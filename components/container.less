@@ -1,0 +1,61 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: @gap * 2;
+  .sizing;
+
+  max-width: @container-max-width;
+  min-width: @container-min-width;
+
+  &:not([class^="row"]):not([class*=" row"]) {
+    .padding-h(@gap);
+
+    @media screen and (min-width: @screen-large) {
+      .padding-h(@gap-big);
+    }
+
+    @media screen and (max-width: @screen-medium) {
+      .padding-h(@gap-medium);
+    }
+
+    @media screen and (max-width: @screen-small) {
+      .padding-h(@gap-small);
+    }
+  }
+
+  @media screen and (max-width: @screen-tablet) {
+    margin-bottom: @gap-small * 2;
+  }
+
+  &.flexible {
+    max-width: none;
+  }
+
+  &.large {
+    max-width: @container-large;
+  }
+
+  &.big {
+    max-width: @container-big;
+  }
+
+  &.medium {
+    max-width: @container-medium;
+  }
+
+  &.small {
+    max-width: @container-small;
+  }
+
+  &.tiny {
+    max-width: @container-tiny;
+  }
+
+  &.tablet {
+    max-width: @container-tablet;
+  }
+
+  &.mobile {
+    max-width: @container-mobile;
+  }
+}

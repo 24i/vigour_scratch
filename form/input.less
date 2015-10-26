@@ -1,0 +1,90 @@
+textarea,
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='time'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='url'] {
+  // not yet
+}
+
+.input {
+  .sizing;
+  height: @input-height;
+
+  display: inline-block;
+  padding: .5rem 1rem;
+
+  font-family: @font-family;
+  font-size: @font-size;
+
+  color: @primary;
+  background: white;
+  text-decoration: none;
+  outline: 0;
+
+  border: @lightgray 1px solid;
+  .shadow(inset 3px 0 3px -3px @lightgray, inset -3px 0 3px -3px @lightgray);
+
+  .appearance;
+  .radius(3px);
+  .transition(@transition-duration linear all);
+
+  &:focus {
+    border-color: @midgray;
+  }
+}
+
+select {
+  // not yet
+}
+
+input[type='checkbox'] {
+  // not yet
+}
+
+input[type='radio'] {
+  // not yet
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Input sizes
+============================== */
+  .input.shadow {
+    .shadow(0 0 0px);
+
+    &:focus {
+      border-color: @primary-border;
+      .shadow(0 0 6px @primary-border);
+    }
+
+    &.primary:focus {
+      border-color: @primary;
+      .shadow(0 0 6px @primary);
+    }
+
+    &.secondary:focus {
+      border-color: @secondary;
+      .shadow(0 0 6px @secondary);
+    }
+  }
+
+/* Input sizes
+============================== */
+  .button.big {
+    height: @input-big-height;
+  }
+
+  .button.large {
+    height: @input-big-height;
+  }

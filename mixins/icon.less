@@ -1,0 +1,14 @@
+ /**
+ * `icon` mixin for generating icon in any element
+ * @param {string} char - character
+ * @example
+ * div {
+ *   .icon('\e60b');
+ * }
+ */
+.icon(@char) {
+  &:before {
+    font-family: 'icomoon';
+    content: @char;
+  }
+}

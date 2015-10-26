@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+// include scratch framework
+@import url('./scratch.less');
+
+// hacking goes on
+.selection(#000, #fff);
+
+html {
+  // for full hardware acceleration:
+  // http://cl.ly/image/2F3K0J1O1B2Y
+  // BUG: prevents fixed position on child elements:
+  // https://code.google.com/p/chromium/issues/detail?id=20574
+  // .transform(translateZ(0));
+}
+
+body {
+  overflow: hidden;
+  letter-spacing: 0.2px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  .user-select;
+
+  // this causes a bug in text-ellipsis on certain android devices
+  text-rendering: optimizeLegibility;
+
+  &.hasTouch {
+    position: fixed;
+    top: 0;
+  }
+}

@@ -1,0 +1,54 @@
+/* Form item groups
+============================== */
+.form-group {
+  .clearfix;
+
+  > button,
+  > input {
+    display: block;
+    float: left;
+
+    @media screen and (min-width: @screen-tablet) {
+      &:first-child:not(:last-child) {
+        border-right: 0;
+        .radius(@radius 0 0 @radius);
+      }
+
+      &:last-child:not(:first-child) {
+        .radius(0 @radius @radius 0);
+        border-left: 0;
+      }
+    }
+  }
+}
+
+.inverse() {
+  > button,
+  > input {
+    &:first-child:not(:last-child) {
+      .radius(0 @radius @radius 0);
+      border-left: 0;
+
+      &:focus ~ .button {
+        border-right: 0;
+        .radius(@radius 0 0 @radius);
+      }
+    }
+  }
+}
+
+
+.form-group {
+  .input {
+    &:last-of-type {
+      .shadow(inset 3px 0 3px -3px @lightgray);
+    }
+
+    &:focus {
+      ~ .button {
+        border-color: @midgray;
+        background: @whitegray;
+      }
+    }
+  }
+}

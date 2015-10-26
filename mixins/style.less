@@ -1,0 +1,104 @@
+@import url('../config.less');
+
+/* Box styling mixins
+---------------------------------------------- */
+
+/**
+ * `border-radius` mixin
+ * @param {string} property
+ * @example
+ * .radius(3px) // all
+ * .radius(top right bottom left)
+ */
+.radius(@radius: @radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+/**
+ * `background-clip` mixin
+ * @param {string} [property=padding-box]
+ * @example
+ * .clip(content-box)
+ */
+.clip (@property: padding-box) {
+  -webkit-background-clip: @property;
+     -moz-background-clip: @property;
+          background-clip: @property;
+}
+
+/**
+ * box-shadow
+ * @param {string} property
+ * @param {string} [property2=inset 0 0 0]
+ * @example
+ * .shadow(1px 1px 3px 1px #ccc)
+ */
+.shadow (@property, @property2: 0 0 0px 0px, @property3: 0 0 0px 0px) {
+  -webkit-box-shadow: @property, @property2, @property3;
+     -moz-box-shadow: @property, @property2, @property3;
+          box-shadow: @property, @property2, @property3;
+}
+
+/**
+ * gradient
+ * @param {string} from
+ * @param {string} to
+ * @param {string} [startpoint=top]
+ * @param {string} [endpoint=bottom]
+ * @example
+ * .gradient(#fff, #ccc)
+ */
+.gradient(@from: #000 50%, @to: #fff 50%, @startpoint: top, @endpoint: bottom) {
+  background: -moz-linear-gradient(@startpoint, @from, @to);
+  background: -webkit-linear-gradient(@startpoint, @from, @to);
+  background: -ms-linear-gradient(@startpoint, @from, @to);
+  background: linear-gradient(to @endpoint, @from, @to);
+}
+
+/**
+ * gradient-o - radial gradient
+ * @param {string} from
+ * @param {string} to
+ * @example
+ * .gradient-o(#fff, #ccc)
+ */
+.gradient-o(@from: #000 0%, @to: #fff 100%, @position: center) {
+  background: -webkit-radial-gradient(@position, ellipse cover, @to, @from);
+  background: -webkit-gradient(radial, @position @position, @to, @from);
+  background: -moz-radial-gradient(@position, ellipse cover, @to, @from);
+  background: -ms-radial-gradient(@position, ellipse cover, @to, @from);
+  background: radial-gradient(ellipse at @position, @to, @from);
+}
+
+/**
+ * Overflow scrollbar styling
+ * @todo needs to be more flexible
+ * @example
+ * .overflow(10px, yellow, #eee, #ccc)
+ */
+.overflow (@width: 10px) {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: @width;
+  }
+  &::-webkit-scrollbar-track {
+    .radius(5px);
+    background: rgba(255, 255, 255, 0.2);
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    .radius(5px);
+    background: #ccc;
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+  }
+  &::-webkit-scrollbar-thumb:window-inactive {
+    background: #eee;
+  }
+}

@@ -1,0 +1,135 @@
+.box {
+  background: white;
+  margin-bottom: @gap * 2;
+  background: white;
+  z-index: 3;
+  .radius(6px);
+  .shadow(0 0 5px @lightgray);
+  .transition(@transition-duration linear all);
+
+  &:first-child {
+    z-index: 4;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: @screen-tablet) {
+    margin-bottom: @gap-small * 2;
+  }
+
+  & + .box {
+    margin-top: -@gap;
+
+    @media screen and (max-width: @screen-tablet) {
+      margin-top: -@gap-small;
+    }
+  }
+
+  header {
+    padding: (@gap / 2);
+    z-index: 10;
+    .clearfix;
+    .shadow(0 3px 5px -3px @midgray-light);
+
+    span {
+      color: @midgray;
+      font-size: @h6;
+      float: right;
+      margin-top: 6px;
+      margin-right: (@gap / 2);
+      font-weight: @font-regular;
+    }
+
+    &:first-child {
+      .radius(0);
+    }
+  }
+
+  &.large {
+    background: @whitegray;
+
+    header,
+    .content {
+      padding: @gap @gap @gap (@gap * .75);
+      .clearfix;
+
+      @media screen and (max-width: @screen-tablet) {
+        padding: @gap-small;
+      }
+
+      .left-side {
+        float: left;
+        text-align: center;
+        width: 8rem;
+      }
+
+      .right-side {
+        float: right;
+        width: calc(~"100% - 8rem - " @gap / 2);
+      }
+
+      @media screen and (max-width: @screen-tablet) {
+        padding: @gap-small;
+
+        .left-side {
+          width: 4rem;
+        }
+        .right-side {
+          width: calc(~"100% - 4rem - " @gap / 4);
+        }
+      }
+    }
+
+    header {
+      font-size: @h2;
+      .shadow(0 0 0px);
+      font-weight: @font-bold;
+      background: white;
+
+      .icon {
+        display: inline-block;
+        text-align: center;
+        color: @primary;
+      }
+
+      &:first-child {
+        .radius(6px 6px 0 0);
+      }
+    }
+
+    > .container {
+      .padding-v(@gap);
+    }
+
+    .content {
+      font-size: @h5;
+      color: @blackgray;
+
+      ul {
+        list-style-type: none;
+
+        li {
+          margin: (@gap / 2) 0;
+
+          p {
+            margin: (@gap * 1.5) 0;
+          }
+
+          &:first-child {
+            p {
+              margin-top: 0;
+            }
+          }
+
+          &:last-child {
+            p {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

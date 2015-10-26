@@ -1,0 +1,55 @@
+/**
+ * scheme
+ * @param {string} [scheme=@schemeA]
+ * @param {string} [hover=false]
+ * @param {string} [helper=false]
+ * @example
+ * .scheme(@schemeA, both)
+ */
+.scheme(@scheme: @schemeA, @hover: false, @helper: false) {
+  color: extract(@scheme, 1);
+  background-color: extract(@scheme, 3);
+
+  // setting for hover
+  // on hover change color
+  & when (@hover = color) {
+    &:hover {
+      color: extract(@scheme, 2);
+    }
+  }
+
+  // on hover change background
+  & when (@hover = background) {
+    &:hover {
+      background-color: extract(@scheme, 4);
+    }
+  }
+
+  // on hover change both
+  & when (@hover = both) {
+    &:hover {
+      color: extract(@scheme, 2);
+      background-color: extract(@scheme, 4);
+    }
+  }
+
+  // setting for helper
+  // additional colors affects to border
+  & when (@helper = border) {
+    border-color: extract(@scheme, 5);
+  }
+
+  // additional colors affects to color
+  & when (@helper = color) {
+    .helper {
+      color: extract(@scheme, 5);
+    }
+  }
+
+  // additional colors affects to background
+  & when (@helper = background) {
+    .helper {
+      background-color: extract(@scheme, 5);
+    }
+  }
+}

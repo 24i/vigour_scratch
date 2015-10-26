@@ -1,0 +1,19 @@
+.label {
+  padding: .5rem .8rem;
+  .radius(3px);
+  margin: 4px;
+  display: inline-block;
+  font-size: 1.3rem;
+  cursor: default;
+  .transition(0.1s linear all);
+  cursor: pointer;
+
+  &:hover {
+    background: #f9f9f9;
+  }
+
+  &.linear {
+    .shadow(0 0 0 1px @lightgray);
+    color: @midgray;
+  }
+}

@@ -1,326 +1,484 @@
+@import url('../mixins/grid.less');
+
+// defining rows
 [class^="row"] >,
 [class*=" row"] > {
-	display: block;
+  .clearfix;
+  .padding-h(0) !important;
+  display: block;
 
-	&:after {
-		content: "";
-		clear: both;
-		display: block;
-		height: 1px;
-		float: none;
-	}
+  > li,
+  > div,
+  > .cell {
+    float: left;
+    .padding-h(@gap / 2);
+    .sizing;
 
-	& > li,
-	& > div,
-	& > .cell {
-		float: left;
-		padding-right: @grid-padding / 2;
-		padding-left: @grid-padding / 2;
-		.sizing;
+    &.full {
+      width: 100% !important;
+    }
 
-		&.full {
-			width: 100%;
-		}
-	}
+    // margin goodies
+    &.margin {
+      &.center {
+        float: none;
+        .margin-h(auto);
+      }
+    }
+  }
 
-	&.no-padding {
-		& > li,
-		& > div,
-		& > .cell {
-			padding: 0;
-		}
-	}
+  // refactoring
+  &.padding {
+    &.twice {
+      .twice-padding();
+    }
 
-	&.no-side-padding {
-		margin-left: -@grid-padding / 2;
-		margin-right: -@grid-padding / 2;
-	}
+    &.half {
+      .half-padding();
 
-	&.twice-padding {
-		& > li,
-		& > div,
-		& > .cell {
-			padding-right: @grid-padding * 2;
-			padding-left: @grid-padding * 2;
-		}
+      &.more {
+        .half-more-padding();
+      }
+    }
 
-		&.no-side-padding {
-			margin-left: -@grid-padding * 2;
-			margin-right: -@grid-padding * 2;
-		}
-	}
+    &.without {
+      .no-padding();
+    }
 
-	&.no-float {
-		font-size: 0;
+    &.edge {
+      .no-side-padding();
 
-		& > li,
-		& > div,
-		& > .cell {
-			float: none;
-			display: inline-block;
-			vertical-align: top;
-			font-size: @font-size;
-		}
-	}
+      &.twice {
+        .twice-side-padding();
+      }
+    }
+  }
 }
 
+
+// defining columns quantity per row
 .columns (@property: 1){
-	& > li,
-	& > div,
-	& > .cell {
-		width: 100% / @property;
-		min-height: 1px;
+  > li,
+  > div,
+  > .cell {
+    display: block;
+    width: 100% / @property;
+    min-height: 1px;
 
-		&.inverse {
-			width: 100% - (100% / @property);
-		}
+    &.inverse {
+      width: 100% - (100% / @property);
+    }
 
-		&.break {
-			.clearfix;
-		}
+    .generate-colspan(@property);
+    .generate-colspan(@n, @i: 2) when (@i =< @n) {
+      &.cell@{i} {
+        width: (100% / @property) * @i;
+      }
 
-		.generate-colspan(@property);
-		.generate-colspan(@n, @i: 2) when (@i =< @n) {
-			&.cell@{i} {
-				width: (100% / @property) * @i;
-			}
+      .generate-colspan(@n, (@i + 1));
+    }
 
-			.generate-colspan(@n, (@i + 1));
-		}
-	}
+    > [class^="row"],
+    > [class*=" row"] {
+
+    }
+  }
 }
 
+
+// generating rows
 .generate-row(@n, @i: 1) when (@i =< @n) {
-	&.row@{i} {
-		.columns(@i)
-	}
-	.generate-row(@n, (@i + 1));
+  &.row@{i} {
+    .columns(@i);
+  }
+  .generate-row(@n, (@i + 1));
 }
 
 .generate-row(@grid-children);
 
 
-// responsive gridding
-// 1920px
-html when (@grid-children-big-screen > 0) {
-	@media all and (max-width: @big-screen) {
+& when (@responsive = true) {
+  // > 1680px
+  & when (@grid-big-children > 0) {
+    @media all and (min-width: @screen-big) {
 
-		[class^="row"], [class*=" row"] {
-			&[class^="big-screen"],
-			&[class*=" big-screen"] {
-				& > li,
-				& > div,
-				& > .cell {
-					float: left;
-				}
-			}
+      [class^="row"], [class*=" row"] {
+        &[class^="big"],
+        &[class*=" big"] {
+          display: block;
 
-			.generate-row(@n, @i: 1) when (@i =< @n) {
-				&.big-screen@{i} {
-					.columns(@i);
-				}
+          > li,
+          > div,
+          > .cell {
+            float: left;
+          }
+        }
 
-				.generate-row(@n, (@i + 1));
-			}
+        .columns (@property: 1){
+          > li,
+          > div,
+          > .cell {
+            width: 100% / @property;
+            min-height: 1px;
 
-			.generate-row(@grid-children-big-screen);
-		}
+            &.inverse {
+              width: 100% - (100% / @property);
+            }
 
-	}
-}
+            .generate-colspan(@property);
+            .generate-colspan(@n, @i: 1) when (@i =< @n) {
+              &.big@{i} {
+                width: (100% / @property) * @i;
+              }
 
-// 1680px
-html when (@grid-children-big-screen > 0) {
-	@media all and (max-width: @big-screen) {
+              .generate-colspan(@n, (@i + 1));
+            }
 
-		[class^="row"], [class*=" row"] {
-			&[class^="big-screen"],
-			&[class*=" big-screen"] {
-				& > li,
-				& > div,
-				& > .cell {
-					float: left;
-				}
-			}
+            &.big1 {
+              display: block;
+            }
 
-			.generate-row(@n, @i: 1) when (@i =< @n) {
-				&.big-screen@{i} {
-					.columns(@i);
-				}
+            &.big0 {
+              display: none
+            }
+          }
 
-				.generate-row(@n, (@i + 1));
-			}
+          &.big1 {
+            display: block
+          }
+        }
 
-			.generate-row(@grid-children-big-screen);
-		}
+        .generate-row(@n, @i: 1) when (@i =< @n) {
+          &.big@{i} {
+            .columns(@i);
+          }
 
-	}
-}
+          .generate-row(@n, (@i + 1));
+        }
 
-// 1680px
-html when (@grid-children-screen > 0) {
-	@media all and (max-width: @screen) {
+        .generate-row(@grid-big-children);
+      }
 
-		[class^="row"], [class*=" row"] {
-			&[class^="screen"],
-			&[class*=" screen"] {
-				& > li,
-				& > div,
-				& > .cell {
-					float: left;
-				}
-			}
+    }
+  }
 
-			.generate-row(@n, @i: 1) when (@i =< @n) {
-				&.screen@{i} {
-					.columns(@i);
-				}
+  // 1366px
+  & when (@grid-medium-children > 0) {
+    @media all and (max-width: @screen-medium) {
 
-				.generate-row(@n, (@i + 1));
-			}
+      [class^="row"], [class*=" row"] {
+        &[class^="medium"],
+        &[class*=" medium"] {
+          display: block;
 
-			.generate-row(@grid-children-screen);
-		}
+          > li,
+          > div,
+          > .cell {
+            float: left;
+          }
+        }
 
-	}
-}
+        .columns (@property: 1){
+          > li,
+          > div,
+          > .cell {
+            width: 100% / @property;
+            min-height: 1px;
 
-// 1336px
-html when (@grid-children-small-screen > 0) {
-	@media all and (max-width: @small-screen) {
+            &.inverse {
+              width: 100% - (100% / @property);
+            }
 
-		[class^="row"], [class*=" row"] {
-			&[class^="small-screen"],
-			&[class*=" small-screen"] {
-				& > li,
-				& > div,
-				& > .cell {
-					float: left;
-				}
-			}
+            .generate-colspan(@property);
+            .generate-colspan(@n, @i: 1) when (@i =< @n) {
+              &.medium@{i} {
+                width: (100% / @property) * @i;
+              }
 
-			.generate-row(@n, @i: 1) when (@i =< @n) {
-				&.small-screen@{i} {
-					.columns(@i);
-				}
+              .generate-colspan(@n, (@i + 1));
+            }
 
-				.generate-row(@n, (@i + 1));
-			}
+            &.medium1 {
+              display: block;
+            }
 
-			.generate-row(@grid-children-small-screen);
-		}
+            &.medium0 {
+              display: none
+            }
+          }
 
-	}
-}
+          &.medium1 {
+            display: block
+          }
+        }
 
-// 1024px
-html when (@grid-children-tablet > 0) {
-	@media all and (max-width: @tablet) {
+        .generate-row(@n, @i: 1) when (@i =< @n) {
+          &.medium@{i} {
+            .columns(@i);
+          }
 
-		[class^="row"], [class*=" row"] {
-			&[class^="tablet"],
-			&[class*=" tablet"] {
-				& > li,
-				& > div,
-				& > .cell {
-					float: left;
-				}
-			}
+          .generate-row(@n, (@i + 1));
+        }
 
-			.generate-row(@n, @i: 1) when (@i =< @n) {
-				&.tablet@{i} {
-					.columns(@i);
-				}
+        .generate-row(@grid-medium-children);
+      }
 
-				.generate-row(@n, (@i + 1));
-			}
+    }
+  }
 
-			.generate-row(@grid-children-tablet);
-		}
+  // 1280px
+  & when (@grid-small-children > 0) {
+    @media all and (max-width: @screen-small) {
 
-	}
-}
+      [class^="row"], [class*=" row"] {
+        &[class^="small"],
+        &[class*=" small"] {
+          display: block;
 
-// 840px
-html when (@grid-children-small-tablet > 0) {
-	@media all and (max-width: @small-tablet) {
+          > li,
+          > div,
+          > .cell {
+            float: left;
+          }
+        }
 
-		[class^="row"], [class*=" row"] {
-			&[class^="small-tablet"],
-			&[class*=" small-tablet"] {
-				& > li,
-				& > div,
-				& > .cell {
-					float: left;
-				}
-			}
+        .columns (@property: 1){
+          > li,
+          > div,
+          > .cell {
+            width: 100% / @property;
+            min-height: 1px;
 
-			.generate-row(@n, @i: 1) when (@i =< @n) {
-				&.small-tablet@{i} {
-					.columns(@i);
-				}
+            &.inverse {
+              width: 100% - (100% / @property);
+            }
 
-				.generate-row(@n, (@i + 1));
-			}
+            .generate-colspan(@property);
+            .generate-colspan(@n, @i: 1) when (@i =< @n) {
+              &.small@{i} {
+                width: (100% / @property) * @i;
+              }
 
-			.generate-row(@grid-children-small-tablet);
-		}
+              .generate-colspan(@n, (@i + 1));
+            }
 
-	}
-}
+            &.small1 {
+              display: block;
+            }
 
-// 728px
-html when (@grid-children-mobile > 0) {
-	@media all and (max-width: @mobile) {
+            &.small0 {
+              display: none
+            }
+          }
 
-		[class^="row"], [class*=" row"] {
-			&[class^="mobile"],
-			&[class*=" mobile"] {
-				& > li,
-				& > div,
-				& > .cell {
-					float: left;
-				}
-			}
+          &.small1 {
+            display: block
+          }
+        }
 
-			.generate-row(@n, @i: 1) when (@i =< @n) {
-				&.mobile@{i} {
-					.columns(@i);
-				}
+        .generate-row(@n, @i: 1) when (@i =< @n) {
+          &.small@{i} {
+            .columns(@i);
+          }
 
-				.generate-row(@n, (@i + 1));
-			}
+          .generate-row(@n, (@i + 1));
+        }
 
-			.generate-row(@grid-children-mobile);
-		}
+        .generate-row(@grid-small-children);
+      }
 
-	}
-}
+    }
+  }
 
-// 480px
-html when (@grid-children-small-mobile > 0) {
-	@media all and (max-width: @small-mobile) {
+  // 960px
+  & when (@grid-tiny-children > 0) {
+    @media all and (max-width: @screen-tiny) {
 
-		[class^="row"], [class*=" row"] {
-			&[class^="small-mobile"],
-			&[class*=" small-mobile"] {
-				& > li,
-				& > div,
-				& > .cell {
-					float: left;
-				}
-			}
+      [class^="row"], [class*=" row"] {
+        &[class^="tiny"],
+        &[class*=" tiny"] {
+          display: block;
 
-			.generate-row(@n, @i: 1) when (@i =< @n) {
-				&.small-mobile@{i} {
-					.columns(@i);
-				}
+          > li,
+          > div,
+          > .cell {
+            float: left;
+          }
+        }
 
-				.generate-row(@n, (@i + 1));
-			}
+        .columns (@property: 1){
+          > li,
+          > div,
+          > .cell {
+            width: 100% / @property;
+            min-height: 1px;
 
-			.generate-row(@grid-children-small-mobile);
-		}
+            &.inverse {
+              width: 100% - (100% / @property);
+            }
 
-	}
+            .generate-colspan(@property);
+            .generate-colspan(@n, @i: 1) when (@i =< @n) {
+              &.tiny@{i} {
+                width: (100% / @property) * @i;
+              }
+
+              .generate-colspan(@n, (@i + 1));
+            }
+
+            &.tiny1 {
+              display: block;
+            }
+
+            &.tiny0 {
+              display: none
+            }
+          }
+
+          &.tiny1 {
+            display: block
+          }
+        }
+
+        .generate-row(@n, @i: 1) when (@i =< @n) {
+          &.tiny@{i} {
+            .columns(@i);
+          }
+
+          .generate-row(@n, (@i + 1));
+        }
+
+        .generate-row(@grid-tiny-children);
+      }
+
+    }
+  }
+
+  // 768px
+  & when (@grid-tablet-children > 0) {
+    @media all and (max-width: @screen-tablet) {
+
+      [class^="row"], [class*=" row"] {
+        &[class^="tablet"],
+        &[class*=" tablet"] {
+          display: block;
+
+          > li,
+          > div,
+          > .cell {
+            float: left;
+          }
+        }
+
+        .columns (@property: 1){
+          > li,
+          > div,
+          > .cell {
+            width: 100% / @property;
+            min-height: 1px;
+
+            &.inverse {
+              width: 100% - (100% / @property);
+            }
+
+            .generate-colspan(@property);
+            .generate-colspan(@n, @i: 1) when (@i =< @n) {
+              &.tablet@{i} {
+                width: (100% / @property) * @i;
+              }
+
+              .generate-colspan(@n, (@i + 1));
+            }
+
+            &.tablet1 {
+              display: block;
+            }
+
+            &.tablet0 {
+              display: none
+            }
+          }
+
+          &.tablet1 {
+            display: block
+          }
+        }
+
+        .generate-row(@n, @i: 1) when (@i =< @n) {
+          &.tablet@{i} {
+            .columns(@i);
+          }
+
+          .generate-row(@n, (@i + 1));
+        }
+
+        .generate-row(@grid-tablet-children);
+      }
+
+    }
+  }
+
+  // 480px
+  & when (@grid-mobile-children > 0) {
+    @media all and (max-width: @screen-mobile) {
+
+      [class^="row"], [class*=" row"] {
+        &[class^="mobile"],
+        &[class*=" mobile"] {
+          display: block;
+
+          > li,
+          > div,
+          > .cell {
+            float: left;
+          }
+        }
+
+        .columns (@property: 1){
+          > li,
+          > div,
+          > .cell {
+            width: 100% / @property;
+            min-height: 1px;
+
+            &.inverse {
+              width: 100% - (100% / @property);
+            }
+
+            .generate-colspan(@property);
+            .generate-colspan(@n, @i: 1) when (@i =< @n) {
+              &.mobile@{i} {
+                width: (100% / @property) * @i;
+              }
+
+              .generate-colspan(@n, (@i + 1));
+            }
+
+            &.mobile1 {
+              display: block;
+            }
+
+            &.mobile0 {
+              display: none
+            }
+          }
+
+          &.mobile1 {
+            display: block
+          }
+        }
+
+        .generate-row(@n, @i: 1) when (@i =< @n) {
+          &.mobile@{i} {
+            .columns(@i);
+          }
+
+          .generate-row(@n, (@i + 1));
+        }
+
+        .generate-row(@grid-mobile-children);
+      }
+
+    }
+  }
 }

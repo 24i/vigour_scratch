@@ -1,0 +1,33 @@
+.pinned-container {
+  position: relative;
+}
+
+
+&.pinned {
+  &.pinned-top {
+    position: fixed;
+    z-index: 800;
+    top: 0;
+    bottom: auto !important;
+  }
+
+  &.pinned-bottom {
+    position: absolute;
+    z-index: 800;
+    bottom: 0;
+    top: auto !important;
+  }
+
+  &:not(.pinned-top):not(.pinned-bottom) {
+    top: auto !important;
+    bottom: auto !important;
+  }
+
+  &.pinned-top,
+  &.pinned-bottom {
+    > header {
+      background: white;
+      .shadow(0 0 5px @lightgray);
+    }
+  }
+}

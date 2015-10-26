@@ -1,49 +1,27 @@
-// ----------------------------------------------------------------------------
-//  _____                _       _
-// /  ___|              | |     | |
-// \ `--.  ___ _ __ __ _| |_ ___| |__
-//  `--. \/ __| '__/ _` | __/ __| '_ \
-// /\__/ / (__| | | (_| | || (__| | | |
-// \____/ \___|_|  \__,_|\__\___|_| |_|
-//
-// ----------------------------------------------------------------------------
-//  Scratch Framework (https://github.com/nikoloza/Scratch)
-//  @author Nika Tomadze (@nnikoloza)
-//  @author nika.tomadze@gmail.com
-//  License - The MIT License (c) 2014 Nika Tomadze
-// ----------------------------------------------------------------------------
-
+@charset "UTF-8";
 
 // color variables
 @import url('colors');
 
+// config
+@import url('config');
+
 // variables
-@import url('var');
+@import url('variables');
 
 // mixins
-@import url('mixins/index');
+@import url('mixins');
 
 // reset
-@import url('reset');
+& when (@reset = true) {
+  @import url('reset');
+}
 
-// forms
-@import url('forms/buttons');
-@import url('forms/form');
+// helpers
+@import url('helpers');
+
+// form elements
+@import url('form');
 
 // animations
-@import url('animations/index');
-
-
-// browsers and print page
-.browsers() {
-  @import 'browsers/os';
-  @import 'browsers/browsers';
-  @import 'browsers/print';
-}
-
-// responsive
-.responsive() {
-	@import 'responsive/screen';
-	@import 'responsive/tablet';
-	@import 'responsive/mobile';
-}
+@import url('animation');

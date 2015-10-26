@@ -1,0 +1,254 @@
+@import url('./colors.less');
+
+
+/* Config
+----------------------------------------------
+This variables are often defined depend on Brand Book of the company.
+They are used in `reset.less` file as a dependency. If you need to
+change any class which is depend on those, you may need to change it here
+or redefine it as a new one. */
+
+
+/* Document Styleset */
+/* ---------------------------------------------- */
+
+  @reset: false;
+
+  // directories listings
+  @fonts-path: 'assets/fonts';
+  @icons-path: 'assets/fonts';
+  @img-path:   '../../../assets/img';
+
+
+/* Brand Colors */
+/* ---------------------------------------------- */
+
+  // document settings
+  @body-background: @blackgray;
+  @text-color: white;
+  @separator-color: @whitegray;
+
+  /**
+   * Colors can be: 'colorA', 'colorB', 'colorN'...
+   * They can have types - 'colorN[type]'
+   * Types can be:
+   * 'D'  - darken
+   * 'L'  - lighten
+   * 'H'  - hover
+   * 'C'  - contrast
+   * 'CH' - contrast hover
+   * 'A'  - additional/helper color
+   * 'I'  - inverse
+   *
+   * @example
+   * a {
+   *   color: @colorA;
+   *   &:hover {
+   *     color: @colorAH;
+   *   }
+   * }
+   */
+
+  // color A
+  @colorA:   @pink;
+  @colorAD:  darken(@colorA, 10%); // darker
+  @colorAL:  lighten(@colorA, 10%); // lighter
+  @colorAH:  inherit; // hover
+  @colorAC:  white; // contrast
+  @colorACH: inherit; // contrast hover
+  @colorAA:  @yellow; // additional/helper color
+
+  @schemeA:  @colorA, @colorAH, @colorAC, @colorACH, @colorAA;
+  @schemeAI: @colorAC, @colorACH, @colorA, @colorAH, @colorAA;
+
+  // color B
+  @colorB:   @blue;
+  @colorBD:  darken(@colorB, 10%);
+  @colorBL:  lighten(@colorB, 10%);
+  @colorBH:  @colorBL;
+  @colorBC:  white;
+  @colorBCH: @whitegrayL;
+  @colorBA:  @yellow;
+
+  @schemeB:  @colorB, @colorBH, @colorBC, @colorBCH, @colorBA;
+  @schemeBI: @colorBC, @colorBCH, @colorB, @colorBH, @colorBA;
+
+  // color C
+  @colorC:   @lilac;
+  @colorCH:  inherit;
+  @colorCC:  white;
+  @colorCCH: inherit;
+  @colorCA:  @yellow;
+
+  @schemeC:  @colorC, @colorCH, @colorCC, @colorCCH, @colorCA;
+  @schemeCI: @colorCC, @colorCCH, @colorC, @colorCH, @colorCA;
+
+
+/* Fonts */
+/* ---------------------------------------------- */
+
+  // weights
+  @font-slim:      200;
+  @font-light:     300;
+  @font-regular:   400;
+  @font-semibold:  600;
+  @font-bold:      700;
+  @font-extrabold: 800;
+
+  // header sizes
+  @h1: 3.2rem;
+  @h2: 2.4rem;
+  @h3: 2.0rem;
+  @h4: 1.8rem;
+  @h5: 1.6rem;
+  @h6: 1.4rem;
+  @h7: 1.2rem;
+  @h8: 1.3rem;
+  @h9: 1.1rem;
+  @h10:  1rem;
+
+  // default weight for headers
+  @font-weight: normal;
+
+  @h-color: inherit;
+  @h-weight: @font-bold;
+
+
+/* Breakpoints */
+/* ---------------------------------------------- */
+
+  @responsive: false;
+
+  // if '@responsive' is true
+  @screen-large:   1920px;
+  @screen-big:     1680px;
+  @screen-medium:  1366px;
+  @screen-small:   1225px;
+  @screen-tiny:    1024px;
+  @screen-tablet:  768px;
+  @screen-mobile:  480px;
+
+
+/* Helper modules */
+/* ---------------------------------------------- */
+
+  @helpers: false;
+
+  @classes: false;
+  @fonts: false;
+  @grid: false;
+
+
+/* Griding */
+/* ---------------------------------------------- */
+
+  // if '@grid' is true
+  @grid-children:         12;
+
+  // responsive gridding
+  // if '@responsive' is true
+  @grid-big-children:     0;
+  @grid-medium-children:  0;
+  @grid-small-children:   8;
+  @grid-tiny-children:    4;
+  @grid-tablet-children:  5;
+  @grid-mobile-children:  2;
+
+  // gap between cells
+  @gap-big:               3rem;
+  @gap:                   2rem;
+  @gap-medium:            2vw;
+  @gap-small:             3vw;
+
+
+/* Container */
+/* ---------------------------------------------- */
+
+  // container setting
+  @container-large:     @screen-large;
+  @container-big:       @screen-big;
+  @container-medium:    @screen-medium;
+  @container-small:     @screen-small;
+  @container-tiny:      @screen-tiny;
+  @container-tablet:    @screen-tablet;
+  @container-mobile:    @screen-mobile;
+
+  // container default behaviour
+  @container-min-width: 32rem;
+  @container-max-width: @screen-medium;
+
+
+/* Font settings */
+/* ---------------------------------------------- */
+
+  // font settings
+  @font-size: 1.4rem; // root document font size is 10px
+  @font-style: normal;
+  @font-varuant: normal;
+  @line-height: 1.3;
+  @font-family: 'dinLight', Arial, sans-serif;
+
+
+/* Brainding */
+/* ---------------------------------------------- */
+
+  // styling
+  @radius: 5px;
+
+  // link properties
+  @a-color: white;
+  @aH: @whitegray;
+  @a-weight: inherit;
+  @a-decoration: none;
+  @aH-decoration: none;
+
+
+/* Forms */
+/* ---------------------------------------------- */
+
+  @input-small-height: 2.4rem;
+  @input-small-font: 1.2rem;
+
+  @input-height: 3.6rem;
+  @input-font: @font-size;
+
+  @input-big-height: 4.2rem;
+  @input-big-font: 1.6rem;
+
+  @placeholder: @blackgray; // default placeholder color for forms
+
+
+/* Animations */
+/* ---------------------------------------------- */
+
+  @animatecss: false;
+
+  // if '@animatecss' is true
+  @animatecss-bounce: false;
+  @animatecss-fade: true;
+  @animatecss-flip: false;
+  @animatecss-light-speed: false;
+  @animatecss-roll: false;
+  @animatecss-rotate: false;
+  @animatecss-slide: true;
+  @animatecss-zoom: false;
+
+  @animation-duration: 1.2s;
+
+
+/* Transition */
+/* ---------------------------------------------- */
+
+  // default transition
+  @transition: linear .2s;
+
+
+/* Layout */
+/* ---------------------------------------------- */
+
+  // header
+  @header-fixed: false;
+  @header-height: @input-height + 2rem; // if '@header-fixed' is true
+
+  @sticky-footer: false;
+  @footer-height: 5rem; // if sticky footer is true

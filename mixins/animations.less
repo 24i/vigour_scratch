@@ -24,10 +24,10 @@
 }
 
 /**
- * `animation-name` mixin
+ * `animation-timing` mixin
  * @param {string} property
  * @example
- * .animation-name(fadeIn)
+ * .animation-timing(fadeIn)
  */
 .animation-timing(@property) {
   -webkit-animation-timing-function: @property;
@@ -58,11 +58,11 @@
 
 /**
  * `animation-fill-mode` mixin
- * @param {string} [property=both]
+ * @param {string} [property=towards]
  * @example
  * .animation-fill(backwards)
  */
-.animation-fill(@property: both) {
+.animation-fill(@property: towards) {
   -webkit-animation-fill-mode: @property;
           animation-fill-mode: @property;
 }

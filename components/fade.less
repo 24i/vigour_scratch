@@ -1,0 +1,33 @@
+.fade() {
+  z-index: 950;
+  background-color: fade(@whitegray, 97%);
+  .fixed(0, 0, 0, 0);
+  .size(100%);
+  .transition(linear .5s background-color);
+  padding-right: (@gap * 2.5);
+
+  @media screen and (max-width: @screen-small) {
+    padding-right: (@gap-small * 2.5);
+  }
+
+  > .close.button {
+    opacity: 1;
+    .transition-duration(.5s);
+    color: @darkgray;
+    .fixed(auto, @gap, @gap * .75);
+
+    @media screen and (max-width: @screen-small) {
+      .fixed(auto, @gap-small, @gap-small * .75);
+    }
+  }
+
+  &.closed {
+    pointer-events: none;
+    background-color: fade(@whitegray, 0%);
+
+    > .close.button {
+      .transition-duration(.3s);
+      opacity: 0;
+    }
+  }
+}
