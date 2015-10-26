@@ -36,6 +36,15 @@ Injecting in less:
 
 	@import 'vigour-scratch/index.less';
 
+
+Config
+-------------
+
+For every framework specific variable, you can look at `config.less` file.
+
+For every application specific variable, you can look at `variables.less` file.
+
+
 -------------
 
 More documentation will be soon.
