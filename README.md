@@ -19,6 +19,14 @@ To install run:
 
 	$ npm install vigour-scratch
 
+Using in Browserify:
+
+	require('vigour-scratch');
+
+Using in less:
+
+	@import 'vigour-scratch/index.less';
+
 -------------
 
 More documentation will be soon.
