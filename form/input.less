@@ -25,7 +25,7 @@ input[type='url'] {
   font-family: @font-family;
   font-size: @font-size;
 
-  color: @primary;
+  color: @colorA;
   background: white;
   text-decoration: none;
   outline: 0;
@@ -60,31 +60,33 @@ textarea {
 
 /* Input sizes
 ============================== */
-  .input.shadow {
+  .input {
     .shadow(0 0 0px);
 
     &:focus {
-      border-color: @primary-border;
-      .shadow(0 0 6px @primary-border);
+      border-color: @colorAD;
+      .shadow(0 0 6px @colorAD);
     }
 
-    &.primary:focus {
-      border-color: @primary;
-      .shadow(0 0 6px @primary);
+    &.colorA:focus {
+      border-color: @colorA;
+      .shadow(0 0 6px @colorA);
     }
 
-    &.secondary:focus {
-      border-color: @secondary;
-      .shadow(0 0 6px @secondary);
+    &.colorB:focus {
+      border-color: @colorB;
+      .shadow(0 0 6px @colorB);
     }
   }
 
 /* Input sizes
 ============================== */
-  .button.big {
+  .input.big {
     height: @input-big-height;
+    font-size: @input-big-font;
   }
 
-  .button.large {
-    height: @input-big-height;
+  .input.large {
+    height: @input-large-height;
+    font-size: @input-big-font;
   }
