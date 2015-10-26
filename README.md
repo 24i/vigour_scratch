@@ -13,7 +13,7 @@ Scratch Framework
 
 **LESS boilerplate and styleguide for front end projects.**
 
-Scratch helps you to make high level front end architecture using `Less` and `HTML5`.
+Scratch helps you to make abstract CSS architecture using `Less`.
 
 It has semantic code and file structure which helps you write beautiful and modular code.
 
@@ -24,15 +24,15 @@ Scratch is not UI framework, it's for architecture only. For DOM, styles and UI 
 Getting Started
 -------------
 
-To install run:
+To install, run:
 
 	$ npm install vigour-scratch
 
-Using in Browserify:
+Injecting in Browserify:
 
 	require('vigour-scratch');
 
-Using in less:
+Injecting in less:
 
 	@import 'vigour-scratch/index.less';
 
