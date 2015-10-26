@@ -21,7 +21,16 @@
 @import url('helpers');
 
 // form elements
-@import url('form');
+& when (@form = true) {
+  @import url('form');
+}
+
+// components
+& when (@components = true) {
+  @import url('components');
+}
 
 // animations
-@import url('animation');
+& when (@animatecss = true) {
+  @import url('animation');
+}
