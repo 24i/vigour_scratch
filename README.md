@@ -13,7 +13,7 @@ Scratch Framework
 
 **LESS boilerplate and styleguide for front end projects.**
 
-Scratch helps you to make abstract CSS architecture using `Less`.
+Scratch helps you to make abstract CSS architecture using `Less`. So, keep it abstract.
 
 It has semantic code and file structure which helps you write beautiful and modular code.
 
@@ -40,14 +40,8 @@ Injecting in less:
 Config
 -------------
 
-For every framework specific variable, you can look at `config.less` file.
+Make your own variables file to replace our set on top of `scratch`. You can see configs in `config.less` and also follow the imported files inside.
 
-For every application specific variable, you can look at `variables.less` file.
-
-
--------------
-
-Keep it abstract.
 
 -------------
 

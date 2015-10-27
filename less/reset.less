@@ -1,13 +1,13 @@
 @import url('./config.less');
 @import url('./mixins.less');
 
-
-/* Powerful reset
-----------------------------------------------
-Reset can be pain sometimes. Here we have reset that doesn't overwrite your
-classes but it does for almost all property in the browser. Even, you
-can control it from variables file. */
-
+/**
+ * Powerful reset
+ * ----------------------------------------------
+ * Reset can be pain sometimes. Here we have reset
+ * that doesn't overwrite your classes but it does
+ * for almost all property in the browser.
+ */
 
 html {
   position: relative;
@@ -15,7 +15,7 @@ html {
   font-size: 10px;
   background: @body-background;
 
-  & when (@responsive = true) {
+  & when (@responsive =true) {
     @media all and (max-width: @screen-tablet) {
       font-size: 9px;
     }
@@ -32,11 +32,11 @@ body {
   font-size: @body-size;
   font-style: @body-style;
   font-variant: @body-variant;
-  overflow-x: hidden;
   font-family: @body-family;
   min-width: @container-min-width;
+  overflow-x: hidden;
   position: relative;
-  height: 100%;
+  min-height: 100%;
   cursor: default;
 }
 
@@ -48,7 +48,7 @@ h5,
 h6 {
   margin: 0;
   line-height: 1.3;
-  font-family: @headers-family, @body-family;
+  font-family: @header-family, @body-family;
   color: @header-color;
   font-weight: @header-weight;
 }
@@ -85,16 +85,15 @@ button {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0;
+  // display: none; // <- Crashes Chrome on hover
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
-
   ul.bullet {
     list-style: inherit;
     line-height: 1.5;
@@ -114,11 +113,13 @@ nav,
 section,
 summary {
   .sizing;
-  display:block;
+  display: block;
 }
 
-audio,canvas,video {
-  display:inline-block;
+audio,
+canvas,
+video {
+  display: inline-block;
 }
 
 video::-webkit-media-controls {
@@ -130,18 +131,18 @@ video::-webkit-media-controls-enclosure {
 }
 
 audio:not([controls]) {
-  display:none;
-  height:0;
+  display: none;
+  height: 0;
 }
 
 [hidden] {
-  display:none;
+  display: none;
 }
 
 html {
   font-family: @body-family;
-  -webkit-text-size-adjust:100%;
-  -ms-text-size-adjust:100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 a {
@@ -150,7 +151,6 @@ a {
   text-decoration: @a-decoration;
   outline: none;
   cursor: pointer;
-
   &:hover {
     color: @aH;
     text-decoration: @aH-decoration;
@@ -181,21 +181,21 @@ dfn {
 }
 
 mark {
-  background:#ff0;
-  color:#000;
+  background: #ff0;
+  color: #000;
 }
 
 code,
 kbd,
 pre,
 samp {
-  font-family:monospace, serif;
-  font-size:1em;
+  font-family: monospace, serif;
+  font-size: 1em;
 }
 
 pre {
-    white-space: pre-wrap;
-    .word-wrap;
+  white-space: pre-wrap;
+  .word-wrap;
 }
 
 q {
@@ -203,27 +203,27 @@ q {
 }
 
 small {
-  font-size:80%;
+  font-size: 80%;
 }
 
 sub,
 sup {
-  font-size:75%;
-  line-height:0;
-  position:relative;
-  vertical-align:baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
 sup {
-  top:-.5em;
+  top: -.5em;
 }
 
 sub {
-  bottom:-.25em;
+  bottom: -.25em;
 }
 
 img {
-  border:0;
+  border: 0;
   max-width: 100%;
 }
 
@@ -234,7 +234,7 @@ img {
 }
 
 svg:not(:root) {
-  overflow:hidden;
+  overflow: hidden;
 }
 
 hr {
@@ -247,9 +247,9 @@ button,
 input,
 select,
 textarea {
-  font-family:inherit;
-  font-size:100%;
-  margin:0;
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
   outline: none;
 }
 
@@ -260,22 +260,25 @@ input {
 }
 
 button,
-html input[type=button],/* 1 */
+html input[type=button],
+
+/* 1 */
+
 input[type=reset],
 input[type=submit] {
-  -webkit-appearance:button;
-  cursor:pointer;
+  -webkit-appearance: button;
+  cursor: pointer;
 }
 
 button[disabled],
 input[disabled] {
-  cursor:default;
+  cursor: default;
 }
 
 input[type=checkbox],
 input[type=radio] {
   .sizing;
-  padding:0;
+  padding: 0;
 }
 
 fieldset {
@@ -289,23 +292,25 @@ figure {
 }
 
 textarea {
-  overflow:auto;
-  vertical-align:top;
+  overflow: auto;
+  vertical-align: top;
 }
 
 table {
-  border-collapse:collapse;
-  border-spacing:0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-body,figure {
-  margin:0;
+body,
+figure {
+  margin: 0;
 }
 
-legend,button::-moz-focus-inner,
+legend,
+button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border:0;
-  padding:0;
+  border: 0;
+  padding: 0;
 }
 
 address {
