@@ -1,0 +1,58 @@
+@import url('./colors.less');
+
+
+// Config
+// ==============================================
+// This variables are often defined depend on Brand Book of
+// the company. They are used in `reset.less` file as a
+// dependency. If you need to change any class which is
+// depends on those, you may need to change it here or
+// redefine it as a new one.
+
+
+// Document Styleset
+// ==============================================
+
+  @reset: false;
+  @components: false;
+
+  // directories listings
+  @fonts-path: 'assets/fonts';
+  @icons-path: 'assets/fonts';
+  @img-path:   '../../../assets/img';
+
+
+// Animations
+// ==============================================
+
+@animatecss: false;
+
+// if '@animatecss' is true
+@animatecss-bounce: false;
+@animatecss-fade: true;
+@animatecss-flip: false;
+@animatecss-light-speed: false;
+@animatecss-roll: false;
+@animatecss-rotate: false;
+@animatecss-slide: true;
+@animatecss-zoom: false;
+
+@animation-duration: 1.2s;
+
+
+// Transition
+// ==============================================
+
+  // default transition
+  @transition: linear .2s;
+
+
+// Layout
+// ==============================================
+
+  // header
+  @header-fixed: false;
+  @header-height: @input-height + 2rem; // if '@header-fixed' is true
+
+  @sticky-footer: false;
+  @footer-height: 5rem; // if sticky footer is true

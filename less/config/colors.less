@@ -1,0 +1,117 @@
+// Color variables
+// ================================================
+// These variables are often defined depend on Brand Book
+// of the company. For using them as an example, here are
+// given some hand picked color scheme, which can be
+// useful. For primary and secondary colors, you may
+// need to re-define them in `var.less` file
+
+
+// brand blue
+@blue: #5058C9;
+
+// brand yellow
+@yellow:  #F9E900;
+
+// brand red
+@red: #D62F2F;
+
+// brand lilac
+@lilac:  #231331;
+
+// brand green
+@green: #7ED321;
+
+// brand pink
+@pink: #FF0070;
+
+// brand orange
+@orange: #fea930;
+
+
+// brand grayscale
+@blackgray:  #181818;
+
+@darkgray:  #555;
+
+@midgray:  #757575;
+
+@lightgray:  #D7D7D8;
+
+@whitegray:  #F6F6F6;
+
+
+// social network colors
+@twitter: #55ACEE;
+
+@facebook: #3A5798;
+
+@youtube: #FB0000;
+
+@google: #D74924;
+
+@vimeo: #5CC6FF;
+
+@rss: #F6AA30;
+
+@pinterest: #CD1B1F;
+
+
+
+// Brand colors
+// ================================================
+
+// Color priorities
+// ----------------------------------------------
+
+// primary color
+@primary:                @green;
+@primary-darken:         darken(@primary, 10%);
+@primary-lighten:        lighten(@primary, 10%);
+@primary-hover:          inherit;
+@primary-contrast:       white;
+@primary-contrast-hover: inherit;
+@primary-additional:     @yellow;
+
+// secondary color
+@secondary:                @blue;
+@secondary-darken:         darken(@secondary, 10%);
+@secondary-lighten:        lighten(@secondary, 10%);
+@secondary-hover:          inherit;
+@secondary-contrast:       white;
+@secondary-contrast-hover: inherit;
+@secondary-additional:     @yellow;
+
+// thirdly color
+@thirdly:                @blue;
+@thirdly-darken:         darken(@thirdly, 10%);
+@thirdly-lighten:        lighten(@thirdly, 10%);
+@thirdly-hover:          inherit;
+@thirdly-contrast:       white;
+@thirdly-contrast-hover: inherit;
+@thirdly-additional:     @yellow;
+
+
+// Color schemes
+// ----------------------------------------------
+
+// scheme for primary color
+@primary-scheme: @primary,
+                 @primary-hover,
+                 @primary-contrast,
+                 @primary-contrast-hover,
+                 @primary-additional;
+
+// scheme for secondary color
+@secondary-scheme: @secondary,
+                   @secondary-hover,
+                   @secondary-contrast,
+                   @secondary-contrast-hover,
+                   @secondary-additional;
+
+// scheme for thirdly color
+@thirdly-scheme: @thirdly,
+                 @thirdly-hover,
+                 @thirdly-contrast,
+                 @thirdly-contrast-hover,
+                 @thirdly-additional;

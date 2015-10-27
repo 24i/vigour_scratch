@@ -47,4 +47,8 @@ For every application specific variable, you can look at `variables.less` file.
 
 -------------
 
+Keep it abstract.
+
+-------------
+
 More documentation will be soon.
