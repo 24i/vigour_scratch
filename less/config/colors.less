@@ -1,10 +1,11 @@
-// Color variables
-// ================================================
-// These variables are often defined depend on Brand Book
-// of the company. For using them as an example, here is
-// given hand picked color scheme, which can be useful.
-// To change primary, secondary and tertiary colors, you
-// may need to redefine them at the bottom.
+/**
+ * Color variables
+ * ----------------------------------------------
+ * These variables are often defined depend on
+ * Brand Book of the company. For using them as
+ * an example, here is given hand picked color
+ * scheme, which can be useful.
+ */
 
 
 // Brand blue
@@ -58,11 +59,16 @@
 
 
 
-// Brand colors
-// ================================================
+/**
+ * Brand colors
+ * ----------------------------------------------
+ * You can redefine them with priorities depend
+ * on your brand.
+ */
 
-// Color priorities
-// ----------------------------------------------
+/**
+ * Color priorities
+ */
 
 // Primary color
 @primary:                @green;
@@ -82,7 +88,7 @@
 @secondary-contrast-hover: inherit;
 @secondary-additional:     @yellow;
 
-// tertiary color
+// Tertiary color
 @tertiary:                @blue;
 @tertiary-darken:         darken(@tertiary, 10%);
 @tertiary-lighten:        lighten(@tertiary, 10%);
@@ -92,8 +98,9 @@
 @tertiary-additional:     @yellow;
 
 
-// Color schemes
-// ----------------------------------------------
+/**
+ * Color schemes
+ */
 
 // Scheme for primary color
 @primary-scheme: @primary,
@@ -111,7 +118,7 @@
 
 // Scheme for tertiary color
 @tertiary-scheme: @tertiary,
-                 @tertiary-hover,
-                 @tertiary-contrast,
-                 @tertiary-contrast-hover,
-                 @tertiary-additional;
+                  @tertiary-hover,
+                  @tertiary-contrast,
+                  @tertiary-contrast-hover,
+                  @tertiary-additional;
