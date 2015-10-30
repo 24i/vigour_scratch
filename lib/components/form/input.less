@@ -58,26 +58,27 @@ textarea {
   resize: vertical;
 }
 
-/* Input sizes
-============================== */
-  .input {
-    .shadow(0 0 0px);
+/**
+ * Input sizes
+ */
+.input {
+  .shadow(0 0 0px);
 
-    &:focus {
-      border-color: @colorAD;
-      .shadow(0 0 6px @colorAD);
-    }
-
-    &.colorA:focus {
-      border-color: @colorA;
-      .shadow(0 0 6px @colorA);
-    }
-
-    &.colorB:focus {
-      border-color: @colorB;
-      .shadow(0 0 6px @colorB);
-    }
+  &:focus {
+    border-color: @colorAD;
+    .shadow(0 0 6px @colorAD);
   }
+
+  &.colorA:focus {
+    border-color: @colorA;
+    .shadow(0 0 6px @colorA);
+  }
+
+  &.colorB:focus {
+    border-color: @colorB;
+    .shadow(0 0 6px @colorB);
+  }
+}
 
 /* Input sizes
 ============================== */
