@@ -1,62 +1,19 @@
 {
-  "_args": [
-    [
-      "git+ssh://git@github.com/vigour-io/scratch.git",
-      "/Users/nikoloza/www/uikit"
-    ]
-  ],
-  "_from": "git+ssh://git@github.com/vigour-io/scratch.git",
-  "_id": "vigour-scratch@1.1.0",
-  "_inCache": true,
-  "_location": "/vigour-scratch",
-  "_phantomChildren": {},
-  "_requested": {
-    "hosted": {
-      "directUrl": "https://raw.githubusercontent.com/vigour-io/scratch/master/package.json",
-      "gitUrl": "git://github.com/vigour-io/scratch.git",
-      "httpsUrl": "git+https://github.com/vigour-io/scratch.git",
-      "shortcut": "github:vigour-io/scratch",
-      "ssh": "git@github.com:vigour-io/scratch.git",
-      "sshUrl": "git+ssh://git@github.com/vigour-io/scratch.git",
-      "type": "github"
-    },
-    "name": null,
-    "raw": "git+ssh://git@github.com/vigour-io/scratch.git",
-    "rawSpec": "git+ssh://git@github.com/vigour-io/scratch.git",
-    "scope": null,
-    "spec": "git+ssh://git@github.com/vigour-io/scratch.git",
-    "type": "hosted"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "git+ssh://git@github.com/vigour-io/scratch.git#f80b92c34ed6c7ca46c29a8558dedbac9314f581",
-  "_shasum": "581f505de5b0eeb42c8a5bff8ab1fc1f59841c78",
-  "_shrinkwrap": null,
-  "_spec": "git+ssh://git@github.com/vigour-io/scratch.git",
-  "_where": "/Users/nikoloza/www/uikit",
-  "author": "",
-  "bugs": {
-    "url": "https://github.com/vigour-io/scratch/issues"
-  },
-  "dependencies": {},
-  "description": "Currently under the heavy process of refactoring.",
-  "devDependencies": {},
-  "gitHead": "f80b92c34ed6c7ca46c29a8558dedbac9314f581",
-  "homepage": "https://github.com/vigour-io/scratch#readme",
-  "installable": true,
-  "license": "MIT",
-  "main": "index.less",
   "name": "vigour-scratch",
-  "optionalDependencies": {},
-  "readme": "Currently under the heavy process of refactoring.\n\n\t _____                _       _\n\t/  ___|              | |     | |\n\t\\ `--.  ___ _ __ __ _| |_ ___| |__\n\t `--. \\/ __| '__/ _` | __/ __| '_ \\\n\t/\\__/ / (__| | | (_| | || (__| | | |\n\t\\____/ \\___|_|  \\__,_|\\__\\___|_| |_|\n\n\nScratch Framework\n=============\n\n**LESS boilerplate and styleguide for front end projects.**\n\nScratch helps you to make abstract CSS architecture using `Less`. So, keep it abstract.\n\nIt has semantic code and file structure which helps you write beautiful and modular code.\n\nScratch is not UI framework, it's for architecture only. For DOM, styles and UI elements you can look at those repositories: [vigour-io/element](https://github.com/vigour-io/element) and [vigour-io/uikit](https://github.com/vigour-io/uikit).\n\n-------------\n\nGetting Started\n-------------\n\nTo install, run:\n\n\t$ npm install vigour-scratch\n\nInjecting in Browserify:\n\n\trequire('vigour-scratch');\n\nInjecting in less:\n\n\t@import 'vigour-scratch/index.less';\n\n\nConfig\n-------------\n\nMake your own variables file to replace our set on top of `scratch`. You can see configs in `config.less` and also follow the imported files inside.\n\n\n-------------\n\nMore documentation will be soon.\n",
-  "readmeFilename": "README.md",
+  "version": "1.1.1",
+  "description": "",
+  "main": "index.less",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vigour-io/scratch.git"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vigour-io/scratch/issues"
   },
-  "version": "1.1.0"
+  "homepage": "https://github.com/vigour-io/scratch#readme"
 }
