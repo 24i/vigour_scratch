@@ -75,6 +75,7 @@
 @primary-darken:         darken(@primary, 10%);
 @primary-lighten:        lighten(@primary, 10%);
 @primary-hover:          inherit;
+@primary-border:         inherit;
 @primary-contrast:       white;
 @primary-contrast-hover: inherit;
 @primary-additional:     @yellow;
@@ -84,6 +85,7 @@
 @secondary-darken:         darken(@secondary, 10%);
 @secondary-lighten:        lighten(@secondary, 10%);
 @secondary-hover:          inherit;
+@secondary-border:         inherit;
 @secondary-contrast:       white;
 @secondary-contrast-hover: inherit;
 @secondary-additional:     @yellow;
@@ -93,6 +95,7 @@
 @tertiary-darken:         darken(@tertiary, 10%);
 @tertiary-lighten:        lighten(@tertiary, 10%);
 @tertiary-hover:          inherit;
+@tertiary-border:         inherit;
 @tertiary-contrast:       white;
 @tertiary-contrast-hover: inherit;
 @tertiary-additional:     @yellow;
@@ -109,6 +112,12 @@
                  @primary-contrast-hover,
                  @primary-additional;
 
+@primary-scheme-inverse: @primary-contrast,
+                 @primary-contrast-hover,
+                 @primary,
+                 @primary-hover,
+                 @primary-additional;
+
 // Scheme for secondary color
 @secondary-scheme: @secondary,
                    @secondary-hover,
@@ -116,9 +125,21 @@
                    @secondary-contrast-hover,
                    @secondary-additional;
 
+@secondary-scheme-inverse: @secondary-contrast,
+                   @secondary-contrast-hover,
+                   @secondary,
+                   @secondary-hover,
+                   @secondary-additional;
+
 // Scheme for tertiary color
 @tertiary-scheme: @tertiary,
                   @tertiary-hover,
                   @tertiary-contrast,
                   @tertiary-contrast-hover,
+                  @tertiary-additional;
+
+@tertiary-scheme-inverse: @tertiary-contrast,
+                  @tertiary-contrast-hover,
+                  @tertiary,
+                  @tertiary-hover,
                   @tertiary-additional;

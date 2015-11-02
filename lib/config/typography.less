@@ -18,10 +18,10 @@
 
 
 /**
- * Links
+ * Header
  */
 @header-family: @font-family-sans-serif;
-@header-weight: @font-weight;
+@header-weight: @body-weight;
 
 // sizes
 @h1: 3.2rem;
@@ -35,16 +35,24 @@
 @h9: 1.1rem;
 @h10:  1rem;
 
-
-
 /**
  * Links
  */
-@link-color: @primary;
-@link-hover: @primary-hover;
+@a-color: @primary;
+@a-decoration: none;
 
-@link-weight: inherit;
-@link-line-height: inherit;
+@a-weight: inherit;
+@a-line-height: inherit;
 
-@link-decoration: none;
-@link-hover-decoration: underline;
+@a-hover: @primary-hover;
+@a-hover-decoration: underline;
+
+@a-focus: @primary-lighten;
+@a-focus-decoration: underline;
+
+
+/**
+ * Paragraph
+ */
+@p-line-height: 1.3;
+@p-margin: auto;

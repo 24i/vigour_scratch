@@ -12,11 +12,9 @@
   display: inline-block;
   padding: 0 1rem;
 
-  font-family: @font-family;
-  font-size: @input-font;
+  font-family: @body-family;
+  font-size: @body-size;
 
-  color: @primary;
-  background: @primary-bg;
   text-decoration: none;
   outline: 0;
   text-align: center;
@@ -24,7 +22,7 @@
   border: @primary-border 1px solid;
 
   .appearance;
-  .radius(@radius);
+  .radius(@input-radius);
   .transition(@transition-duration linear all);
 
   &:hover {
@@ -38,18 +36,15 @@
  */
 
 .button.primary {
-  color: @primary;
-  border-color: @primary;
+  .scheme(@primary-scheme-inverse);
 }
 
 .button.secondary {
-  color: @secondary;
-  border-color: @secondary;
+  .scheme(@secondary-scheme-inverse);
 }
 
 .button.tertiary {
-  color: @tertiary;
-  border-color: @tertiary;
+  .scheme(@tertiary-scheme-inverse);
 }
 
 
@@ -80,7 +75,7 @@
  */
 
 .button.small {
-  font-size: @input-small-font;
+  font-size: @input-small-size;
   height: @input-small-height;
   min-width: 0;
 
@@ -95,7 +90,7 @@
 }
 
 .button.big {
-  font-size: @input-big-font;
+  font-size: @input-big-size;
   height: @input-big-height;
   .padding-h(@gap);
   min-width: 15rem;
@@ -112,6 +107,7 @@
 
 .button.large {
   width: 100%;
+  font-size: @input-large-size;
   font-weight: bold;
   font-size: 1.6rem;
   height: @input-big-height;
