@@ -1,0 +1,29 @@
+@font-face {
+  font-family: @icon-family;
+  src:url('@{icon-path}/@{icon-family}.eot');
+  src:url('@{icon-path}/@{icon-family}.eot#iefix') format('embedded-opentype'),
+    url('@{icon-path}/@{icon-family}.woff2') format('woff2'),
+    url('@{icon-path}/@{icon-family}.ttf') format('truetype'),
+    url('@{icon-path}/@{icon-family}.woff') format('woff'),
+    url('@{icon-path}/@{icon-family}.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.@{icon-prefix}:before {
+  font-family: @icon-family;
+  display: inline-block;
+  font-size: @icon-size;
+  vertical-align: middle;
+  color: @body-color;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
