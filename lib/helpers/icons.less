@@ -10,20 +10,28 @@
   font-style: normal;
 }
 
-.@{icon-prefix}:before {
-  font-family: @icon-family;
-  display: inline-block;
+.@{icon-prefix} {
   font-size: @icon-size;
-  vertical-align: middle;
   color: @body-color;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  font-family: @icon-family;
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a.@{icon-prefix} {
+  &,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
 }
