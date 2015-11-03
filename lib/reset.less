@@ -14,6 +14,10 @@ html {
   height: 100%;
   font-size: 10px;
   background: @body-background;
+  font-family: @body-family;
+
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 
   & when (@responsive =true) {
     @media all and (max-width: @screen-tablet) {
@@ -46,8 +50,8 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
-  line-height: 1.3;
+  margin: @header-margin;
+  line-height: @header-line-height;
   font-family: @header-family, @body-family;
   font-weight: @header-weight;
 }
@@ -138,16 +142,11 @@ audio:not([controls]) {
   display: none;
 }
 
-html {
-  font-family: @body-family;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
 a {
   color: @a-color;
   font-weight: @a-weight;
   text-decoration: @a-decoration;
+  font-family: @a-family, @body-family;
   outline: none;
   cursor: pointer;
 
@@ -171,6 +170,7 @@ a:hover {
 p {
   line-height: @p-line-height;
   margin: @p-margin;
+  font-family: @p-family, @body-family;
 }
 
 abbr[title] {
@@ -179,7 +179,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: 700;
+  font-weight: @font-bold;
 }
 
 dfn {
@@ -231,12 +231,6 @@ sub {
 img {
   border: 0;
   max-width: 100%;
-}
-
-.gm-style {
-  img {
-    max-width: none;
-  }
 }
 
 svg:not(:root) {
