@@ -8,41 +8,45 @@
  */
 
 
-// Brand blue
-@blue: #4394DF;
+// brand blue
+@blue: #3E92E2;
 
-// Brand yellow
-@yellow:  #F9E900;
+// brand yellow
+@yellow: #FAEB00;
 
-// Brand red
-@red: #FF144E;
+// brand red
+@red: #FF0649;
 
-// Brand lilac
-@lilac:  #231331;
+// brand lilac
+@lilac: #C187C3;
 
-// Brand green
+// brand green
 @green: #00BA88;
 
-// Brand pink
-@pink: #FF0070;
+// brand pink
+@pink: #FF63A8;
 
-// Brand orange
-@orange: #fea930;
-
-
-// Brand grayscale
-@blackgray:  #181818;
-
-@darkgray:  #555;
-
-@midgray:  #757575;
-
-@lightgray:  #D7D7D8;
-
-@whitegray:  #F6F6F6;
+// brand orange
+@orange: #FFAA15;
 
 
-// Social network colors
+// brand grayscale
+@blackgray: #1B1D1F;
+
+@darkgray: #272833;
+
+@softgray: #52575F;
+
+@midgray: #838994;
+
+@coldgray: #BABDC3;
+
+@lightgray: #DEE0E3;
+
+@whitegray: #F9FAFA;
+
+
+// social network colors
 @twitter: #55ACEE;
 
 @facebook: #3A5798;
@@ -70,42 +74,52 @@
  * Color priorities
  */
 
-// Primary color
+// primary color
 @primary:                @green;
 @primary-darken:         darken(@primary, 10%);
 @primary-lighten:        lighten(@primary, 10%);
-@primary-hover:          inherit;
-@primary-border:         inherit;
+@primary-hover:          darken(@primary, 3%);
+@primary-border:         darken(@primary, 7%);
 @primary-contrast:       white;
-@primary-contrast-hover: inherit;
-@primary-additional:     @yellow;
+@primary-contrast-hover: @whitegray;
+@primary-additional:     @orange;
 
-// Secondary color
+// secondary color
 @secondary:                @blue;
 @secondary-darken:         darken(@secondary, 10%);
 @secondary-lighten:        lighten(@secondary, 10%);
-@secondary-hover:          inherit;
-@secondary-border:         inherit;
+@secondary-hover:          darken(@secondary, 3%);
+@secondary-hover:          darken(@secondary, 7%);
 @secondary-contrast:       white;
-@secondary-contrast-hover: inherit;
+@secondary-contrast-hover: @whitegray;
 @secondary-additional:     @yellow;
 
-// Tertiary color
+// tertiary color
 @tertiary:                @red;
 @tertiary-darken:         darken(@tertiary, 10%);
 @tertiary-lighten:        lighten(@tertiary, 10%);
-@tertiary-hover:          inherit;
-@tertiary-border:         inherit;
+@tertiary-hover:          darken(@tertiary, 3%);
+@tertiary-border:         darken(@tertiary, 7%);
 @tertiary-contrast:       white;
-@tertiary-contrast-hover: inherit;
+@tertiary-contrast-hover: @whitegray;
 @tertiary-additional:     @yellow;
+
+// grayscale color
+@grayscale:                @darkgray;
+@grayscale-darken:         darken(@grayscale, 10%);
+@grayscale-lighten:        lighten(@grayscale, 10%);
+@grayscale-hover:          @blackgray;
+@grayscale-border:         black;
+@grayscale-contrast:       white;
+@grayscale-contrast-hover: @whitegray;
+@grayscale-additional:     @primary;
 
 
 /**
  * Color schemes
  */
 
-// Scheme for primary color
+// scheme for primary color
 @primary-scheme: @primary,
                  @primary-hover,
                  @primary-contrast,
@@ -118,7 +132,7 @@
                  @primary-hover,
                  @primary-additional;
 
-// Scheme for secondary color
+// scheme for secondary color
 @secondary-scheme: @secondary,
                    @secondary-hover,
                    @secondary-contrast,
@@ -131,7 +145,7 @@
                    @secondary-hover,
                    @secondary-additional;
 
-// Scheme for tertiary color
+// scheme for tertiary color
 @tertiary-scheme: @tertiary,
                   @tertiary-hover,
                   @tertiary-contrast,
@@ -143,3 +157,16 @@
                   @tertiary,
                   @tertiary-hover,
                   @tertiary-additional;
+
+// scheme for grayscale color
+@grayscale-scheme: @grayscale,
+                   @grayscale-hover,
+                   @grayscale-contrast,
+                   @grayscale-contrast-hover,
+                   @grayscale-additional;
+
+@grayscale-scheme-inverse: @grayscale-contrast,
+                   @grayscale-contrast-hover,
+                   @grayscale,
+                   @grayscale-hover,
+                   @grayscale-additional;
