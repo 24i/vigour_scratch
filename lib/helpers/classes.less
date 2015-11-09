@@ -1,69 +1,81 @@
 // opacity control
-.transparent  {opacity: 0;}
-.opacity {
-  &.full      {opacity: 1;}
-  &.high      {opacity: .75;}
-  &.half      {opacity: .5;}
-  &.low       {opacity: .25;}
-  &.zero      {opacity: 0;}
+.ui-transparent {opacity: 0;}
+.ui-opacity {
+  &.full        {opacity: 1;}
+  &.high        {opacity: .75;}
+  &.half        {opacity: .5;}
+  &.low         {opacity: .25;}
+  &.zero        {opacity: 0;}
 }
 
 // visibility control
-.hidden    		{visibility: hidden;}
-.hide      		{display: none;}
-.none      		{display: none !important;} // vanish!
+.ui-hidden    		{visibility: hidden;}
+.ui-hide      		{display: none;}
+.ui-none      		{display: none !important;} // vanish!
 
 // float at center
-.centered     {margin: 0 auto;}
+.ui-center      {margin: 0 auto;}
 
 // floating
-.float-left     	{float: left;}
-.float-right   	{float: right;}
-.float-nofloat   {float: none;}
+.pull-left     	{float: left;}
+.pull-right   	{float: right;}
+.nofloat        {float: none;}
 
 // font settings
 // weight
-.slim         {font-weight: @font-slim;}
-.regular      {font-weight: @font-regular;}
-.strong       {font-weight: @font-bold;}
+.ui-slim         {font-weight: @font-slim;}
+.ui-light        {font-weight: @font-light;}
+.ui-regular      {font-weight: @font-regular;}
+.ui-semibold     {font-weight: @font-semibold;}
+.ui-bold         {font-weight: @font-bold;}
+.ui-extrabold    {font-weight: @font-extrabold;}
+
+// families
+.ui-sans-serif   {font-family: @font-family-sans-serif;}
+.ui-serif        {font-family: @font-family-serif;}
+.ui-monospace    {font-family: @font-family-monospace;}
+
+// decoration
+.ui-underline    {text-decoration: underline;}
+.ui-line-through {text-decoration: line-through;}
 
 // styles
-.italic       {font-style: italic;}
+.ui-italic       {font-style: italic;}
 
 // sizes
-.h1           {font-size: @h1;}
-.h2           {font-size: @h2;}
-.h3           {font-size: @h3;}
-.h4           {font-size: @h4;}
-.h5           {font-size: @h5;}
-.h6           {font-size: @h6;}
-.h7           {font-size: @h7;}
-.h8           {font-size: @h8;}
-.h9           {font-size: @h9;}
-.h10      		{font-size: @h10;}
+.ui-h1           {font-size: @h1;}
+.ui-h2           {font-size: @h2;}
+.ui-h3           {font-size: @h3;}
+.ui-h4           {font-size: @h4;}
+.ui-h5           {font-size: @h5;}
+.ui-h6           {font-size: @h6;}
+.ui-h7           {font-size: @h7;}
+.ui-h8           {font-size: @h8;}
+.ui-h9           {font-size: @h9;}
+.ui-h10      		{font-size: @h10;}
 
 // colors
-.color-primary        { color: @primary; }
-a.color-primary:hover { color: @primary; }
+.ui-primary        {color: @primary; }
+.ui-primary:hover  {color: @primary-hover; }
 
-.color-secondary        { color: @secondary; }
-a.color-secondary:hover { color: @secondary-hover; }
+.ui-secondary       {color: @secondary; }
+.ui-secondary:hover {color: @secondary-hover; }
 
 // align
-.text-right     {text-align: right;}
-.text-left      {text-align: left;}
-.text-center    {text-align: center;}
+.ui-right     {text-align: right;}
+.ui-left      {text-align: left;}
+.ui-center    {text-align: center;}
 
 // case
-.uppercase    {text-transform: uppercase;}
-.lowercase    {text-transform: lowercase;}
-.camelcase    {text-transform: capitalize;}
-.nocase       {text-transform: none}
+.ui-uppercase    {text-transform: uppercase;}
+.ui-lowercase    {text-transform: lowercase;}
+.ui-camelcase    {text-transform: capitalize;}
+.ui-nocase       {text-transform: none}
 
 
 // aditional tricks
 // 4 space indent
-.tab {
+.ui-tab {
   &:before {
     content: "____";
     opacity: 0;
@@ -71,7 +83,7 @@ a.color-secondary:hover { color: @secondary-hover; }
 }
 
 // inline set children
-.inline {
+.ui-inline {
   .clearfix;
 
   & > li,
@@ -80,20 +92,20 @@ a.color-secondary:hover { color: @secondary-hover; }
   }
 }
 
-// tableset with witout <table>
-// .table {
-//   display: table;
-//   width: 100%;
-//   table-layout: fixed;
+// tableset with witout using <table>
+.ui-table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
 
-//   & > div {
-//     display: table-row;
+  & > div {
+    display: table-row;
 
-//     & > div {
-//       display: table-cell;
-//     }
-//   }
-// }
+    & > div {
+      display: table-cell;
+    }
+  }
+}
 
 // grow the first letter
 .first-letter {

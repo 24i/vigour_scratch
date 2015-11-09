@@ -23,7 +23,7 @@ input[type='url'] {
   // not yet
 }
 
-.input {
+.ui-input {
   .sizing;
   height: @input-height;
 
@@ -70,7 +70,7 @@ textarea {
 /**
  * Input sizes
  */
-.input {
+.ui-input {
   .shadow(0 0 0px);
 
   &:focus {
@@ -91,12 +91,17 @@ textarea {
 
 /* Input sizes
 ============================== */
-  .input.big {
+  .ui-input.small {
+    height: @input-small-height;
+    font-size: @input-small-size;
+  }
+
+  .ui-input.big {
     height: @input-big-height;
     font-size: @input-big-size;
   }
 
-  .input.large {
+  .ui-input.large {
     height: @input-large-height;
     font-size: @input-large-size;
   }
