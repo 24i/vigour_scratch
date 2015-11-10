@@ -78,30 +78,36 @@
 @primary:                @green;
 @primary-darken:         darken(@primary, 10%);
 @primary-lighten:        lighten(@primary, 10%);
-@primary-hover:          darken(@primary, 3%);
-@primary-border:         darken(@primary, 7%);
+@primary-hover:          darken(@primary, 8%);
+@primary-focus:          darken(@primary, 12%);
+@primary-border:         darken(@primary, 10%);
 @primary-contrast:       white;
-@primary-contrast-hover: @whitegray;
+@primary-contrast-hover: darken(@primary-contrast, 5%);
+@primary-contrast-focus: darken(@primary-contrast, 9%);
 @primary-additional:     @orange;
 
 // secondary color
 @secondary:                @blue;
 @secondary-darken:         darken(@secondary, 10%);
 @secondary-lighten:        lighten(@secondary, 10%);
-@secondary-hover:          darken(@secondary, 3%);
-@secondary-hover:          darken(@secondary, 7%);
+@secondary-hover:          darken(@secondary, 8%);
+@secondary-focus:          darken(@secondary, 12%);
+@secondary-border:         darken(@secondary, 10%);
 @secondary-contrast:       white;
-@secondary-contrast-hover: @whitegray;
+@secondary-contrast-hover: darken(@secondary-contrast, 5%);
+@secondary-contrast-focus: darken(@secondary-contrast, 9%);
 @secondary-additional:     @yellow;
 
 // tertiary color
 @tertiary:                @red;
 @tertiary-darken:         darken(@tertiary, 10%);
 @tertiary-lighten:        lighten(@tertiary, 10%);
-@tertiary-hover:          darken(@tertiary, 3%);
-@tertiary-border:         darken(@tertiary, 7%);
+@tertiary-hover:          darken(@tertiary, 8%);
+@tertiary-focus:          darken(@tertiary, 12%);
+@tertiary-border:         darken(@tertiary, 10%);
 @tertiary-contrast:       white;
-@tertiary-contrast-hover: @whitegray;
+@tertiary-contrast-hover: darken(@tertiary-contrast, 5%);
+@tertiary-contrast-focus: darken(@tertiary-contrast, 9%);
 @tertiary-additional:     @yellow;
 
 // grayscale color
@@ -109,9 +115,11 @@
 @grayscale-darken:         darken(@grayscale, 10%);
 @grayscale-lighten:        lighten(@grayscale, 10%);
 @grayscale-hover:          @blackgray;
+@grayscale-focus:          black;
 @grayscale-border:         black;
-@grayscale-contrast:       white;
-@grayscale-contrast-hover: @whitegray;
+@grayscale-contrast:       @whitegray;
+@grayscale-contrast-hover: darken(@grayscale-contrast, 5%);
+@grayscale-contrast-focus: darken(@grayscale-contrast, 9%);
 @grayscale-additional:     @primary;
 
 
@@ -122,51 +130,75 @@
 // scheme for primary color
 @primary-scheme: @primary,
                  @primary-hover,
+                 @primary-focus,
                  @primary-contrast,
                  @primary-contrast-hover,
+                 @primary-contrast-focus,
+                 @primary-border,
                  @primary-additional;
 
 @primary-scheme-inverse: @primary-contrast,
                  @primary-contrast-hover,
+                 @primary-contrast-focus,
                  @primary,
                  @primary-hover,
+                 @primary-focus,
+                 @primary-border,
                  @primary-additional;
 
 // scheme for secondary color
 @secondary-scheme: @secondary,
                    @secondary-hover,
+                   @secondary-focus,
                    @secondary-contrast,
                    @secondary-contrast-hover,
+                   @secondary-contrast-focus,
+                   @secondary-border,
                    @secondary-additional;
 
 @secondary-scheme-inverse: @secondary-contrast,
                    @secondary-contrast-hover,
+                   @secondary-contrast-focus,
                    @secondary,
                    @secondary-hover,
+                   @secondary-focus,
+                   @secondary-border,
                    @secondary-additional;
 
 // scheme for tertiary color
 @tertiary-scheme: @tertiary,
                   @tertiary-hover,
+                  @tertiary-focus,
                   @tertiary-contrast,
                   @tertiary-contrast-hover,
+                  @tertiary-contrast-focus,
+                  @tertiary-border,
                   @tertiary-additional;
 
 @tertiary-scheme-inverse: @tertiary-contrast,
                   @tertiary-contrast-hover,
+                  @tertiary-contrast-focus,
                   @tertiary,
                   @tertiary-hover,
+                  @tertiary-focus,
+                  @tertiary-border,
                   @tertiary-additional;
 
 // scheme for grayscale color
 @grayscale-scheme: @grayscale,
                    @grayscale-hover,
+                   @grayscale-focus,
                    @grayscale-contrast,
                    @grayscale-contrast-hover,
+                   @grayscale-contrast-focus,
+                   @grayscale-border,
                    @grayscale-additional;
 
 @grayscale-scheme-inverse: @grayscale-contrast,
                    @grayscale-contrast-hover,
+                   @grayscale-contrast-focus,
                    @grayscale,
                    @grayscale-hover,
+                   @grayscale-focus,
+                   @grayscale-border,
                    @grayscale-additional;

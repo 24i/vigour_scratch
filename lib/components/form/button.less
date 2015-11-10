@@ -8,11 +8,12 @@
 
 .ui-button {
   .sizing;
+  background: white;
   height: @input-height;
-  min-width: 12rem;
 
   display: inline-block;
-  padding: 0 1rem;
+  vertical-align: middle;
+  padding: @input-padding;
 
   font-family: @body-family;
   font-size: @body-size;
@@ -21,32 +22,35 @@
   outline: 0;
   text-align: center;
 
-  border: @primary-border 1px solid;
-
   .appearance;
   .radius(@input-radius);
   .transition(@transition-duration linear all);
 
-  &:hover {
-    background: @whitegray;
-  }
+  .scheme(@input-scheme, both, both);
 }
 
 
 /**
  * Button colors
+ * ----------------------------------------------
+ * Default color set is primary
  */
 
+.ui-button,
 .ui-button.primary {
-  .scheme(@primary-scheme-inverse);
+  .scheme(@primary-scheme-inverse, both, both);
 }
 
 .ui-button.secondary {
-  .scheme(@secondary-scheme-inverse);
+  .scheme(@secondary-scheme-inverse, both, both);
 }
 
 .ui-button.tertiary {
-  .scheme(@tertiary-scheme-inverse);
+  .scheme(@tertiary-scheme-inverse, both, both);
+}
+
+.ui-button.grayscale {
+  .scheme(@grayscale-scheme-inverse, both, both);
 }
 
 
@@ -79,6 +83,7 @@
 .ui-button.small {
   font-size: @input-small-size;
   height: @input-small-height;
+  padding: @input-small-padding;
   min-width: 0;
 
   .icon {
@@ -91,10 +96,26 @@
   }
 }
 
+.ui-button,
+.ui-button.medium {
+  font-size: @input-size;
+  height: @input-height;
+  padding: @input-padding;
+
+  .icon {
+    font-size: @h10;
+    vertical-align: 0;
+  }
+
+  &.iconic {
+    width: @input-height;
+  }
+}
+
 .ui-button.big {
   font-size: @input-big-size;
   height: @input-big-height;
-  .padding-h(@gap);
+  padding: @input-big-padding;
   min-width: 15rem;
 
   .icon {
@@ -108,11 +129,10 @@
 }
 
 .ui-button.large {
-  width: 100%;
   font-size: @input-large-size;
-  font-weight: bold;
-  font-size: 1.6rem;
+  padding: @input-large-padding;
   height: @input-big-height;
+  min-width: 22rem;
 
   &.iconic {
     width: @input-big-height;

@@ -1,0 +1,87 @@
+@import url('../../config/forms.less');
+
+/**
+ * Label
+ * ----------------------------------------------
+ * Label element for reusable use.
+ */
+
+label.ui-label {
+  display: inline-block;
+  font-size: @input-size;
+
+  .scheme(@input-scheme, both, both);
+  .transition(@transition-duration linear all);
+
+  .radius(3px);
+
+  > .caption {
+    display: inline-block;
+    vertical-align: middle;
+    padding: @input-padding;
+    padding-right: 0;
+
+    text-decoration: none;
+    outline: 0;
+
+  }
+
+  > .icon {
+    font-size: @input-size;
+  }
+
+  > .ui-input {
+    background: transparent;
+  }
+}
+
+
+/**
+ * Label colors
+ * ----------------------------------------------
+ * Default color set is primary
+ */
+
+label.ui-label.primary {
+  display: inline-block;
+  .scheme(@primary-scheme-inverse, both, both);
+
+  > .ui-input {
+    background: none;
+    color: white;
+    .placeholder(@secondary-contrast-hover);
+  }
+}
+
+label.ui-label.secondary {
+  display: inline-block;
+  .scheme(@secondary-scheme-inverse, both, both);
+
+  > .ui-input {
+    background: none;
+    color: white;
+    .placeholder(@secondary-contrast-hover);
+  }
+}
+
+label.ui-label.tertiary {
+  display: inline-block;
+  .scheme(@tertiary-scheme-inverse, both, both);
+
+  > .ui-input {
+    background: none;
+    color: white;
+    .placeholder(@secondary-contrast-hover);
+  }
+}
+
+label.ui-label.grayscale {
+  display: inline-block;
+  .scheme(@grayscale-scheme-inverse, both, both);
+
+  > .ui-input {
+    background: none;
+    color: white;
+    .placeholder(@secondary-contrast-hover);
+  }
+}

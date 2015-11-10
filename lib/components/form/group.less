@@ -4,11 +4,12 @@
  * Grouped form elements.
  */
 
-.form-group {
+.ui-form-group {
   .clearfix;
 
-  > button,
-  > input {
+  > .ui-button,
+  > .ui-input,
+  > .ui-label {
     display: block;
     float: left;
 
@@ -27,13 +28,14 @@
 }
 
 .inverse() {
-  > button,
-  > input {
+  > .ui-button,
+  > .ui-input,
+  > .ui-label {
     &:first-child:not(:last-child) {
       .radius(0 @input-radius @input-radius 0);
       border-left: 0;
 
-      &:focus ~ .button {
+      &:focus ~ .ui-button {
         border-right: 0;
         .radius(@input-radius 0 0 @input-radius);
       }
@@ -42,16 +44,16 @@
 }
 
 
-.form-group {
-  .input {
+.ui-form-group {
+  .ui-input {
     &:last-of-type {
-      .shadow(inset 3px 0 3px -3px @lightgray);
+      // .shadow(inset 3px 0 3px -3px @lightgray);
     }
 
     &:focus {
-      ~ .button {
+      ~ .ui-button {
         border-color: @midgray;
-        background: @whitegray;
+        // background: @whitegray;
       }
     }
   }

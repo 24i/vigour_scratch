@@ -25,30 +25,22 @@ input[type='url'] {
 
 .ui-input {
   .sizing;
-  height: @input-height;
 
   display: inline-block;
-  padding: .5rem 1rem;
+  vertical-align: middle;
+  padding: @input-padding;
 
   font-family: @body-family;
-  font-size: @body-size;
-
-  .scheme(@primary);
+  font-size: @input-size;
 
   text-decoration: none;
   outline: 0;
-
-  border: @lightgray 1px solid;
-
-  .shadow(inset 3px 0 3px -3px @lightgray, inset -3px 0 3px -3px @lightgray);
 
   .appearance;
   .radius(3px);
   .transition(@transition-duration linear all);
 
-  &:focus {
-    border-color: @midgray;
-  }
+  .scheme(@input-scheme, false, both);
 }
 
 select {
@@ -71,37 +63,68 @@ textarea {
  * Input sizes
  */
 .ui-input {
-  .shadow(0 0 0px);
+  &.primary {
+    .scheme(@primary-scheme-inverse, false, both);
+    .placeholder(@primary-contrast-hover);
 
-  &:focus {
-    border-color: @primary-darken;
-    .shadow(0 0 6px @primary-darken);
+    &.focused,
+    &:focus {
+
+    }
   }
 
-  &.primary:focus {
-    border-color: @primary;
-    .shadow(0 0 6px @primary);
+  &.secondary {
+    .scheme(@secondary-scheme-inverse, false, both);
+    .placeholder(@secondary-contrast-hover);
+
+    &.focused,
+    &:focus {
+
+    }
   }
 
-  &.secondary:focus {
-    border-color: @secondary;
-    .shadow(0 0 6px @secondary);
+  &.tertiary {
+    .scheme(@tertiary-scheme-inverse, false, both);
+    .placeholder(@tertiary-contrast-hover);
+
+    &.focused,
+    &:focus {
+
+    }
+  }
+
+  &.grayscale {
+    .scheme(@grayscale-scheme-inverse, false, both);
+    .placeholder(@grayscale-contrast-hover);
+
+    &.focused,
+    &:focus {
+
+    }
   }
 }
 
-/* Input sizes
-============================== */
-  .ui-input.small {
-    height: @input-small-height;
-    font-size: @input-small-size;
-  }
 
-  .ui-input.big {
-    height: @input-big-height;
-    font-size: @input-big-size;
-  }
+/**
+ * Input sizes
+ */
+.ui-input.small {
+  height: @input-small-height;
+  font-size: @input-small-size;
+  padding: @input-small-padding;
+  min-width: 0;
+}
 
-  .ui-input.large {
-    height: @input-large-height;
-    font-size: @input-large-size;
-  }
+.ui-input.big {
+  height: @input-big-height;
+  font-size: @input-big-size;
+  padding: @input-big-padding;
+  min-width: 15rem;
+}
+
+.ui-input.large {
+  height: @input-large-height;
+  font-size: @input-large-size;
+  padding: @input-large-padding;
+  min-width: 22rem;
+}

@@ -1,16 +1,18 @@
 /**
  * scheme
  * @param {string} [scheme=@schemeA]
- * @param {string} [hover=false]
+ * @param {string} [hover=false] it can be set as a `color`, `background` or `both`
+ * @param {string} [focus=false] it can be set as a `color`, `background` or `both`
  * @param {string} [helper=false]
  * @example
  * .scheme(@schemeA, both)
  */
-.scheme(@scheme: @primary-scheme, @hover: false, @helper: false) {
+.scheme(@scheme: @primary-scheme, @hover: false, @focus: false, @border: true, @helper: false) {
   color: extract(@scheme, 1);
-  background-color: extract(@scheme, 3);
+  background-color: extract(@scheme, 4);
 
   // setting for hover
+  // ---------------------------
   // on hover change color
   & when (@hover = color) {
     &:hover {
@@ -21,7 +23,7 @@
   // on hover change background
   & when (@hover = background) {
     &:hover {
-      background-color: extract(@scheme, 4);
+      background-color: extract(@scheme, 5);
     }
   }
 
@@ -29,27 +31,61 @@
   & when (@hover = both) {
     &:hover {
       color: extract(@scheme, 2);
-      background-color: extract(@scheme, 4);
+      background-color: extract(@scheme, 5);
     }
   }
 
+  // setting for focus
+  // ---------------------------
+  // on focus change color
+  & when (@focus = color) {
+    &:active,
+    &:focus {
+      color: extract(@scheme, 3);
+    }
+  }
+
+  // on focus change background
+  & when (@focus = background) {
+    &:active,
+    &:focus {
+      background-color: extract(@scheme, 6);
+    }
+  }
+
+  // on focus change both
+  & when (@focus = both) {
+    &:active,
+    &:focus {
+      color: extract(@scheme, 3);
+      background-color: extract(@scheme, 6);
+    }
+  }
+
+  // border
+  // ---------------------------
+  & when (@border = true) {
+    border-color: extract(@scheme, 7);
+  }
+
   // setting for helper
+  // ---------------------------
   // additional colors affects to border
   & when (@helper = border) {
-    border-color: extract(@scheme, 5);
+    border-color: extract(@scheme, 7);
   }
 
   // additional colors affects to color
   & when (@helper = color) {
     .helper {
-      color: extract(@scheme, 5);
+      color: extract(@scheme, 8);
     }
   }
 
   // additional colors affects to background
   & when (@helper = background) {
     .helper {
-      background-color: extract(@scheme, 5);
+      background-color: extract(@scheme, 8);
     }
   }
 }
