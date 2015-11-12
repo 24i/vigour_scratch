@@ -20,11 +20,12 @@ input[type='number'],
 input[type='search'],
 input[type='tel'],
 input[type='url'] {
-  // not yet
+  // nothing yet
 }
 
 .ui-input {
   .sizing;
+  pointer-events: none;
 
   display: inline-block;
   vertical-align: middle;
@@ -36,9 +37,13 @@ input[type='url'] {
   text-decoration: none;
   outline: 0;
 
+  @media @under-tablet {
+    margin-bottom: @gap-small;
+  }
+
   .appearance;
   .radius(3px);
-  .transition(@transition-duration linear all);
+  .transition(@transition-duration linear background);
 
   .scheme(@input-scheme, false, both);
 }

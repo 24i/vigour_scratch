@@ -22,9 +22,13 @@
   outline: 0;
   text-align: center;
 
+  @media @under-tablet {
+    margin-bottom: @gap-small;
+  }
+
   .appearance;
   .radius(@input-radius);
-  .transition(@transition-duration linear all);
+  .transition(@transition-duration linear background);
 
   .scheme(@input-scheme, both, both);
 }

@@ -10,8 +10,18 @@ label.ui-label {
   display: inline-block;
   font-size: @input-size;
 
+  @media @under-tablet {
+    display: block;
+    margin-bottom: @gap-small;
+
+    > .ui-input,
+    > .ui-button {
+      margin-bottom: 0;
+    }
+  }
+
   .scheme(@input-scheme, both, both);
-  .transition(@transition-duration linear all);
+  .transition(@transition-duration linear background);
 
   .radius(3px);
 
@@ -43,7 +53,6 @@ label.ui-label {
  */
 
 label.ui-label.primary {
-  display: inline-block;
   .scheme(@primary-scheme-inverse, both, both);
 
   > .ui-input {
@@ -54,7 +63,6 @@ label.ui-label.primary {
 }
 
 label.ui-label.secondary {
-  display: inline-block;
   .scheme(@secondary-scheme-inverse, both, both);
 
   > .ui-input {
@@ -65,7 +73,6 @@ label.ui-label.secondary {
 }
 
 label.ui-label.tertiary {
-  display: inline-block;
   .scheme(@tertiary-scheme-inverse, both, both);
 
   > .ui-input {
@@ -76,7 +83,6 @@ label.ui-label.tertiary {
 }
 
 label.ui-label.grayscale {
-  display: inline-block;
   .scheme(@grayscale-scheme-inverse, both, both);
 
   > .ui-input {

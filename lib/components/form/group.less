@@ -13,16 +13,14 @@
     display: block;
     float: left;
 
-    @media screen and (min-width: @screen-tablet) {
-      &:first-child:not(:last-child) {
-        border-right: 0;
-        .radius(@input-radius 0 0 @input-radius);
-      }
+    &:first-child:not(:last-child) {
+      border-right: 0;
+      .radius(@input-radius 0 0 @input-radius);
+    }
 
-      &:last-child:not(:first-child) {
-        .radius(0 @input-radius @input-radius 0);
-        border-left: 0;
-      }
+    &:last-child:not(:first-child) {
+      .radius(0 @input-radius @input-radius 0);
+      border-left: 0;
     }
   }
 }
@@ -45,7 +43,8 @@
 
 
 .ui-form-group {
-  .ui-input {
+  .ui-input,
+  .ui-label {
     &:last-of-type {
       // .shadow(inset 3px 0 3px -3px @lightgray);
     }

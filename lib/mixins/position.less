@@ -11,12 +11,12 @@
  * .absolute(10px, 20px)
  * .absolute(auto, auto, 100px, 200px)
  */
-.absolute(@left: auto, @top: auto, @right: auto, @bottom: auto) {
+.absolute(@top: auto, @right: auto, @bottom: auto, @left: auto) {
   position: absolute;
-  left: @left;
   top: @top;
   right: @right;
   bottom: @bottom;
+  left: @left;
 }
 
 /**
@@ -29,7 +29,7 @@
  * .fixed(10px, 20px)
  * .fixed(auto, auto, 100px, 200px)
  */
-.fixed(@left: auto, @top: auto, @right: auto, @bottom: auto) {
+.fixed(@top: auto, @right: auto, @bottom: auto, @left: auto) {
   position: fixed;
   left: @left;
   top: @top;

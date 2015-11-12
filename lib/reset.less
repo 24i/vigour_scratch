@@ -16,6 +16,8 @@ html {
   background: @body-background;
   font-family: @body-family;
 
+  -webkit-overflow-scrolling: touch;
+
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 
@@ -40,8 +42,14 @@ body {
   min-width: @container-min-width;
   overflow-x: hidden;
   position: relative;
-  min-height: 100%;
+  height: 100%;
   cursor: default;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.holder {
+
 }
 
 h1,
@@ -50,11 +58,11 @@ h3,
 h4,
 h5,
 h6,
-.ui-header {
-  margin: @header-margin;
-  line-height: @header-line-height;
-  font-family: @header-family, @body-family;
-  font-weight: @header-weight;
+.ui-heading {
+  margin: @heading-margin;
+  line-height: @heading-line-height;
+  font-family: @heading-family, @body-family;
+  font-weight: @heading-weight;
 }
 
 h1 {
