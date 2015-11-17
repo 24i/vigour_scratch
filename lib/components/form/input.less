@@ -60,9 +60,9 @@ textarea {
 
   .appearance;
   .radius(@input-radius);
-  .transition(@transition-duration linear background);
 
-  .scheme(@input-scheme, false, both);
+  .scheme-interactive(@input-scheme, false, both);
+  .transition(@transition-duration linear background);
 }
 
 
@@ -71,7 +71,7 @@ textarea {
  */
 .ui-input {
   &.primary {
-    .scheme(@primary-scheme-inverse, false, both);
+    .scheme-interactive(@primary-scheme-inverse, false, both);
     .placeholder(lighten(@primary-contrast, 5%));
 
     &.focused,
@@ -81,7 +81,7 @@ textarea {
   }
 
   &.primary-inverse {
-    .scheme(@primary-scheme, false, both);
+    .scheme-interactive(@primary-scheme, false, both);
     .placeholder(lighten(@primary-contrast, 5%));
 
     &.focused,
@@ -91,7 +91,7 @@ textarea {
   }
 
   &.secondary {
-    .scheme(@secondary-scheme-inverse, false, both);
+    .scheme-interactive(@secondary-scheme-inverse, false, both);
     .placeholder(lighten(@secondary-contrast, 5%));
 
     &.focused,
@@ -101,7 +101,7 @@ textarea {
   }
 
   &.secondary-inverse {
-    .scheme(@secondary-scheme, false, both);
+    .scheme-interactive(@secondary-scheme, false, both);
     .placeholder(lighten(@secondary-contrast, 5%));
 
     &.focused,
@@ -111,7 +111,7 @@ textarea {
   }
 
   &.tertiary {
-    .scheme(@tertiary-scheme-inverse, false, both);
+    .scheme-interactive(@tertiary-scheme-inverse, false, both);
     .placeholder(lighten(@tertiary-contrast, 5%));
 
     &.focused,
@@ -121,7 +121,7 @@ textarea {
   }
 
   &.tertiary-inverse {
-    .scheme(@tertiary-scheme, false, both);
+    .scheme-interactive(@tertiary-scheme, false, both);
     .placeholder(lighten(@tertiary-contrast, 5%));
 
     &.focused,
@@ -131,7 +131,7 @@ textarea {
   }
 
   &.grayscale-light {
-    .scheme(@grayscale-light-scheme-inverse, false, both);
+    .scheme-interactive(@grayscale-light-scheme-inverse, false, both);
     .placeholder(lighten(@grayscale-light-contrast, 5%));
 
     &.focused,
@@ -141,7 +141,7 @@ textarea {
   }
 
   &.grayscale-light-inverse {
-    .scheme(@grayscale-light-scheme, false, both);
+    .scheme-interactive(@grayscale-light-scheme, false, both);
     .placeholder(lighten(@grayscale-light-contrast, 5%));
 
     &.focused,
@@ -151,7 +151,7 @@ textarea {
   }
 
   &.grayscale-dark {
-    .scheme(@grayscale-dark-scheme-inverse, false, both);
+    .scheme-interactive(@grayscale-dark-scheme-inverse, false, both);
     .placeholder(lighten(@grayscale-dark-contrast, 5%));
 
     &.focused,
@@ -161,7 +161,7 @@ textarea {
   }
 
   &.grayscale-dark-inverse {
-    .scheme(@grayscale-dark-scheme, false, both);
+    .scheme-interactive(@grayscale-dark-scheme, false, both);
     .placeholder(lighten(@grayscale-dark-contrast, 5%));
 
     &.focused,
@@ -171,7 +171,7 @@ textarea {
   }
 
   &.blackwhite {
-    .scheme(@blackwhite-scheme-inverse, false, both);
+    .scheme-interactive(@blackwhite-scheme-inverse, false, both);
     .placeholder(lighten(@blackwhite-contrast, 5%));
 
     &.focused,
@@ -181,7 +181,7 @@ textarea {
   }
 
   &.blackwhite-inverse {
-    .scheme(@blackwhite-scheme, false, both);
+    .scheme-interactive(@blackwhite-scheme, false, both);
     .placeholder(lighten(@blackwhite-contrast, 5%));
 
     &.focused,

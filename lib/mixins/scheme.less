@@ -3,21 +3,30 @@
 
  * @param {string} [scheme=@primary-scheme]
 
+ * @example
+ * .scheme(@primary-scheme, both)
+ */
+.scheme(@scheme: @primary-scheme) {
+  color: extract(@scheme, 1);
+  background-color: extract(@scheme, 4);
+}
+
+
+/**
+ * interactive scheming usage for hovering and focusing elements
+
+ * @param {string} [scheme=@primary-scheme]
+
  * @param {string} [hover=false] it can be set as a `color`,
  * `background` or `both`
 
  * @param {string} [focus=false] it can be set as a `color`,
  * `background` or `both`
 
- * @param {string} [border=false] applying border color
-
- * @param {string} [additional=false] if you want to use helper
- * color instead of brand one.
-
  * @example
  * .scheme(@primary-scheme, both)
  */
-.scheme(@scheme: @primary-scheme, @hover: false, @focus: false, @border: true, @additional: false, @additional-color: border) {
+.scheme-interactive(@scheme: @primary-scheme, @hover: false, @focus: false) {
   color: extract(@scheme, 1);
   background-color: extract(@scheme, 4);
 
@@ -71,7 +80,23 @@
       background-color: extract(@scheme, 6);
     }
   }
+}
 
+
+/**
+ * additional scheming usage such as border and helper color
+
+ * @param {string} [scheme=@primary-scheme]
+
+ * @param {string} [border=false] applying border color
+
+ * @param {string} [additional=false] if you want to use helper
+ * color instead of brand one.
+
+ * @example
+ * .scheme(@primary-scheme, both)
+ */
+.scheme-additions(@scheme: @primary-scheme, @border: true, @additional: false) {
   // border
   // ---------------------------
   & when (@border = true) {

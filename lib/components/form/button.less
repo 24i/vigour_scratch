@@ -30,9 +30,9 @@
 
   .appearance;
   .radius(@input-radius);
-  .transition(@transition-duration linear background);
 
-  .scheme(@button-scheme, both, both);
+  .scheme-interactive(@button-scheme, both, both);
+  .transition(@transition-duration linear background);
 }
 
 
@@ -44,27 +44,27 @@
 
 .ui-button{
   &.primary {
-    .scheme(@primary-scheme-inverse, both, both);
+    .scheme-interactive(@primary-scheme-inverse, both, both);
   }
 
   &.secondary {
-    .scheme(@secondary-scheme-inverse, both, both);
+    .scheme-interactive(@secondary-scheme-inverse, both, both);
   }
 
   &.tertiary {
-    .scheme(@tertiary-scheme-inverse, both, both);
+    .scheme-interactive(@tertiary-scheme-inverse, both, both);
   }
 
   &.grayscale-dark {
-    .scheme(@grayscale-dark-scheme-inverse, both, both);
+    .scheme-interactive(@grayscale-dark-scheme-inverse, both, both);
   }
 
   &.grayscale-light {
-    .scheme(@grayscale-light-scheme-inverse, both, both);
+    .scheme-interactive(@grayscale-light-scheme-inverse, both, both);
   }
 
   &.blackwhite {
-    .scheme(@blackwhite-scheme-inverse, both, both);
+    .scheme-interactive(@blackwhite-scheme-inverse, both, both);
   }
 }
 
