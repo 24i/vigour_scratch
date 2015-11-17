@@ -6,10 +6,15 @@
  * Label element for reusable use.
  */
 
-label.ui-label {
+.ui-label {
   display: inline-block;
   font-size: @input-size;
   height: @input-height;
+  cursor: text;
+
+  .flex-display;
+  .flex-direction(row);
+  .align-items(center);
 
   @media @under-tablet {
     display: block;
@@ -21,7 +26,6 @@ label.ui-label {
     }
   }
 
-  .scheme-interactive(@input-scheme, both, both);
   .transition(@transition-duration linear background);
 
   .radius(3px);
@@ -42,8 +46,8 @@ label.ui-label {
   }
 
   > .ui-input {
+    .flex(1);
     background-color: transparent !important;
-    padding-left: calc(@input-padding / 2) !important;
 
     &:hover,
     &:focus {
@@ -60,9 +64,9 @@ label.ui-label {
  * Default color set is primary
  */
 
-label.ui-label {
+.ui-label {
   &.primary {
-    .scheme-interactive(@primary-scheme-inverse, both, both);
+    .scheme(@primary-scheme-inverse);
 
     > .ui-input {
       .ui-input;
@@ -71,7 +75,7 @@ label.ui-label {
   }
 
   &.secondary {
-    .scheme-interactive(@secondary-scheme-inverse, both, both);
+    .scheme(@secondary-scheme-inverse);
 
     > .ui-input {
       .ui-input;
@@ -80,7 +84,7 @@ label.ui-label {
   }
 
   &.tertiary {
-    .scheme-interactive(@tertiary-scheme-inverse, both, both);
+    .scheme(@tertiary-scheme-inverse);
 
     > .ui-input {
       .ui-input;
@@ -89,7 +93,7 @@ label.ui-label {
   }
 
   &.grayscale-light {
-    .scheme-interactive(@grayscale-light-scheme-inverse, both, both);
+    .scheme(@grayscale-light-scheme);
 
     > .ui-input {
       .ui-input;
@@ -98,7 +102,7 @@ label.ui-label {
   }
 
   &.grayscale-dark {
-    .scheme-interactive(@grayscale-dark-scheme-inverse, both, both);
+    .scheme(@grayscale-dark-scheme);
 
     > .ui-input {
       .ui-input;
@@ -107,7 +111,7 @@ label.ui-label {
   }
 
   &.blackwhite {
-    .scheme-interactive(@blackwhite-scheme-inverse, both, both);
+    .scheme(@blackwhite-scheme-inverse);
 
     > .ui-input {
       .ui-input;
