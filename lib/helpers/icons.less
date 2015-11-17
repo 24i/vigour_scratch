@@ -12,12 +12,11 @@
   }
 }
 
-& when not (@icon-external-link = false) {
-  @import url(@icon-external-link);
+& when (@icon-local = false) {
+  // @import url(@icon-external-link);
 }
 
 .@{icon-prefix} {
-  font-size: @icon-size;
   display: inline-block;
   vertical-align: middle;
   line-height: 1;
