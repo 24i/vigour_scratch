@@ -41,16 +41,18 @@ textarea {
 
 .ui-input {
   .sizing;
+  height: @input-height;
 
   display: inline-block;
   vertical-align: middle;
-  padding: @input-padding;
+  .padding-h(@input-padding);
 
   font-family: @body-family;
   font-size: @input-size;
 
   text-decoration: none;
   outline: 0;
+  line-height: @input-height;
 
   @media @under-tablet {
     margin-bottom: @gap-small;
@@ -74,7 +76,7 @@ textarea {
 
     &.focused,
     &:focus {
-
+      .placeholder(lighten(@primary-contrast-focus, 5%));
     }
   }
 
@@ -84,7 +86,7 @@ textarea {
 
     &.focused,
     &:focus {
-
+      .placeholder(lighten(@primary-contrast-focus, 5%));
     }
   }
 
@@ -94,7 +96,7 @@ textarea {
 
     &.focused,
     &:focus {
-
+      .placeholder(lighten(@secondary-contrast-focus, 5%));
     }
   }
 
@@ -104,7 +106,7 @@ textarea {
 
     &.focused,
     &:focus {
-
+      .placeholder(lighten(@secondary-contrast-focus, 5%));
     }
   }
 
@@ -114,7 +116,7 @@ textarea {
 
     &.focused,
     &:focus {
-
+      .placeholder(lighten(@tertiary-contrast-focus, 5%));
     }
   }
 
@@ -124,7 +126,7 @@ textarea {
 
     &.focused,
     &:focus {
-
+      .placeholder(lighten(@tertiary-contrast-focus, 5%));
     }
   }
 
@@ -134,7 +136,7 @@ textarea {
 
     &.focused,
     &:focus {
-
+      .placeholder(lighten(@grayscale-light-contrast-focus, 5%));
     }
   }
 
@@ -144,7 +146,7 @@ textarea {
 
     &.focused,
     &:focus {
-
+      .placeholder(lighten(@grayscale-light-contrast-focus, 5%));
     }
   }
 
@@ -154,7 +156,7 @@ textarea {
 
     &.focused,
     &:focus {
-
+      .placeholder(lighten(@grayscale-dark-contrast-focus, 5%));
     }
   }
 
@@ -164,7 +166,7 @@ textarea {
 
     &.focused,
     &:focus {
-
+      .placeholder(lighten(@grayscale-dark-contrast-focus, 5%));
     }
   }
 
@@ -174,7 +176,7 @@ textarea {
 
     &.focused,
     &:focus {
-
+      .placeholder(lighten(@blackwhite-contrast-focus, 5%));
     }
   }
 
@@ -184,7 +186,7 @@ textarea {
 
     &.focused,
     &:focus {
-
+      .placeholder(lighten(@blackwhite-contrast-focus, 5%));
     }
   }
 }
@@ -196,24 +198,27 @@ textarea {
 .ui-input {
   &.small {
     height: @input-small-height;
+    line-height: @input-small-height;
     font-size: @input-small-size;
-    padding: @input-small-padding;
+    .padding-h(@input-small-padding);
     .radius(@input-small-radius);
     min-width: 0;
   }
 
   &.big {
     height: @input-big-height;
+    line-height: @input-big-height;
     font-size: @input-big-size;
-    padding: @input-big-padding;
+    .padding-h(@input-big-padding);
     .radius(@input-big-radius);
     min-width: 15rem;
   }
 
   &.large {
     height: @input-large-height;
+    line-height: @input-large-height;
     font-size: @input-large-size;
-    padding: @input-large-padding;
+    .padding-h(@input-large-padding);
     .radius(@input-large-radius);
     min-width: 22rem;
   }

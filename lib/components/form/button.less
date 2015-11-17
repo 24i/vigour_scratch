@@ -13,13 +13,15 @@
 
   display: inline-block;
   vertical-align: middle;
-  padding: @input-padding;
+  .padding-v(0);
+  .padding-h(@input-padding);
 
   font-family: @body-family;
   font-size: @body-size;
 
   text-decoration: none;
   outline: 0;
+  line-height: 1;
   text-align: center;
 
   @media @under-tablet {
@@ -97,7 +99,8 @@
   &.small {
     font-size: @input-small-size;
     height: @input-small-height;
-    padding: @input-small-padding;
+    line-height: @input-small-height;
+    .padding-h(@input-small-padding);
     .radius(@input-small-radius);
     min-width: 0;
 
@@ -114,7 +117,8 @@
   &.big {
     font-size: @input-big-size;
     height: @input-big-height;
-    padding: @input-big-padding;
+    line-height: @input-big-height;
+    .padding-h(@input-big-padding);
     .radius(@input-big-radius);
     min-width: 15rem;
 
@@ -130,8 +134,9 @@
 
   &.large {
     font-size: @input-large-size;
-    padding: @input-large-padding;
-    height: @input-big-height;
+    .padding-h(@input-large-padding);
+    height: @input-large-height;
+    line-height: @input-large-height;
     .radius(@input-large-radius);
     min-width: 22rem;
 

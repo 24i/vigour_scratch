@@ -9,6 +9,7 @@
 label.ui-label {
   display: inline-block;
   font-size: @input-size;
+  height: @input-height;
 
   @media @under-tablet {
     display: block;
@@ -28,12 +29,12 @@ label.ui-label {
   > .caption {
     display: inline-block;
     vertical-align: middle;
-    padding: @input-padding;
+    line-height: @input-height;
+    .padding-h(@input-padding);
     padding-right: 0;
 
     text-decoration: none;
     outline: 0;
-
   }
 
   > .icon {
@@ -41,7 +42,14 @@ label.ui-label {
   }
 
   > .ui-input {
-    background: transparent;
+    background-color: transparent !important;
+    padding-left: calc(@input-padding / 2) !important;
+
+    &:hover,
+    &:focus {
+      background-color: transparent !important;
+      color: inherit !important;
+    }
   }
 }
 
@@ -57,9 +65,8 @@ label.ui-label {
     .scheme(@primary-scheme-inverse, both, both);
 
     > .ui-input {
-      background: none;
-      color: white;
-      .placeholder(lighten(@primary-contrast, 5%));
+      .ui-input;
+      .primary;
     }
   }
 
@@ -67,9 +74,8 @@ label.ui-label {
     .scheme(@secondary-scheme-inverse, both, both);
 
     > .ui-input {
-      background: none;
-      color: white;
-      .placeholder(lighten(@secondary-contrast, 5%));
+      .ui-input;
+      .secondary;
     }
   }
 
@@ -77,9 +83,8 @@ label.ui-label {
     .scheme(@tertiary-scheme-inverse, both, both);
 
     > .ui-input {
-      background: none;
-      color: white;
-      .placeholder(lighten(@tertiary-contrast, 5%));
+      .ui-input;
+      .tertiary;
     }
   }
 
@@ -87,9 +92,8 @@ label.ui-label {
     .scheme(@grayscale-light-scheme-inverse, both, both);
 
     > .ui-input {
-      background: none;
-      color: white;
-      .placeholder(lighten(@grayscale-light-contrast, 5%));
+      .ui-input;
+      .grayscale-light;
     }
   }
 
@@ -97,9 +101,8 @@ label.ui-label {
     .scheme(@grayscale-dark-scheme-inverse, both, both);
 
     > .ui-input {
-      background: none;
-      color: white;
-      .placeholder(lighten(@grayscale-dark-contrast, 5%));
+      .ui-input;
+      .grayscale-dark;
     }
   }
 
@@ -107,9 +110,8 @@ label.ui-label {
     .scheme(@blackwhite-scheme-inverse, both, both);
 
     > .ui-input {
-      background: none;
-      color: white;
-      .placeholder(lighten(@blackwhite-contrast, 5%));
+      .ui-input;
+      .blackwhite;
     }
   }
 }
