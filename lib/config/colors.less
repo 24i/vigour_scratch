@@ -74,7 +74,7 @@
  * Color priorities
  */
 
-// primary color
+// primary theme
 @primary:                @green;
 @primary-darken:         darken(@primary, 10%);
 @primary-lighten:        lighten(@primary, 10%);
@@ -86,7 +86,7 @@
 @primary-contrast-focus: darken(@primary-contrast, 9%);
 @primary-additional:     @orange;
 
-// secondary color
+// secondary theme
 @secondary:                @blue;
 @secondary-darken:         darken(@secondary, 10%);
 @secondary-lighten:        lighten(@secondary, 10%);
@@ -98,7 +98,7 @@
 @secondary-contrast-focus: darken(@secondary-contrast, 9%);
 @secondary-additional:     @yellow;
 
-// tertiary color
+// tertiary theme
 @tertiary:                @red;
 @tertiary-darken:         darken(@tertiary, 10%);
 @tertiary-lighten:        lighten(@tertiary, 10%);
@@ -110,17 +110,41 @@
 @tertiary-contrast-focus: darken(@tertiary-contrast, 9%);
 @tertiary-additional:     @yellow;
 
-// grayscale color
-@grayscale:                @darkgray;
-@grayscale-darken:         darken(@grayscale, 10%);
-@grayscale-lighten:        lighten(@grayscale, 10%);
-@grayscale-hover:          darken(@grayscale, 5%);
-@grayscale-focus:          darken(@grayscale, 9%);
-@grayscale-border:         black;
-@grayscale-contrast:       @whitegray;
-@grayscale-contrast-hover: darken(@grayscale-contrast, 5%);
-@grayscale-contrast-focus: darken(@grayscale-contrast, 9%);
-@grayscale-additional:     @primary;
+// grayscale dark theme
+@grayscale-dark:                @darkgray;
+@grayscale-dark-darken:         darken(@grayscale-dark, 10%);
+@grayscale-dark-lighten:        lighten(@grayscale-dark, 10%);
+@grayscale-dark-hover:          darken(@grayscale-dark, 5%);
+@grayscale-dark-focus:          darken(@grayscale-dark, 9%);
+@grayscale-dark-border:         black;
+@grayscale-dark-contrast:       @midgray;
+@grayscale-dark-contrast-hover: darken(@grayscale-dark-contrast, 5%);
+@grayscale-dark-contrast-focus: darken(@grayscale-dark-contrast, 9%);
+@grayscale-dark-additional:     @primary;
+
+// grayscale light theme
+@grayscale-light:                @midgray;
+@grayscale-light-darken:         darken(@grayscale-light, 10%);
+@grayscale-light-lighten:        lighten(@grayscale-light, 10%);
+@grayscale-light-hover:          darken(@grayscale-light, 5%);
+@grayscale-light-focus:          darken(@grayscale-light, 9%);
+@grayscale-light-border:         black;
+@grayscale-light-contrast:       @whitegray;
+@grayscale-light-contrast-hover: darken(@grayscale-light-contrast, 5%);
+@grayscale-light-contrast-focus: darken(@grayscale-light-contrast, 9%);
+@grayscale-light-additional:     @primary;
+
+// black and white theme
+@blackwhite:                @blackgray;
+@blackwhite-darken:         darken(@blackwhite, 10%);
+@blackwhite-lighten:        lighten(@blackwhite, 10%);
+@blackwhite-hover:          darken(@blackwhite, 5%);
+@blackwhite-focus:          darken(@blackwhite, 9%);
+@blackwhite-border:         @primary;
+@blackwhite-contrast:       @whitegray;
+@blackwhite-contrast-hover: darken(@blackwhite-contrast, 5%);
+@blackwhite-contrast-focus: darken(@blackwhite-contrast, 9%);
+@blackwhite-additional:     @primary;
 
 
 /**
@@ -184,21 +208,59 @@
                   @tertiary-border,
                   @tertiary-additional;
 
-// scheme for grayscale color
-@grayscale-scheme: @grayscale,
-                   @grayscale-hover,
-                   @grayscale-focus,
-                   @grayscale-contrast,
-                   @grayscale-contrast-hover,
-                   @grayscale-contrast-focus,
-                   @grayscale-border,
-                   @grayscale-additional;
+// scheme for grayscale-light color
+@grayscale-light-scheme: @grayscale-light,
+                   @grayscale-light-hover,
+                   @grayscale-light-focus,
+                   @grayscale-light-contrast,
+                   @grayscale-light-contrast-hover,
+                   @grayscale-light-contrast-focus,
+                   @grayscale-light-border,
+                   @grayscale-light-additional;
 
-@grayscale-scheme-inverse: @grayscale-contrast,
-                   @grayscale-contrast-hover,
-                   @grayscale-contrast-focus,
-                   @grayscale,
-                   @grayscale-hover,
-                   @grayscale-focus,
-                   @grayscale-border,
-                   @grayscale-additional;
+@grayscale-light-scheme-inverse: @grayscale-light-contrast,
+                   @grayscale-light-contrast-hover,
+                   @grayscale-light-contrast-focus,
+                   @grayscale-light,
+                   @grayscale-light-hover,
+                   @grayscale-light-focus,
+                   @grayscale-light-border,
+                   @grayscale-light-additional;
+
+// scheme for grayscale-dark color
+@grayscale-dark-scheme: @grayscale-dark,
+                   @grayscale-dark-hover,
+                   @grayscale-dark-focus,
+                   @grayscale-dark-contrast,
+                   @grayscale-dark-contrast-hover,
+                   @grayscale-dark-contrast-focus,
+                   @grayscale-dark-border,
+                   @grayscale-dark-additional;
+
+@grayscale-dark-scheme-inverse: @grayscale-dark-contrast,
+                   @grayscale-dark-contrast-hover,
+                   @grayscale-dark-contrast-focus,
+                   @grayscale-dark,
+                   @grayscale-dark-hover,
+                   @grayscale-dark-focus,
+                   @grayscale-dark-border,
+                   @grayscale-dark-additional;
+
+// scheme for blackwhite color
+@blackwhite-scheme: @blackwhite,
+                   @blackwhite-hover,
+                   @blackwhite-focus,
+                   @blackwhite-contrast,
+                   @blackwhite-contrast-hover,
+                   @blackwhite-contrast-focus,
+                   @blackwhite-border,
+                   @blackwhite-additional;
+
+@blackwhite-scheme-inverse: @blackwhite-contrast,
+                   @blackwhite-contrast-hover,
+                   @blackwhite-contrast-focus,
+                   @blackwhite,
+                   @blackwhite-hover,
+                   @blackwhite-focus,
+                   @blackwhite-border,
+                   @blackwhite-additional;

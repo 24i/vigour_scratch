@@ -30,7 +30,7 @@
   .radius(@input-radius);
   .transition(@transition-duration linear background);
 
-  .scheme(@input-scheme, both, both);
+  .scheme(@button-scheme, both, both);
 }
 
 
@@ -40,21 +40,30 @@
  * Default color set is primary
  */
 
-.ui-button,
-.ui-button.primary {
-  .scheme(@primary-scheme-inverse, both, both);
-}
+.ui-button{
+  &.primary {
+    .scheme(@primary-scheme-inverse, both, both);
+  }
 
-.ui-button.secondary {
-  .scheme(@secondary-scheme-inverse, both, both);
-}
+  &.secondary {
+    .scheme(@secondary-scheme-inverse, both, both);
+  }
 
-.ui-button.tertiary {
-  .scheme(@tertiary-scheme-inverse, both, both);
-}
+  &.tertiary {
+    .scheme(@tertiary-scheme-inverse, both, both);
+  }
 
-.ui-button.grayscale {
-  .scheme(@grayscale-scheme-inverse, both, both);
+  &.grayscale-dark {
+    .scheme(@grayscale-dark-scheme-inverse, both, both);
+  }
+
+  &.grayscale-light {
+    .scheme(@grayscale-light-scheme-inverse, both, both);
+  }
+
+  &.blackwhite {
+    .scheme(@blackwhite-scheme-inverse, both, both);
+  }
 }
 
 
@@ -84,61 +93,50 @@
  * Button sizes
  */
 
-.ui-button.small {
-  font-size: @input-small-size;
-  height: @input-small-height;
-  padding: @input-small-padding;
-  min-width: 0;
+.ui-button {
+  &.small {
+    font-size: @input-small-size;
+    height: @input-small-height;
+    padding: @input-small-padding;
+    .radius(@input-small-radius);
+    min-width: 0;
 
-  .icon {
-    font-size: @h10;
-    vertical-align: 0;
+    .icon {
+      font-size: @h10;
+      vertical-align: 0;
+    }
+
+    &.iconic {
+      width: @input-small-height;
+    }
   }
 
-  &.iconic {
-    width: @input-small-height;
-  }
-}
+  &.big {
+    font-size: @input-big-size;
+    height: @input-big-height;
+    padding: @input-big-padding;
+    .radius(@input-big-radius);
+    min-width: 15rem;
 
-.ui-button,
-.ui-button.medium {
-  font-size: @input-size;
-  height: @input-height;
-  padding: @input-padding;
+    .icon {
+      font-size: @h4;
+      vertical-align: -3px;
+    }
 
-  .icon {
-    font-size: @h10;
-    vertical-align: 0;
-  }
-
-  &.iconic {
-    width: @input-height;
-  }
-}
-
-.ui-button.big {
-  font-size: @input-big-size;
-  height: @input-big-height;
-  padding: @input-big-padding;
-  min-width: 15rem;
-
-  .icon {
-    font-size: @h4;
-    vertical-align: -3px;
+    &.iconic {
+      width: @input-big-height;
+    }
   }
 
-  &.iconic {
-    width: @input-big-height;
-  }
-}
+  &.large {
+    font-size: @input-large-size;
+    padding: @input-large-padding;
+    height: @input-big-height;
+    .radius(@input-large-radius);
+    min-width: 22rem;
 
-.ui-button.large {
-  font-size: @input-large-size;
-  padding: @input-large-padding;
-  height: @input-big-height;
-  min-width: 22rem;
-
-  &.iconic {
-    width: @input-big-height;
+    &.iconic {
+      width: @input-big-height;
+    }
   }
 }

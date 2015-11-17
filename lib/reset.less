@@ -21,8 +21,8 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 
-  & when (@responsive =true) {
-    @media all and (max-width: @screen-tablet) {
+  & when (@responsive = true) {
+    @media @under-tablet {
       font-size: 9px;
     }
   }

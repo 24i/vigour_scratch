@@ -82,8 +82,28 @@ label.ui-label.tertiary {
   }
 }
 
-label.ui-label.grayscale {
-  .scheme(@grayscale-scheme-inverse, both, both);
+label.ui-label.grayscale-light {
+  .scheme(@grayscale-light-scheme-inverse, both, both);
+
+  > .ui-input {
+    background: none;
+    color: white;
+    .placeholder(@secondary-contrast-hover);
+  }
+}
+
+label.ui-label.grayscale-dark {
+  .scheme(@grayscale-dark-scheme-inverse, both, both);
+
+  > .ui-input {
+    background: none;
+    color: white;
+    .placeholder(@secondary-contrast-hover);
+  }
+}
+
+label.ui-label.blackwhite {
+  .scheme(@blackwhite-scheme-inverse, both, both);
 
   > .ui-input {
     background: none;

@@ -23,31 +23,6 @@ input[type='url'] {
   // nothing yet
 }
 
-.ui-input {
-  .sizing;
-  pointer-events: none;
-
-  display: inline-block;
-  vertical-align: middle;
-  padding: @input-padding;
-
-  font-family: @body-family;
-  font-size: @input-size;
-
-  text-decoration: none;
-  outline: 0;
-
-  @media @under-tablet {
-    margin-bottom: @gap-small;
-  }
-
-  .appearance;
-  .radius(3px);
-  .transition(@transition-duration linear background);
-
-  .scheme(@input-scheme, false, both);
-}
-
 select {
   // not yet
 }
@@ -64,13 +39,48 @@ textarea {
   resize: vertical;
 }
 
+.ui-input {
+  .sizing;
+
+  display: inline-block;
+  vertical-align: middle;
+  padding: @input-padding;
+
+  font-family: @body-family;
+  font-size: @input-size;
+
+  text-decoration: none;
+  outline: 0;
+
+  @media @under-tablet {
+    margin-bottom: @gap-small;
+  }
+
+  .appearance;
+  .radius(@input-radius);
+  .transition(@transition-duration linear background);
+
+  .scheme(@input-scheme, false, both);
+}
+
+
 /**
  * Input sizes
  */
 .ui-input {
   &.primary {
     .scheme(@primary-scheme-inverse, false, both);
-    .placeholder(@primary-contrast-hover);
+    .placeholder(lighten(@primary-contrast, 5%));
+
+    &.focused,
+    &:focus {
+
+    }
+  }
+
+  &.primary-inverse {
+    .scheme(@primary-scheme, false, both);
+    .placeholder(lighten(@primary-contrast, 5%));
 
     &.focused,
     &:focus {
@@ -80,7 +90,17 @@ textarea {
 
   &.secondary {
     .scheme(@secondary-scheme-inverse, false, both);
-    .placeholder(@secondary-contrast-hover);
+    .placeholder(lighten(@secondary-contrast, 5%));
+
+    &.focused,
+    &:focus {
+
+    }
+  }
+
+  &.secondary-inverse {
+    .scheme(@secondary-scheme, false, both);
+    .placeholder(lighten(@secondary-contrast, 5%));
 
     &.focused,
     &:focus {
@@ -90,7 +110,7 @@ textarea {
 
   &.tertiary {
     .scheme(@tertiary-scheme-inverse, false, both);
-    .placeholder(@tertiary-contrast-hover);
+    .placeholder(lighten(@tertiary-contrast, 5%));
 
     &.focused,
     &:focus {
@@ -98,9 +118,69 @@ textarea {
     }
   }
 
-  &.grayscale {
-    .scheme(@grayscale-scheme-inverse, false, both);
-    .placeholder(@grayscale-contrast-hover);
+  &.tertiary-inverse {
+    .scheme(@tertiary-scheme, false, both);
+    .placeholder(lighten(@tertiary-contrast, 5%));
+
+    &.focused,
+    &:focus {
+
+    }
+  }
+
+  &.grayscale-light {
+    .scheme(@grayscale-light-scheme-inverse, false, both);
+    .placeholder(lighten(@grayscale-light-contrast, 5%));
+
+    &.focused,
+    &:focus {
+
+    }
+  }
+
+  &.grayscale-light-inverse {
+    .scheme(@grayscale-light-scheme, false, both);
+    .placeholder(lighten(@grayscale-light-contrast, 5%));
+
+    &.focused,
+    &:focus {
+
+    }
+  }
+
+  &.grayscale-dark {
+    .scheme(@grayscale-dark-scheme-inverse, false, both);
+    .placeholder(lighten(@grayscale-dark-contrast, 5%));
+
+    &.focused,
+    &:focus {
+
+    }
+  }
+
+  &.grayscale-dark-inverse {
+    .scheme(@grayscale-dark-scheme, false, both);
+    .placeholder(lighten(@grayscale-dark-contrast, 5%));
+
+    &.focused,
+    &:focus {
+
+    }
+  }
+
+  &.blackwhite {
+    .scheme(@blackwhite-scheme-inverse, false, both);
+    .placeholder(lighten(@blackwhite-contrast, 5%));
+
+    &.focused,
+    &:focus {
+
+    }
+  }
+
+  &.blackwhite-inverse {
+    .scheme(@blackwhite-scheme, false, both);
+    .placeholder(lighten(@blackwhite-contrast, 5%));
 
     &.focused,
     &:focus {
@@ -113,23 +193,28 @@ textarea {
 /**
  * Input sizes
  */
-.ui-input.small {
-  height: @input-small-height;
-  font-size: @input-small-size;
-  padding: @input-small-padding;
-  min-width: 0;
-}
+.ui-input {
+  &.small {
+    height: @input-small-height;
+    font-size: @input-small-size;
+    padding: @input-small-padding;
+    .radius(@input-small-radius);
+    min-width: 0;
+  }
 
-.ui-input.big {
-  height: @input-big-height;
-  font-size: @input-big-size;
-  padding: @input-big-padding;
-  min-width: 15rem;
-}
+  &.big {
+    height: @input-big-height;
+    font-size: @input-big-size;
+    padding: @input-big-padding;
+    .radius(@input-big-radius);
+    min-width: 15rem;
+  }
 
-.ui-input.large {
-  height: @input-large-height;
-  font-size: @input-large-size;
-  padding: @input-large-padding;
-  min-width: 22rem;
+  &.large {
+    height: @input-large-height;
+    font-size: @input-large-size;
+    padding: @input-large-padding;
+    .radius(@input-large-radius);
+    min-width: 22rem;
+  }
 }
