@@ -16,10 +16,14 @@ html {
   background: @body-background;
   font-family: @body-family;
 
+  letter-spacing: .2px;
+
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   & when (@responsive = true) {
     @media @under-tablet {
