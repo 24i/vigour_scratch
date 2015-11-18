@@ -12,7 +12,7 @@
   height: @input-height;
   cursor: text;
 
-  .flex-display;
+  .flex-display(inline-flex);
   .flex-direction(row);
   .align-items(center);
 
@@ -45,14 +45,15 @@
     font-size: @input-size;
   }
 
-  > .ui-input {
+  > .ui-input,
+  > .ui-select {
     .flex(1);
     background-color: transparent !important;
 
     &:hover,
     &:focus {
       background-color: transparent !important;
-      color: inherit !important;
+      // color: inherit !important;
     }
   }
 }
@@ -68,6 +69,11 @@
   &.primary {
     .scheme(@primary-scheme-inverse);
 
+    > .ui-select {
+      .ui-select;
+      .primary;
+    }
+
     > .ui-input {
       .ui-input;
       .primary;
@@ -76,6 +82,11 @@
 
   &.secondary {
     .scheme(@secondary-scheme-inverse);
+
+    > .ui-select {
+      .ui-select;
+      .secondary;
+    }
 
     > .ui-input {
       .ui-input;
@@ -86,6 +97,11 @@
   &.tertiary {
     .scheme(@tertiary-scheme-inverse);
 
+    > .ui-select {
+      .ui-select;
+      .tertiary;
+    }
+
     > .ui-input {
       .ui-input;
       .tertiary;
@@ -94,6 +110,11 @@
 
   &.grayscale-light {
     .scheme(@grayscale-light-scheme);
+
+    > .ui-select {
+      .ui-select;
+      .grayscale-light;
+    }
 
     > .ui-input {
       .ui-input;
@@ -104,6 +125,11 @@
   &.grayscale-dark {
     .scheme(@grayscale-dark-scheme);
 
+    > .ui-select {
+      .ui-select;
+      .grayscale-dark;
+    }
+
     > .ui-input {
       .ui-input;
       .grayscale-dark;
@@ -112,6 +138,11 @@
 
   &.blackwhite {
     .scheme(@blackwhite-scheme-inverse);
+
+    > .ui-select {
+      .ui-select;
+      .blackwhite;
+    }
 
     > .ui-input {
       .ui-input;

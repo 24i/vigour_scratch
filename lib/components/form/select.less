@@ -1,105 +1,89 @@
 @import url('../../config/forms.less');
 
 /**
- * Inputs
+ * Selets
  * ----------------------------------------------
- * Input element for reusable use.
+ * Selet element for reusable use.
  */
 
-textarea,
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='date'],
-input[type='datetime'],
-input[type='datetime-local'],
-input[type='month'],
-input[type='week'],
-input[type='time'],
-input[type='number'],
-input[type='search'],
-input[type='tel'],
-input[type='url'] {
-  // nothing yet
-}
+.ui-select {
+  .flex-display(inline-flex);
+  .flex-direction(row);
+  .align-items(center);
 
-select {
-  // not yet
-}
-
-input[type='checkbox'] {
-  // not yet
-}
-
-input[type='radio'] {
-  // not yet
-}
-
-textarea {
-  resize: vertical;
-}
-
-.ui-input {
-  .sizing;
   min-width: 12rem;
-  height: @input-height;
+  .radius(@input-radius);
 
-  display: inline-block;
-  vertical-align: middle;
-  .padding-h(@input-padding);
+  padding-right: 0.5em;
 
   font-family: @body-family;
   font-size: @input-size;
 
-  text-decoration: none;
-  outline: 0;
-  border: 0;
-  line-height: @input-height;
+  .scheme(@input-scheme);
+  .transition(@transition-duration linear background);
 
-  @media @under-tablet {
-    margin-bottom: @gap-small;
+  > .ui-icon {
+    margin: 0;
+    margin-left: -1.5em;
+    pointer-events: none;
   }
 
-  .appearance;
-  .radius(@input-radius);
+  > select {
+    .sizing;
+    height: @input-height;
 
-  .scheme-interactive(@input-scheme, false, both);
-  .transition(@transition-duration linear background);
+    display: inline-block;
+    vertical-align: middle;
+    .padding-h(@input-padding, calc(@input-padding * 3));
+
+    font-family: inherit;
+    font-size: inherit;
+
+    .flex(1);
+    background: transparent;
+    background: none;
+    color: inherit;
+
+    text-decoration: none;
+    outline: 0;
+    border: 0;
+    line-height: @input-height;
+
+    @media @under-tablet {
+      margin-bottom: @gap-small;
+    }
+
+    .appearance;
+  }
 }
 
 
 /**
  * Input sizes
  */
-.ui-input {
+.ui-select {
   &.primary {
     .scheme-interactive(@primary-scheme-inverse, false, both);
-    .placeholder(fade(@primary-contrast, 50%));
   }
 
   &.secondary {
     .scheme-interactive(@secondary-scheme-inverse, false, both);
-    .placeholder(fade(@secondary-contrast, 50%));
   }
 
   &.tertiary {
     .scheme-interactive(@tertiary-scheme-inverse, false, both);
-    .placeholder(fade(@tertiary-contrast, 50%));
   }
 
   &.grayscale-light {
     .scheme-interactive(@grayscale-light-scheme-inverse, false, both);
-    .placeholder(fade(@grayscale-light-contrast, 50%));
   }
 
   &.grayscale-dark {
     .scheme-interactive(@grayscale-dark-scheme-inverse, false, both);
-    .placeholder(fade(@grayscale-dark-contrast, 50%));
   }
 
   &.blackwhite {
     .scheme-interactive(@blackwhite-scheme-inverse, false, both);
-    .placeholder(fade(@blackwhite-contrast, 50%));
   }
 }
 
@@ -107,7 +91,7 @@ textarea {
 /**
  * Input sizes
  */
-.ui-input {
+.ui-select {
   &.small {
     height: @input-small-height;
     line-height: @input-small-height;
