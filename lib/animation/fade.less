@@ -20,6 +20,7 @@
 
 .fadeIn() {
   .animation-name(fadeIn);
+  .animation-duration(@animation-in-duration);
 }
 
 
@@ -49,7 +50,7 @@
 
 .fadeInDown() {
   .animation-name(fadeInDown);
-  .animation-duration(1.6s);
+  .animation-duration(@animation-in-duration);
 }
 
 
@@ -79,6 +80,7 @@
 
 .fadeInDownBig() {
   .animation-name(fadeInDownBig);
+  .animation-duration(@animation-in-duration);
 }
 
 
@@ -108,6 +110,7 @@
 
 .fadeInLeft() {
   .animation-name(fadeInLeft);
+  .animation-duration(@animation-in-duration);
 }
 
 
@@ -137,6 +140,7 @@
 
 .fadeInLeftBig() {
   .animation-name(fadeInLeftBig);
+  .animation-duration(@animation-in-duration);
 }
 
 
@@ -166,6 +170,7 @@
 
 .fadeInRight() {
   .animation-name(fadeInRight);
+  .animation-duration(@animation-in-duration);
 }
 
 
@@ -195,6 +200,7 @@
 
 .fadeInRightBig() {
   .animation-name(fadeInRightBig);
+  .animation-duration(@animation-in-duration);
 }
 
 
@@ -224,6 +230,7 @@
 
 .fadeInUp() {
   .animation-name(fadeInUp);
+  .animation-duration(@animation-in-duration);
 }
 
 
@@ -253,6 +260,7 @@
 
 .fadeInUpBig() {
   .animation-name(fadeInUpBig);
+  .animation-duration(@animation-in-duration);
 }
 
 
@@ -278,6 +286,7 @@
 
 .fadeOut() {
   .animation-name(fadeOut);
+  .animation-duration(@animation-out-duration);
 }
 
 
@@ -305,6 +314,7 @@
 
 .fadeOutDown() {
   .animation-name(fadeOutDown);
+  .animation-duration(@animation-out-duration);
 }
 
 
@@ -332,6 +342,7 @@
 
 .fadeOutDownBig() {
   .animation-name(fadeOutDownBig);
+  .animation-duration(@animation-out-duration);
 }
 
 
@@ -359,6 +370,7 @@
 
 .fadeOutLeft() {
   .animation-name(fadeOutLeft);
+  .animation-duration(@animation-out-duration);
 
   .animation-duration(0.5s);
 }
@@ -388,6 +400,7 @@
 
 .fadeOutLeftBig() {
   .animation-name(fadeOutLeftBig);
+  .animation-duration(@animation-out-duration);
 }
 
 
@@ -415,6 +428,7 @@
 
 .fadeOutRight() {
   .animation-name(fadeOutRight);
+  .animation-duration(@animation-out-duration);
 
   .animation-duration(0.5s);
 }
@@ -444,6 +458,7 @@
 
 .fadeOutRightBig() {
   .animation-name(fadeOutRightBig);
+  .animation-duration(@animation-out-duration);
 }
 
 
@@ -471,6 +486,7 @@
 
 .fadeOutUp() {
   .animation-name(fadeOutUp);
+  .animation-duration(@animation-out-duration);
 }
 
 
@@ -498,55 +514,5 @@
 
 .fadeOutUpBig() {
   .animation-name(fadeOutUpBig);
-}
-
-
-@-webkit-keyframes flip {
-  0% {
-    .transform(perspective(400px) rotate3d(0, 1, 0, -360deg));
-    .animation-timing(ease-out);
-  }
-
-  40% {
-    .transform(perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg));
-    .animation-timing(ease-out);
-  }
-
-  50% {
-    .transform(perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg));
-    .animation-timing(ease-in);
-  }
-
-  80% {
-    .transform(perspective(400px) scale3d(.95, .95, .95));
-    .animation-timing(ease-in);
-  }
-
-  100% {
-    .transform(perspective(400px));
-    .animation-timing(ease-in);
-  }
-}
-
-@keyframes flip {
-  0% {
-    .transform(perspective(400px) rotate3d(0, 1, 0, -360deg));
-    .animation-timing(ease-out);
-  }
-
-  50% {
-    .transform(perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg));
-    .animation-timing(ease-out);
-  }
-
-  80% {
-    .transform(perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg));
-    .animation-timing(ease-in);
-  }
-
-  100% {
-    .transform(perspective(400px) scale3d(.95, .95, .95));
-    .animation-timing(ease-in);
-  }
-
+  .animation-duration(@animation-out-duration);
 }

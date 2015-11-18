@@ -110,6 +110,30 @@
 @tertiary-border:         darken(@tertiary, 10%);
 @tertiary-additional:     @yellow;
 
+// quaternary theme
+@quaternary:                @blue;
+@quaternary-darken:         darken(@quaternary, 10%);
+@quaternary-lighten:        lighten(@quaternary, 10%);
+@quaternary-hover:          darken(@quaternary, 8%);
+@quaternary-focus:          darken(@quaternary, 12%);
+@quaternary-contrast:       white;
+@quaternary-contrast-hover: darken(@quaternary-contrast, 5%);
+@quaternary-contrast-focus: darken(@quaternary-contrast, 9%);
+@quaternary-border:         darken(@quaternary, 10%);
+@quaternary-additional:     @yellow;
+
+// quinary theme
+@quinary:                @green;
+@quinary-darken:         darken(@quinary, 10%);
+@quinary-lighten:        lighten(@quinary, 10%);
+@quinary-hover:          darken(@quinary, 8%);
+@quinary-focus:          darken(@quinary, 12%);
+@quinary-contrast:       white;
+@quinary-contrast-hover: darken(@quinary-contrast, 5%);
+@quinary-contrast-focus: darken(@quinary-contrast, 9%);
+@quinary-border:         darken(@quinary, 10%);
+@quinary-additional:     @yellow;
+
 // grayscale dark theme
 @grayscale-dark:                @darkgray;
 @grayscale-dark-darken:         darken(@grayscale-dark, 10%);
@@ -207,6 +231,44 @@
                   @tertiary-focus,
                   @tertiary-border,
                   @tertiary-additional;
+
+// scheme for quaternary color
+@quaternary-scheme: @quaternary,
+                  @quaternary-hover,
+                  @quaternary-focus,
+                  @quaternary-contrast,
+                  @quaternary-contrast-hover,
+                  @quaternary-contrast-focus,
+                  @quaternary-border,
+                  @quaternary-additional;
+
+@quaternary-scheme-inverse: @quaternary-contrast,
+                  @quaternary-contrast-hover,
+                  @quaternary-contrast-focus,
+                  @quaternary,
+                  @quaternary-hover,
+                  @quaternary-focus,
+                  @quaternary-border,
+                  @quaternary-additional;
+
+// scheme for quaternary color
+@quinary-scheme: @quinary,
+                  @quinary-hover,
+                  @quinary-focus,
+                  @quinary-contrast,
+                  @quinary-contrast-hover,
+                  @quinary-contrast-focus,
+                  @quinary-border,
+                  @quinary-additional;
+
+@quinary-scheme-inverse: @quinary-contrast,
+                  @quinary-contrast-hover,
+                  @quinary-contrast-focus,
+                  @quinary,
+                  @quinary-hover,
+                  @quinary-focus,
+                  @quinary-border,
+                  @quinary-additional;
 
 // scheme for grayscale-light color
 @grayscale-light-scheme: @grayscale-light,
