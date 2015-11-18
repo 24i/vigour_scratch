@@ -63,8 +63,12 @@ textarea {
   .appearance;
   .radius(@input-radius);
 
-  .scheme-interactive(@input-scheme, false, both);
-  .transition(@transition-duration linear background);
+  .scheme(@input-scheme);
+
+  &.ui-interactive {
+    .scheme-interactive(@input-scheme, both, both);
+    .transition(@input-transition-duration linear background);
+  }
 }
 
 
@@ -73,33 +77,57 @@ textarea {
  */
 .ui-input {
   &.primary {
-    .scheme-interactive(@primary-scheme-inverse, false, both);
     .placeholder(fade(@primary-contrast, 50%));
+    .scheme(@primary-scheme-inverse);
+
+    &.ui-interactive {
+      .scheme-interactive(@primary-scheme-inverse, false, both);
+    }
   }
 
   &.secondary {
-    .scheme-interactive(@secondary-scheme-inverse, false, both);
     .placeholder(fade(@secondary-contrast, 50%));
+    .scheme(@secondary-scheme-inverse);
+
+    &.ui-interactive {
+      .scheme-interactive(@secondary-scheme-inverse, false, both);
+    }
   }
 
   &.tertiary {
-    .scheme-interactive(@tertiary-scheme-inverse, false, both);
     .placeholder(fade(@tertiary-contrast, 50%));
+    .scheme(@tertiary-scheme-inverse);
+
+    &.ui-interactive {
+      .scheme-interactive(@tertiary-scheme-inverse, false, both);
+    }
   }
 
   &.grayscale-light {
-    .scheme-interactive(@grayscale-light-scheme-inverse, false, both);
     .placeholder(fade(@grayscale-light-contrast, 50%));
+    .scheme(@grayscale-light-scheme-inverse);
+
+    &.ui-interactive {
+      .scheme-interactive(@grayscale-light-scheme-inverse, false, both);
+    }
   }
 
   &.grayscale-dark {
-    .scheme-interactive(@grayscale-dark-scheme-inverse, false, both);
     .placeholder(fade(@grayscale-dark-contrast, 50%));
+    .scheme(@grayscale-dark-scheme-inverse);
+
+    &.ui-interactive {
+      .scheme-interactive(@grayscale-dark-scheme-inverse, false, both);
+    }
   }
 
   &.blackwhite {
-    .scheme-interactive(@blackwhite-scheme-inverse, false, both);
     .placeholder(fade(@blackwhite-contrast, 50%));
+    .scheme(@blackwhite-scheme-inverse);
+
+    &.ui-interactive {
+      .scheme-interactive(@blackwhite-scheme-inverse, false, both);
+    }
   }
 }
 
