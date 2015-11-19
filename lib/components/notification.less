@@ -1,27 +1,29 @@
 .ui-notification {
+  .ui-row;
   .radius(@input-radius);
   .padding-h(calc(@input-padding * 2), 0);
   .shadow(0 2px 3px 0 rgba(0,0,0,0.3));
+  cursor: default;
 
   &,
-  &.primary {
-    .ui-row(@primary-scheme-inverse);
+  &.ui-primary {
+    .ui-row-coloring(@primary-scheme-inverse);
   }
 
-  &.secondary {
-    .ui-row(@secondary-scheme-inverse);
+  &.ui-secondary {
+    .ui-row-coloring(@secondary-scheme-inverse);
   }
 
-  &.tertiary {
-    .ui-row(@tertiary-scheme-inverse);
+  &.ui-tertiary {
+    .ui-row-coloring(@tertiary-scheme-inverse);
   }
 
-  &.quaternary {
-    .ui-row(@quaternary-scheme-inverse);
+  &.ui-quaternary {
+    .ui-row-coloring(@quaternary-scheme-inverse);
   }
 
-  &.quinary {
-    .ui-row(@quinary-scheme-inverse);
+  &.ui-quinary {
+    .ui-row-coloring(@quinary-scheme-inverse);
   }
 
   border: 0 !important;

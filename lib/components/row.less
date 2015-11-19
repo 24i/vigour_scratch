@@ -1,15 +1,7 @@
-.ui-row (@scheme: @primary-scheme-inverse) {
-  height: 60px;
-  .sizing;
+.ui-row-coloring(@scheme: @primary-scheme-inverse, @active-scheme: @tertiary-scheme) {
 
   .scheme-interactive(@scheme, color);
   .scheme-additions(@scheme, true, children-color);
-
-  .transition(0.1s linear color);
-
-  &.active {
-    .scheme-interactive(@tertiary-scheme, color);
-  }
 
   &:first-child {
     border-top-style: solid;
@@ -18,6 +10,32 @@
 
   border-bottom-style: solid;
   border-bottom-width: 1px;
+
+  &.active {
+    .scheme-interactive(@active-scheme, color);
+  }
+
+  &.with {
+    &.label {
+      .ui-label {
+        .ui-select {
+          .scheme-additions(@scheme, false, color);
+
+          &.ui-dirty {
+            .scheme(@scheme);
+            .scheme-additions(@scheme, false, children-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+.ui-row {
+  height: 60px;
+  .sizing;
+
+  .transition(0.1s linear color);
 
   cursor: pointer;
   text-transform: capitalize;
@@ -63,7 +81,7 @@
 
       .ui-label {
         .ui-label;
-        .secondary;
+        .ui-secondary;
         position: relative;
         width: 100%;
         height: 100%;
@@ -76,21 +94,15 @@
 
         .ui-select,
         .ui-input {
-          height: 100%;
-          font-size: @h5;
+          &,
+          & > select {
+            height: 100%;
+            font-size: @h5;
+          }
         }
 
         .ui-atom {
           .radius(0);
-        }
-
-        .ui-select {
-          .scheme-additions(@scheme, false, color);
-
-          &.ui-dirty {
-            .scheme(@scheme);
-            .scheme-additions(@scheme, false, children-color);
-          }
         }
       }
     }
