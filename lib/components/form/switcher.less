@@ -1,0 +1,119 @@
+.ui-switcher {
+  position: relative;
+  display: inline-block;
+  width: (@input-height * 2);
+  height: @input-height;
+  background: rgba(0, 0, 0, 0.2);
+  .radius(30px);
+  cursor: pointer;
+
+  input {
+    .appearance;
+    .absolute(0, 0, 0, 0);
+    .fullsize;
+    .radius(30px);
+    .transition(@input-transition-duration background linear);
+
+    &:checked {
+      + span {
+        .translate(@input-height, 0);
+      }
+    }
+  }
+
+  span {
+    .transition(@input-transition-duration transform);
+    .radius(30px);
+    pointer-events: none;
+    background: white;
+    position: relative;
+    display: inline-block;
+    margin: .1rem;
+    width: (@input-height - .2rem);
+    height: (@input-height - .2rem);
+  }
+}
+
+
+.ui-switcher {
+  &,
+  &.ui-primary {
+    input {
+      background: fade(@primary-contrast, 30%);
+
+      &:checked {
+        background: @primary;
+      }
+    }
+  }
+
+  &.ui-secondary {
+    input {
+      background: fade(@secondary-contrast, 30%);
+
+      &:checked {
+        background: @secondary;
+      }
+    }
+  }
+
+  &.ui-tertiary {
+    input {
+      background: fade(@tertiary-contrast, 30%);
+
+      &:checked {
+        background: @tertiary;
+      }
+    }
+  }
+
+  &.ui-quaternary {
+    input {
+      background: fade(@quaternary-contrast, 30%);
+
+      &:checked {
+        background: @quaternary;
+      }
+    }
+  }
+
+  &.ui-quinary {
+    input {
+      background: fade(@quinary-contrast, 30%);
+
+      &:checked {
+        background: @quinary;
+      }
+    }
+  }
+
+  &.ui-grayscale-dark {
+    input {
+      background: fade(@grayscale-dark-contrast, 30%);
+
+      &:checked {
+        background: @grayscale-dark;
+      }
+    }
+  }
+
+  &.ui-grayscale-light {
+    input {
+      background: fade(@grayscale-light-contrast, 30%);
+
+      &:checked {
+        background: @grayscale-light;
+      }
+    }
+  }
+
+  &.ui-blackwhite {
+    input {
+      background: fade(@blackwhite-contrast, 30%);
+
+      &:checked {
+        background: @blackwhite;
+      }
+    }
+  }
+}
