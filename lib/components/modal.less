@@ -6,8 +6,9 @@
   .scheme(@modal-scheme);
 
   text-align: @modal-text-align;
-  max-width: @modal-max-width;
-  min-height: @modal-height;
+
+  .width-range(@modal-min-width, @modal-max-width);
+  .height-range(@modal-min-height, @modal-max-height);
 
   .shadow(0 3px 8px 2px rgba(0, 0, 0, 0.3));
 

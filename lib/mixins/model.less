@@ -31,6 +31,30 @@
 }
 
 /**
+ * Width range
+ * @param {string} min-width
+ * @param {string} max-width
+ * @example
+ * .width-range(200px, 500px)
+ */
+.width-range(@min-width, @max-width: @min-width) {
+  max-width: @min-width;
+  max-width: @max-width;
+}
+
+/**
+ * Height range
+ * @param {string} min-height
+ * @param {string} max-height
+ * @example
+ * .height-range(200px, 500px)
+ */
+.height-range(@min-height, @max-height: @min-height) {
+  max-height: @min-height;
+  max-height: @max-height;
+}
+
+/**
  * Make box full size
  * @example
  * .fullsize;
