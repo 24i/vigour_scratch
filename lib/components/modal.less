@@ -1,4 +1,43 @@
 .ui-modal {
+  .flex-display;
+  .flex-direction(column);
+
   .radius(@modal-radius);
   .scheme(@modal-scheme);
+
+  text-align: @modal-text-align;
+  max-width: @modal-max-width;
+  min-height: @modal-height;
+
+  .shadow(0 3px 8px 2px rgba(0, 0, 0, 0.3));
+
+  > .ui-topbar {
+    .radius(@modal-radius @modal-radius 0 0);
+  }
+
+  > .content {
+    .flex(1);
+    padding: @modal-padding;
+
+    .ui-row {
+      .ui-row-color(@secondary-scheme-inverse);
+
+      &:first-child {
+        border-top: 0;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    .ui-button.ui-large {
+      width: 100%;
+      margin: @gap 0 0;
+    }
+  }
+
+  > .ui-bottombar {
+    .radius(0 0 @modal-radius @modal-radius);
+  }
 }

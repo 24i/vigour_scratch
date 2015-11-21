@@ -65,10 +65,12 @@ textarea {
   .radius(@input-radius);
 
   .scheme(@input-scheme);
+  .scheme-additions(@input-scheme, false, false, true);
+
 
   &.ui-interactive {
-    .scheme-interactive(@input-scheme, both, both);
     .transition(@input-transition-duration linear background);
+    .scheme-interactive(@input-scheme, both, both);
   }
 }
 

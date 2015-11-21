@@ -96,7 +96,7 @@
  * @example
  * .scheme(@primary-scheme, both)
  */
-.scheme-additions(@scheme: @primary-scheme, @border: true, @additional: false) {
+.scheme-additions(@scheme: @primary-scheme, @border: true, @additional: false, @placeholder: false) {
   // border
   // ---------------------------
   & when (@border = true) {
@@ -141,5 +141,11 @@
     .ui-additional {
       background-color: extract(@scheme, 8);
     }
+  }
+
+  // set placeholder color
+  // ---------------------------
+  & when (@additional = children-background) {
+    .placeholder(fade(extract(@scheme, 4), 80%));
   }
 }

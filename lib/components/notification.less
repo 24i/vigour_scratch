@@ -5,27 +5,6 @@
   .shadow(0 2px 3px 0 rgba(0,0,0,0.3));
   cursor: default;
 
-  &,
-  &.ui-primary {
-    .ui-row-coloring(@primary-scheme-inverse);
-  }
-
-  &.ui-secondary {
-    .ui-row-coloring(@secondary-scheme-inverse);
-  }
-
-  &.ui-tertiary {
-    .ui-row-coloring(@tertiary-scheme-inverse);
-  }
-
-  &.ui-quaternary {
-    .ui-row-coloring(@quaternary-scheme-inverse);
-  }
-
-  &.ui-quinary {
-    .ui-row-coloring(@quinary-scheme-inverse);
-  }
-
   border: 0 !important;
 
   > .ui-icon {
@@ -39,4 +18,54 @@
     height: 100%;
     cursor: pointer;
   }
+}
+
+/**
+ * Notification colors
+ * ----------------------------------------------
+ * Default color set is primary
+ */
+.ui-notification {
+
+  &,
+  // primary
+  &.ui-primary {
+    .ui-row-color(@primary-scheme-inverse);
+  }
+
+  // secondary
+  &.ui-secondary {
+    .ui-row-color(@secondary-scheme-inverse);
+  }
+
+  // tertiary
+  &.ui-tertiary {
+    .ui-row-color(@tertiary-scheme-inverse);
+  }
+
+  // quaternary
+  &.ui-quaternary {
+    .ui-row-color(@quaternary-scheme-inverse);
+  }
+
+  // quinary
+  &.ui-quinary {
+    .ui-row-color(@quinary-scheme-inverse);
+  }
+
+  // tertiary
+  &.ui-grayscale-dark {
+    .ui-row-color(@grayscale-dark-scheme-inverse);
+  }
+
+  // quaternary
+  &.ui-grayscale-light {
+    .ui-row-color(@grayscale-light-scheme-inverse);
+  }
+
+  // quinary
+  &.ui-blackwhite {
+    .ui-row-color(@blackwhite-scheme-inverse);
+  }
+
 }

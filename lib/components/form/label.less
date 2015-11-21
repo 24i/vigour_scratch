@@ -67,63 +67,68 @@
 
 .ui-label {
   &.ui-primary {
+    > .ui-input,
     > .ui-select {
       .ui-primary;
     }
 
     > .ui-input {
-      .ui-primary;
+      .scheme-additions(false, false, true);
     }
   }
 
   &.ui-secondary {
+    > .ui-input,
     > .ui-select {
       .ui-secondary;
     }
 
     > .ui-input {
-      .ui-input;
-      .ui-secondary;
+      .scheme-additions(false, false, true);
     }
   }
 
   &.ui-tertiary {
+    > .ui-input,
     > .ui-select {
       .ui-tertiary;
     }
 
     > .ui-input {
-      .ui-tertiary;
+      .scheme-additions(false, false, true);
     }
   }
 
   &.ui-grayscale-light {
+    > .ui-input,
     > .ui-select {
       .ui-grayscale-light;
     }
 
     > .ui-input {
-      .ui-grayscale-light;
+      .scheme-additions(false, false, true);
     }
   }
 
   &.ui-grayscale-dark {
+    > .ui-input,
     > .ui-select {
       .ui-grayscale-dark;
     }
 
     > .ui-input {
-      .ui-grayscale-dark;
+      .scheme-additions(false, false, true);
     }
   }
 
   &.ui-blackwhite {
+    > .ui-input,
     > .ui-select {
       .ui-blackwhite;
     }
 
     > .ui-input {
-      .ui-blackwhite;
+      .scheme-additions(false, false, true);
     }
   }
 }
