@@ -1,3 +1,15 @@
+/**
+ * Helper classes
+ * ----------------------------------------------
+ * defining classes that may be used in markup
+ * for defining text and container styles
+ */
+
+// transition for interactive elements
+.ui-interactive {
+  .transition(@transition-duration linear background);
+}
+
 // opacity control
 .ui-transparent {opacity: 0;}
 .ui-opacity {
@@ -86,7 +98,15 @@
 }
 
 .ui-hr {
-  margin: @gap 0 @gap-big;
+  margin: @gap 0;
+}
+
+.ui-hr {
+  margin: @gap 0;
+
+  &.double {
+    margin: (@gap * 2) 0;
+  }
 }
 
 

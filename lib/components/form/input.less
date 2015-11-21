@@ -46,6 +46,7 @@ textarea {
 
   display: inline-block;
   vertical-align: middle;
+  vertical-align: top;
   .padding-h(@input-padding);
 
   font-family: @body-family;
@@ -73,61 +74,39 @@ textarea {
 
 
 /**
- * Input sizes
+ * Input colors
  */
 .ui-input {
   &.ui-primary {
     .placeholder(fade(@primary-contrast, 50%));
-    .scheme(@primary-scheme-inverse);
-
-    &.ui-interactive {
-      .scheme-interactive(@primary-scheme-inverse, false, both);
-    }
   }
 
   &.ui-secondary {
     .placeholder(fade(@secondary-contrast, 50%));
-    .scheme(@secondary-scheme-inverse);
-
-    &.ui-interactive {
-      .scheme-interactive(@secondary-scheme-inverse, false, both);
-    }
   }
 
   &.ui-tertiary {
     .placeholder(fade(@tertiary-contrast, 50%));
-    .scheme(@tertiary-scheme-inverse);
+  }
 
-    &.ui-interactive {
-      .scheme-interactive(@tertiary-scheme-inverse, false, both);
-    }
+  &.ui-quaternary {
+    .placeholder(fade(@quaternary-contrast, 50%));
+  }
+
+  &.ui-quinary {
+    .placeholder(fade(@quinary-contrast, 50%));
   }
 
   &.ui-grayscale-light {
     .placeholder(fade(@grayscale-light-contrast, 50%));
-    .scheme(@grayscale-light-scheme-inverse);
-
-    &.ui-interactive {
-      .scheme-interactive(@grayscale-light-scheme-inverse, false, both);
-    }
   }
 
   &.ui-grayscale-dark {
     .placeholder(fade(@grayscale-dark-contrast, 50%));
-    .scheme(@grayscale-dark-scheme-inverse);
-
-    &.ui-interactive {
-      .scheme-interactive(@grayscale-dark-scheme-inverse, false, both);
-    }
   }
 
   &.ui-blackwhite {
     .placeholder(fade(@blackwhite-contrast, 50%));
-    .scheme(@blackwhite-scheme-inverse);
-
-    &.ui-interactive {
-      .scheme-interactive(@blackwhite-scheme-inverse, false, both);
-    }
   }
 }
 
@@ -136,7 +115,7 @@ textarea {
  * Input sizes
  */
 .ui-input {
-  &.small {
+  &.ui-small {
     height: @input-small-height;
     line-height: @input-small-height;
     font-size: @input-small-size;
@@ -145,7 +124,7 @@ textarea {
     min-width: 0;
   }
 
-  &.big {
+  &.ui-big {
     height: @input-big-height;
     line-height: @input-big-height;
     font-size: @input-big-size;
@@ -154,7 +133,7 @@ textarea {
     min-width: 15rem;
   }
 
-  &.large {
+  &.ui-large {
     height: @input-large-height;
     line-height: @input-large-height;
     font-size: @input-large-size;

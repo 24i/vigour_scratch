@@ -12,7 +12,7 @@
   height: @input-height;
 
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   .padding-v(0);
   .padding-h(@input-padding);
 
@@ -39,66 +39,9 @@
     .transition(@input-transition-duration linear background);
   }
 
-  .ui-icon {
+  > .ui-icon {
     .margin-h(calc(@input-padding / 2));
     font-style: 0.8em;
-  }
-}
-
-
-/**
- * Button colors
- * ----------------------------------------------
- * Default color set is primary
- */
-
-.ui-button{
-  &.ui-primary {
-    .scheme(@primary-scheme-inverse);
-
-    &.ui-interactive {
-      .scheme-interactive(@primary-scheme-inverse, both, both);
-    }
-  }
-
-  &.ui-secondary {
-    .scheme(@secondary-scheme-inverse);
-
-    &.ui-interactive {
-      .scheme-interactive(@secondary-scheme-inverse, both, both);
-    }
-  }
-
-  &.ui-tertiary {
-    .scheme(@tertiary-scheme-inverse);
-
-    &.ui-interactive {
-      .scheme-interactive(@tertiary-scheme-inverse, both, both);
-    }
-  }
-
-  &.ui-grayscale-dark {
-    .scheme(@grayscale-dark-scheme-inverse);
-
-    &.ui-interactive {
-      .scheme-interactive(@grayscale-dark-scheme-inverse, both, both);
-    }
-  }
-
-  &.ui-grayscale-light {
-    .scheme(@grayscale-light-scheme-inverse);
-
-    &.ui-interactive {
-      .scheme-interactive(@grayscale-light-scheme-inverse, both, both);
-    }
-  }
-
-  &.ui-blackwhite {
-    .scheme(@blackwhite-scheme-inverse);
-
-    &.ui-interactive {
-      .scheme-interactive(@blackwhite-scheme-inverse, both, both);
-    }
   }
 }
 
@@ -113,7 +56,7 @@
   min-width: 0;
   line-height: 1;
 
-  .ui-icon {
+  > .ui-icon {
     font-size: 1em;
     .margin-h(0);
   }
@@ -131,7 +74,7 @@
  */
 
 .ui-button {
-  &.small {
+  &.ui-small {
     font-size: @input-small-size;
     height: @input-small-height;
     line-height: @input-small-height;
@@ -146,7 +89,7 @@
     }
   }
 
-  &.big {
+  &.ui-big {
     font-size: @input-big-size;
     height: @input-big-height;
     line-height: @input-big-height;
@@ -161,7 +104,7 @@
     }
   }
 
-  &.large {
+  &.ui-large {
     font-size: @input-large-size;
     .padding-h(@input-large-padding);
     height: @input-large-height;

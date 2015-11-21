@@ -26,9 +26,13 @@
     }
   }
 
-  .transition(@input-transition-duration linear background);
-
   .radius(3px);
+
+  &.ui-interactive {
+    .ui-form-element {
+      .transition(@input-transition-duration linear background);
+    }
+  }
 
   > .caption {
     display: inline-block;
@@ -63,24 +67,17 @@
 
 .ui-label {
   &.ui-primary {
-    .scheme(@primary-scheme-inverse);
-
     > .ui-select {
-      .ui-select;
       .ui-primary;
     }
 
     > .ui-input {
-      .ui-input;
       .ui-primary;
     }
   }
 
   &.ui-secondary {
-    .scheme(@secondary-scheme-inverse);
-
     > .ui-select {
-      .ui-select;
       .ui-secondary;
     }
 
@@ -91,57 +88,41 @@
   }
 
   &.ui-tertiary {
-    .scheme(@tertiary-scheme-inverse);
-
     > .ui-select {
-      .ui-select;
       .ui-tertiary;
     }
 
     > .ui-input {
-      .ui-input;
       .ui-tertiary;
     }
   }
 
   &.ui-grayscale-light {
-    .scheme(@grayscale-light-scheme);
-
     > .ui-select {
-      .ui-select;
-      // .ui-grayscale-light;
+      .ui-grayscale-light;
     }
 
     > .ui-input {
-      .ui-input;
-      // .ui-grayscale-light;
+      .ui-grayscale-light;
     }
   }
 
   &.ui-grayscale-dark {
-    .scheme(@grayscale-dark-scheme);
-
     > .ui-select {
-      .ui-select;
       .ui-grayscale-dark;
     }
 
     > .ui-input {
-      .ui-input;
       .ui-grayscale-dark;
     }
   }
 
   &.ui-blackwhite {
-    .scheme(@blackwhite-scheme-inverse);
-
     > .ui-select {
-      .ui-select;
       .ui-blackwhite;
     }
 
     > .ui-input {
-      .ui-input;
       .ui-blackwhite;
     }
   }

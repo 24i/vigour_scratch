@@ -4,9 +4,9 @@
   width: (@input-height * 1.8);
   height: @input-height;
   background: rgba(0, 0, 0, 0.2);
-  cursor: pointer;
   vertical-align: top;
   .radius(50px);
+  cursor: pointer;
 
   input {
     .appearance;
@@ -14,7 +14,8 @@
     .fullsize;
     .radius(50px);
     .transition(@input-transition-duration background linear);
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
 
     &:checked {
       background: @default-switcher-color;
