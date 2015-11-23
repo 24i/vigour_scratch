@@ -63,27 +63,35 @@
  */
 .ui-select {
   &.ui-primary {
-    .scheme-interactive(@primary-scheme-inverse, false, both);
+    .scheme(@primary-scheme-inverse);
   }
 
   &.ui-secondary {
-    .scheme-interactive(@secondary-scheme-inverse, false, both);
+    .scheme(@secondary-scheme-inverse);
   }
 
   &.ui-tertiary {
-    .scheme-interactive(@tertiary-scheme-inverse, false, both);
+    .scheme(@tertiary-scheme-inverse);
+  }
+
+  &.ui-quaternary {
+    .scheme(@quaternary-scheme-inverse);
+  }
+
+  &.ui-quinary {
+    .scheme(@quinary-scheme-inverse);
   }
 
   &.ui-grayscale-light {
-    .scheme-interactive(@grayscale-light-scheme-inverse, false, both);
+    .scheme(@grayscale-light-scheme-inverse);
   }
 
   &.ui-grayscale-dark {
-    .scheme-interactive(@grayscale-dark-scheme-inverse, false, both);
+    .scheme(@grayscale-dark-scheme-inverse);
   }
 
   &.ui-blackwhite {
-    .scheme-interactive(@blackwhite-scheme-inverse, false, both);
+    .scheme(@blackwhite-scheme-inverse);
   }
 }
 

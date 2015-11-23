@@ -33,6 +33,24 @@
   }
 }
 
+// quaternary
+.ui-quaternary {
+  .scheme(@quaternary-scheme-inverse);
+
+  &.ui-interactive {
+    .scheme-interactive(@quaternary-scheme-inverse, both, both);
+  }
+}
+
+// quinary
+.ui-quinary {
+  .scheme(@quinary-scheme-inverse);
+
+  &.ui-interactive {
+    .scheme-interactive(@quinary-scheme-inverse, both, both);
+  }
+}
+
 // grayscale-dark
 .ui-grayscale-dark {
   .scheme(@grayscale-dark-scheme-inverse);
@@ -91,6 +109,24 @@
 
   &.ui-interactive {
     .scheme-interactive(@tertiary-scheme, both, both);
+  }
+}
+
+// quaternary
+.ui-quaternary-inverse {
+  .scheme(@quaternary-scheme);
+
+  &.ui-interactive {
+    .scheme-interactive(@quaternary-scheme, both, both);
+  }
+}
+
+// quinary
+.ui-quinary-inverse {
+  .scheme(@quinary-scheme);
+
+  &.ui-interactive {
+    .scheme-interactive(@quinary-scheme, both, both);
   }
 }
 

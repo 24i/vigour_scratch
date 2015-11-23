@@ -1,44 +1,5 @@
 @import url('../../config/forms.less');
 
-/**
- * Inputs
- * ----------------------------------------------
- * Input element for reusable use.
- */
-
-textarea,
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='date'],
-input[type='datetime'],
-input[type='datetime-local'],
-input[type='month'],
-input[type='week'],
-input[type='time'],
-input[type='number'],
-input[type='search'],
-input[type='tel'],
-input[type='url'] {
-  // nothing yet
-}
-
-select {
-  // not yet
-}
-
-input[type='checkbox'] {
-  // not yet
-}
-
-input[type='radio'] {
-  // not yet
-}
-
-textarea {
-  resize: vertical;
-}
-
 .ui-input {
   .sizing;
   min-width: 12rem;
@@ -65,8 +26,7 @@ textarea {
   .radius(@input-radius);
 
   .scheme(@input-scheme);
-  .scheme-additions(@input-scheme, false, false, true);
-
+  .placeholder(fade(extract(@input-scheme, 1), 60%));
 
   &.ui-interactive {
     .transition(@input-transition-duration linear background);
@@ -80,35 +40,35 @@ textarea {
  */
 .ui-input {
   &.ui-primary {
-    .placeholder(fade(@primary-contrast, 50%));
+    .placeholder(fade(extract(@primary-scheme, 4), 60%));
   }
 
   &.ui-secondary {
-    .placeholder(fade(@secondary-contrast, 50%));
+    .placeholder(fade(extract(@secondary-scheme, 4), 60%));
   }
 
   &.ui-tertiary {
-    .placeholder(fade(@tertiary-contrast, 50%));
+    .placeholder(fade(extract(@tertiary-scheme, 4), 60%));
   }
 
   &.ui-quaternary {
-    .placeholder(fade(@quaternary-contrast, 50%));
+    .placeholder(fade(extract(@quaternary-scheme, 4), 60%));
   }
 
   &.ui-quinary {
-    .placeholder(fade(@quinary-contrast, 50%));
+    .placeholder(fade(extract(@quinary-scheme, 4), 60%));
   }
 
   &.ui-grayscale-light {
-    .placeholder(fade(@grayscale-light-contrast, 50%));
+    .placeholder(fade(extract(@grayscale-light-scheme, 4), 60%));
   }
 
   &.ui-grayscale-dark {
-    .placeholder(fade(@grayscale-dark-contrast, 50%));
+    .placeholder(fade(extract(@grayscale-dark-scheme, 4), 60%));
   }
 
   &.ui-blackwhite {
-    .placeholder(fade(@blackwhite-contrast, 50%));
+    .placeholder(fade(extract(@blackwhite-scheme, 4), 60%));
   }
 }
 

@@ -1,3 +1,4 @@
+@import url('../../config/colors.less');
 @import url('../../config/forms.less');
 
 /**
@@ -73,7 +74,7 @@
     }
 
     > .ui-input {
-      .scheme-additions(false, false, true);
+      .placeholder(fade(extract(@primary-scheme, 4), 60%));
     }
   }
 
@@ -84,7 +85,7 @@
     }
 
     > .ui-input {
-      .scheme-additions(false, false, true);
+      .placeholder(fade(extract(@secondary-scheme, 4), 60%));
     }
   }
 
@@ -95,7 +96,29 @@
     }
 
     > .ui-input {
-      .scheme-additions(false, false, true);
+      .placeholder(fade(extract(@tertiary-scheme, 4), 60%));
+    }
+  }
+
+  &.ui-quaternary {
+    > .ui-input,
+    > .ui-select {
+      .ui-quaternary;
+    }
+
+    > .ui-input {
+      .placeholder(fade(extract(@quaternary-scheme, 4), 60%));
+    }
+  }
+
+  &.ui-quinary {
+    > .ui-input,
+    > .ui-select {
+      .ui-quinary;
+    }
+
+    > .ui-input {
+      .placeholder(fade(extract(@quinary-scheme, 4), 60%));
     }
   }
 
@@ -106,7 +129,7 @@
     }
 
     > .ui-input {
-      .scheme-additions(false, false, true);
+      .placeholder(fade(extract(@grayscale-light-scheme, 4), 60%));
     }
   }
 
@@ -117,7 +140,7 @@
     }
 
     > .ui-input {
-      .scheme-additions(false, false, true);
+      .placeholder(fade(extract(@grayscale-dark-scheme, 4), 60%));
     }
   }
 
@@ -128,7 +151,7 @@
     }
 
     > .ui-input {
-      .scheme-additions(false, false, true);
+      .placeholder(fade(extract(@blackwhite-scheme, 4), 60%));
     }
   }
 }
