@@ -1,9 +1,11 @@
 .ui-notification {
-  .ui-row;
   .radius(@input-radius);
   .padding-h(calc(@input-padding * 2), 0);
   .shadow(0 2px 3px 0 rgba(0,0,0,0.3));
   cursor: default;
+
+  .ui-row;
+  .ui-row-color(@primary-scheme-inverse);
 
   border: 0 !important;
 
@@ -28,7 +30,6 @@
  */
 .ui-notification {
 
-  &,
   // primary
   &.ui-primary {
     .ui-row-color(@primary-scheme-inverse);
