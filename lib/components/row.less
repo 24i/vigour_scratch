@@ -3,6 +3,10 @@
   .scheme-interactive(@scheme, color);
   .scheme-additions(@scheme, true, children-color);
 
+  .ui-select:not(.ui-dirty) {
+    color: fade(extract(@scheme, 1), @placeholder-fading);
+  }
+
   &:first-child {
     border-top-style: solid;
     border-top-width: 1px;
@@ -46,18 +50,34 @@
     .justify-content(center);
   }
 
+  > .ui-button {
+    @media @under-tablet {
+      margin-bottom: 0;
+    }
+  }
+
   > .ui-icon {
     .ui-h2;
 
-    // temporary solutin
-    order: -1;
-    margin-right: .3em;
+    &:first-child {
+      margin-right: .3em;
+    }
+
+    &:last-child {
+      margin-left: .3em;
+    }
   }
 
   &.with {
     &.arrow {
       &:after {
         .icon('\e626');
+      }
+    }
+
+    &.locked {
+      &:after {
+        .icon('\e613');
       }
     }
 
@@ -79,6 +99,11 @@
         height: 100%;
         margin-right: 0;
 
+        @media @under-tablet {
+          .flex-display;
+          margin-bottom: 0;
+        }
+
         .ui-icon {
           cursor: pointer;
           .ui-h8;
@@ -86,6 +111,10 @@
 
         .ui-select,
         .ui-input {
+          @media @under-tablet {
+            margin-bottom: 0;
+          }
+
           &,
           & > select {
             height: 100%;

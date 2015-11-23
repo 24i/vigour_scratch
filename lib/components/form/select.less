@@ -21,11 +21,12 @@
   .scheme(@input-scheme);
 
   &.ui-interactive {
-    .transition(@input-transition-duration linear background);
     .scheme-interactive(@input-scheme, both, both);
+    .transition(@input-transition-duration linear background);
   }
 
-  &:not(.ui-dirty) {
+  &:not(.ui-dirty),
+  &.ui-interactive:not(.ui-dirty) {
     color: fade(extract(@input-scheme, 4), @placeholder-fading);
   }
 
@@ -57,11 +58,11 @@
     border: 0;
     line-height: @input-height;
 
-    @media @under-tablet {
-      margin-bottom: @gap-small;
-    }
-
     .appearance;
+  }
+
+  @media @under-tablet {
+    margin-bottom: @gap-small;
   }
 }
 
