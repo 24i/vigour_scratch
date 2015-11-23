@@ -11,7 +11,6 @@
   .flex-direction(row);
   .align-items(center);
 
-  min-width: 12rem;
   .radius(@input-radius);
 
   padding-right: 0.5em;
@@ -20,7 +19,15 @@
   font-size: @input-size;
 
   .scheme(@input-scheme);
-  .transition(@transition-duration linear background);
+
+  &.ui-interactive {
+    .transition(@input-transition-duration linear background);
+    .scheme-interactive(@input-scheme, both, both);
+  }
+
+  &:not(.ui-dirty) {
+    color: fade(extract(@input-scheme, 4), @placeholder-fading);
+  }
 
   > .ui-icon {
     margin: 0;
@@ -30,6 +37,7 @@
 
   > select {
     .sizing;
+    min-width: 12rem;
     height: @input-height;
 
     display: inline-block;
@@ -66,7 +74,7 @@
     .scheme(@primary-scheme-inverse);
 
     &:not(.ui-dirty) {
-      color: fade(extract(@primary-scheme, 4), 80%);
+      color: fade(extract(@primary-scheme, 4), @placeholder-fading);
     }
   }
 
@@ -74,7 +82,7 @@
     .scheme(@secondary-scheme-inverse);
 
     &:not(.ui-dirty) {
-      color: fade(extract(@secondary-scheme, 4), 80%);
+      color: fade(extract(@secondary-scheme, 4), @placeholder-fading);
     }
   }
 
@@ -82,7 +90,7 @@
     .scheme(@tertiary-scheme-inverse);
 
     &:not(.ui-dirty) {
-      color: fade(extract(@tertiary-scheme, 4), 80%);
+      color: fade(extract(@tertiary-scheme, 4), @placeholder-fading);
     }
   }
 
@@ -90,7 +98,7 @@
     .scheme(@quaternary-scheme-inverse);
 
     &:not(.ui-dirty) {
-      color: fade(extract(@quaternary-scheme, 4), 80%);
+      color: fade(extract(@quaternary-scheme, 4), @placeholder-fading);
     }
   }
 
@@ -98,7 +106,7 @@
     .scheme(@quinary-scheme-inverse);
 
     &:not(.ui-dirty) {
-      color: fade(extract(@quinary-scheme, 4), 80%);
+      color: fade(extract(@quinary-scheme, 4), @placeholder-fading);
     }
   }
 
@@ -106,7 +114,7 @@
     .scheme(@grayscale-light-scheme-inverse);
 
     &:not(.ui-dirty) {
-      color: fade(extract(@grayscale-light-scheme, 4), 80%);
+      color: fade(extract(@grayscale-light-scheme, 4), @placeholder-fading);
     }
   }
 
@@ -114,7 +122,7 @@
     .scheme(@grayscale-dark-scheme-inverse);
 
     &:not(.ui-dirty) {
-      color: fade(extract(@grayscale-dark-scheme, 4), 80%);
+      color: fade(extract(@grayscale-dark-scheme, 4), @placeholder-fading);
     }
   }
 
@@ -122,7 +130,7 @@
     .scheme(@blackwhite-scheme-inverse);
 
     &:not(.ui-dirty) {
-      color: fade(extract(@blackwhite-scheme, 4), 80%);
+      color: fade(extract(@blackwhite-scheme, 4), @placeholder-fading);
     }
   }
 }

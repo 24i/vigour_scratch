@@ -26,7 +26,7 @@
   .radius(@input-radius);
 
   .scheme(@input-scheme);
-  .placeholder(fade(extract(@input-scheme, 1), 60%));
+  .placeholder(fade(extract(@input-scheme, 1), @placeholder-fading));
 
   &.ui-interactive {
     .transition(@input-transition-duration linear background);
@@ -40,35 +40,35 @@
  */
 .ui-input {
   &.ui-primary {
-    .placeholder(fade(extract(@primary-scheme, 4), 80%));
+    .placeholder(fade(extract(@primary-scheme, 4), @placeholder-fading));
   }
 
   &.ui-secondary {
-    .placeholder(fade(extract(@secondary-scheme, 4), 80%));
+    .placeholder(fade(extract(@secondary-scheme, 4), @placeholder-fading));
   }
 
   &.ui-tertiary {
-    .placeholder(fade(extract(@tertiary-scheme, 4), 80%));
+    .placeholder(fade(extract(@tertiary-scheme, 4), @placeholder-fading));
   }
 
   &.ui-quaternary {
-    .placeholder(fade(extract(@quaternary-scheme, 4), 80%));
+    .placeholder(fade(extract(@quaternary-scheme, 4), @placeholder-fading));
   }
 
   &.ui-quinary {
-    .placeholder(fade(extract(@quinary-scheme, 4), 80%));
+    .placeholder(fade(extract(@quinary-scheme, 4), @placeholder-fading));
   }
 
   &.ui-grayscale-light {
-    .placeholder(fade(extract(@grayscale-light-scheme, 4), 80%));
+    .placeholder(fade(extract(@grayscale-light-scheme, 4), @placeholder-fading));
   }
 
   &.ui-grayscale-dark {
-    .placeholder(fade(extract(@grayscale-dark-scheme, 4), 80%));
+    .placeholder(fade(extract(@grayscale-dark-scheme, 4), @placeholder-fading));
   }
 
   &.ui-blackwhite {
-    .placeholder(fade(extract(@blackwhite-scheme, 4), 80%));
+    .placeholder(fade(extract(@blackwhite-scheme, 4), @placeholder-fading));
   }
 }
 
