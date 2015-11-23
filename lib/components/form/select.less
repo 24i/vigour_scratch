@@ -64,34 +64,66 @@
 .ui-select {
   &.ui-primary {
     .scheme(@primary-scheme-inverse);
+
+    &:not(.ui-dirty) {
+      color: fade(extract(@primary-scheme, 4), 80%);
+    }
   }
 
   &.ui-secondary {
     .scheme(@secondary-scheme-inverse);
+
+    &:not(.ui-dirty) {
+      color: fade(extract(@secondary-scheme, 4), 80%);
+    }
   }
 
   &.ui-tertiary {
     .scheme(@tertiary-scheme-inverse);
+
+    &:not(.ui-dirty) {
+      color: fade(extract(@tertiary-scheme, 4), 80%);
+    }
   }
 
   &.ui-quaternary {
     .scheme(@quaternary-scheme-inverse);
+
+    &:not(.ui-dirty) {
+      color: fade(extract(@quaternary-scheme, 4), 80%);
+    }
   }
 
   &.ui-quinary {
     .scheme(@quinary-scheme-inverse);
+
+    &:not(.ui-dirty) {
+      color: fade(extract(@quinary-scheme, 4), 80%);
+    }
   }
 
   &.ui-grayscale-light {
     .scheme(@grayscale-light-scheme-inverse);
+
+    &:not(.ui-dirty) {
+      color: fade(extract(@grayscale-light-scheme, 4), 80%);
+    }
   }
 
   &.ui-grayscale-dark {
     .scheme(@grayscale-dark-scheme-inverse);
+
+    &:not(.ui-dirty) {
+      color: fade(extract(@grayscale-dark-scheme, 4), 80%);
+    }
   }
 
   &.ui-blackwhite {
     .scheme(@blackwhite-scheme-inverse);
+
+    &:not(.ui-dirty) {
+      color: fade(extract(@blackwhite-scheme, 4), 80%);
+    }
   }
 }
 

@@ -14,21 +14,6 @@
   &.active {
     .scheme-interactive(@active-scheme, color);
   }
-
-  &.with {
-    &.label {
-      .ui-label {
-        .ui-select {
-          .scheme-additions(@scheme, false, color);
-
-          &.ui-dirty {
-            .scheme(@scheme);
-            .scheme-additions(@scheme, false, children-color);
-          }
-        }
-      }
-    }
-  }
 }
 
 .ui-row {
