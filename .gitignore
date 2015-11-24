@@ -2,4 +2,4 @@ doc
 docs
 build
 node_modules
-.log
+*.log
