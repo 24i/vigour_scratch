@@ -1,6 +1,6 @@
 {
   "name": "vigour-scratch",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "the scratch",
   "main": "index.less",
   "scripts": {
