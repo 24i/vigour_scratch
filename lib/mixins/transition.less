@@ -4,11 +4,11 @@
  * @example
  * .transition(.1s linear background)
  */
-.transition(@property) {
-  -webkit-transition: @property;
-     -moz-transition: @property;
-       -o-transition: @property;
-          transition: @property;
+.transition(@property, @property2: all 0s ease 0s) {
+  -webkit-transition: @property, @property2;
+     -moz-transition: @property, @property2;
+       -o-transition: @property, @property2;
+          transition: @property, @property2;
 }
 
 /**
@@ -31,4 +31,15 @@
 .transition-duration(@property: @transition-duration) {
   -webkit-transition-duration: @property;
           transition-duration: @property;
+}
+
+/**
+ * `transition-delay` mixin
+ * @param {string} [property=@transition-delay]
+ * @example
+ * .transition-delay(.5s)
+ */
+.transition-delay(@property: @transition-delay) {
+  -webkit-transition-delay: @property;
+          transition-delay: @property;
 }
