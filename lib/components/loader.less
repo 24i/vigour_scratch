@@ -2,11 +2,10 @@
   & {
     width: @size;
     height: @size;
-    margin: 100px auto;
     background-color: @color;
-    .radius(100%);
-    .absolute(calc(~"50% - " (@size / 2)), 30%);
     z-index: 200;
+    .radius(100%);
+    .absolute(calc(~"50% - " (@size / 2)), 45%);
 
     .animation(sk-scaleout 1s infinite ease-in-out);
     .animation-delay(0.6s);
