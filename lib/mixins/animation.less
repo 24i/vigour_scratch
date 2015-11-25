@@ -46,6 +46,17 @@
 }
 
 /**
+ * `animation-delay` mixin
+ * @param {string} property
+ * @example
+ * .animation-delay(.5s)
+ */
+.animation-delay(@property) {
+  -webkit-animation-delay: @property;
+          animation-delay: @property;
+}
+
+/**
  * `animation-iteration` mixin
  * @param {string} [property=infinite]
  * @example
