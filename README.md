@@ -1,4 +1,3 @@
-Currently under the heavy process of refactoring.
 
 	 _____                _       _
 	/  ___|              | |     | |
