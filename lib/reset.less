@@ -56,7 +56,7 @@ h6,
 .ui-heading {
   margin: @heading-margin;
   line-height: @heading-line-height;
-  font-family: @heading-family, @body-family;
+  font-family: @heading-family;
   font-weight: @heading-weight;
 }
 
@@ -173,9 +173,9 @@ a:hover {
 }
 
 p {
-  line-height: @p-line-height;
-  margin: @p-margin;
-  font-family: @p-family, @body-family;
+  line-height: @paragraph-line-height;
+  margin: @paragraph-margin;
+  font-family: @paragraph-family, @body-family;
 }
 
 abbr[title] {
@@ -249,50 +249,6 @@ hr {
   margin: @gap 0;
 }
 
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  margin: 0;
-  outline: none;
-}
-
-button,
-input {
-  .sizing;
-  line-height: normal;
-}
-
-button,
-html input[type=button],
-
-/* 1 */
-
-input[type=reset],
-input[type=submit] {
-  -webkit-appearance: button;
-  cursor: pointer;
-}
-
-button[disabled],
-input[disabled] {
-  cursor: default;
-}
-
-input[type=checkbox],
-input[type=radio] {
-  .sizing;
-  padding: 0;
-}
-
-fieldset {
-  border: 0;
-  padding: 0;
-  margin: 0;
-}
-
 figure {
   position: relative;
 }
@@ -354,4 +310,48 @@ input[type='radio'] {
 
 textarea {
   resize: vertical;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  outline: none;
+}
+
+button,
+input {
+  .sizing;
+  line-height: normal;
+}
+
+button,
+html input[type=button],
+
+/* 1 */
+
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  .sizing;
+  padding: 0;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
