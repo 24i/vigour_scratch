@@ -1,7 +1,9 @@
 .ui-switcher {
   position: relative;
   display: inline-block;
-  width: (@input-height * 1.8);
+  // TODO: fix that
+  // width: (@input-height * 1.8rem);
+  width: 4.3rem;
   height: @input-height;
   background: rgba(0, 0, 0, 0.2) !important;
   vertical-align: top;
@@ -14,7 +16,6 @@
     .fullsize;
     .radius(50px);
     .transition(@input-transition-duration background linear);
-    background: rgba(255, 255, 255, 0.2);
     cursor: pointer;
 
     &:checked {
@@ -103,8 +104,6 @@
 .ui-switcher {
   &.ui-primary {
     input {
-      background: fade(@primary-contrast, 30%);
-
       &:checked {
         background: @primary;
       }
@@ -113,8 +112,6 @@
 
   &.ui-secondary {
     input {
-      background: fade(@secondary-contrast, 30%);
-
       &:checked {
         background: @secondary;
       }
@@ -123,8 +120,6 @@
 
   &.ui-tertiary {
     input {
-      background: fade(@tertiary-contrast, 30%);
-
       &:checked {
         background: @tertiary;
       }
@@ -133,8 +128,6 @@
 
   &.ui-quaternary {
     input {
-      background: fade(@quaternary-contrast, 30%);
-
       &:checked {
         background: @quaternary;
       }
@@ -143,8 +136,6 @@
 
   &.ui-quinary {
     input {
-      background: fade(@quinary-contrast, 30%);
-
       &:checked {
         background: @quinary;
       }
@@ -153,8 +144,6 @@
 
   &.ui-grayscale-dark {
     input {
-      background: fade(@grayscale-dark-contrast, 30%);
-
       &:checked {
         background: @grayscale-dark;
       }
@@ -163,8 +152,6 @@
 
   &.ui-grayscale-light {
     input {
-      background: fade(@grayscale-light-contrast, 30%);
-
       &:checked {
         background: @grayscale-light;
       }
@@ -173,8 +160,6 @@
 
   &.ui-blackwhite {
     input {
-      background: fade(@blackwhite-contrast, 30%);
-
       &:checked {
         background: @blackwhite;
       }

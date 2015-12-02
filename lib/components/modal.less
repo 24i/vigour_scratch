@@ -31,6 +31,10 @@
     .ui-button.ui-large {
       width: 100%;
       margin: @gap 0 0;
+
+      &.ui-modal-button {
+        .scheme-interactive(@modal-button-scheme);
+      }
     }
 
     .loader {

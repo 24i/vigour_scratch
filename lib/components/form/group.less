@@ -4,12 +4,7 @@
  * Grouped form elements.
  */
 
-.ui-form-group {
-  .clearfix;
-
-  .flex-display(inline-flex);
-  .flex-direction(row);
-
+.group-radius(@radius) {
   > .ui-button,
   > .ui-input,
   > .ui-label {
@@ -17,14 +12,23 @@
 
     &:first-child:not(:last-child) {
       border-right: 0;
-      .radius(@input-radius 0 0 @input-radius);
+      .radius(@radius 0 0 @radius);
     }
 
     &:last-child:not(:first-child) {
-      .radius(0 @input-radius @input-radius 0);
+      .radius(0 @radius @radius 0);
       border-left: 0;
     }
   }
+}
+
+.ui-form-group {
+  .clearfix;
+
+  .flex-display(inline-flex);
+  .flex-direction(row);
+
+  .group-radius(@input-radius);
 
   > .ui-switcher {
     &,

@@ -16,7 +16,7 @@
   border-bottom-width: 1px;
 
   &.active {
-    .scheme-interactive(@active-scheme, color);
+    color: extract(@active-scheme, 8);
   }
 }
 

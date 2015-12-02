@@ -1,8 +1,10 @@
 .ui-notification {
-  .radius(@input-radius);
   .padding-h(calc(@input-padding * 2), 0);
   .shadow(0 2px 3px 0 rgba(0,0,0,0.3));
   cursor: default;
+
+  .radius(@modal-radius);
+  .group-radius(@modal-radius);
 
   .ui-row;
   .ui-row-color(@primary-scheme-inverse);
@@ -68,6 +70,30 @@
   // quinary
   &.ui-blackwhite {
     .ui-row-color(@blackwhite-scheme-inverse);
+  }
+
+}
+
+/**
+ * State colors for notifications
+ * ----------------------------------------------
+ * Default color set is success
+ */
+.ui-notification {
+
+  // success
+  &.ui-success {
+    .ui-row-color(@success-scheme);
+  }
+
+  // warning
+  &.ui-warning {
+    .ui-row-color(@warning-scheme);
+  }
+
+  // error
+  &.ui-error {
+    .ui-row-color(@error-scheme);
   }
 
 }
