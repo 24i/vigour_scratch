@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/vigour-scratch.svg)](https://badge.fury.io/js/vigour-scratch)
+
 
 	 _____                _       _
 	/  ___|              | |     | |
@@ -25,7 +27,7 @@ Getting Started
 
 To install, run:
 
-	$ npm install vigour-scratch
+	$ npm install vigour-scratch --save-dev
 
 Injecting in Browserify:
 
