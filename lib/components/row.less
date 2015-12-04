@@ -1,4 +1,21 @@
-.ui-row-color(@scheme: @primary-scheme-inverse, @active-scheme: @tertiary-scheme) {
+/**
+ * Mixin for coloring your row
+ * ----------------------------------------------
+ * If you use `.ui-row` class, it'll be
+ * absolutelly unstyled without this mixin.
+ * Only way to pass scheme is to use this mixin.
+
+ * @param {array} scheme
+ * @param {array} scheme for active items
+ *
+ * @example
+ * .ui-modal {
+ *   .content > .ui-row {
+ *     .ui-row-color(@primary-scheme-inverse);
+ *   }
+ * }
+ */
+.ui-row-color(@scheme: @row-scheme, @active-scheme: @tertiary-scheme) {
 
   .scheme-interactive(@scheme, color);
   .scheme-additions(@scheme, true, children-color);
@@ -20,6 +37,13 @@
   }
 }
 
+/**
+ * Default row style and behaviour
+ * ----------------------------------------------
+ * It's default row layout which can be matched
+ * for any type of row. Using flaxbox to easily
+ * rearrange items.
+ */
 .ui-row {
   height: 60px;
   .sizing;
@@ -75,7 +99,7 @@
       }
     }
 
-    &.locked {
+    &.lock {
       &:after {
         .icon('\e613');
       }
