@@ -25,7 +25,7 @@ Getting Started
 
 To install, run:
 
-	$ npm install vigour-scratch
+	$ npm install vigour-scratch --save-dev
 
 Injecting in Browserify:
 
