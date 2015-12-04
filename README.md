@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/vigour-scratch.svg)](https://badge.fury.io/js/vigour-scratch)
+
 
 	 _____                _       _
 	/  ___|              | |     | |
