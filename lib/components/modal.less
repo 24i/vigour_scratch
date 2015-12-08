@@ -9,8 +9,7 @@
   text-align: @modal-text-align;
 
   width: 100%;
-  .width-range(@modal-min-width, @modal-max-width);
-  .height-range(@modal-min-height, @modal-max-height);
+  height: 100%;
 
   > .content {
     .flex(1);
@@ -30,7 +29,8 @@
 
     .ui-button.ui-large {
       width: 100%;
-      margin: @gap 0 0;
+      margin: @gap 0;
+      display: block;
 
       &.ui-modal-button {
         .scheme-interactive(@modal-button-scheme);
@@ -54,13 +54,8 @@
     .radius(@modal-radius);
     .shadow(0 3px 8px 2px rgba(0, 0, 0, 0.3));
 
-    > .ui-topbar {
-      .radius(@modal-radius @modal-radius 0 0);
-    }
-
-    > .ui-bottombar {
-      .radius(0 0 @modal-radius @modal-radius);
-    }
+    .width-range(@modal-min-width, @modal-max-width);
+    .height-range(@modal-min-height, @modal-max-height);
   }
 
   // mobile
