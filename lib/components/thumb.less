@@ -1,11 +1,9 @@
 .ui-thumb {
-  &.force-left,
-  &:first-child {
+  &:first-child:not(:last-child) {
     margin-right: @gap-medium;
   }
 
-  &.force-right,
-  &:last-child {
+  &:last-child:not(:first-child) {
     margin-left: @gap-medium;
   }
 }
