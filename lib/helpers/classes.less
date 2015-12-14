@@ -7,7 +7,7 @@
 
 // transition for interactive elements
 .ui-interactive {
-  .transition(@transition-duration linear background, @transition-duration color);
+  .transition(@transition);
 }
 
 // opacity control
@@ -25,8 +25,12 @@
 .ui-hide      		{display: none;}
 .ui-none      		{display: none !important;} // vanish!
 
-// float at center
-.ui-center      {margin: 0 auto;}
+// align at center
+.ui-center            {margin: 0 auto;}
+.ui-vertically-center {
+  .absolute(50%, 50%);
+  .translate;
+}
 
 // floating
 .ui-float-left  {float: left;}
