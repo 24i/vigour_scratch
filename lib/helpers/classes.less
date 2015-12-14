@@ -25,17 +25,25 @@
 .ui-hide      		{display: none;}
 .ui-none      		{display: none !important;} // vanish!
 
-// align at center
-.ui-center            {margin: 0 auto;}
-.ui-vertically-center {
+// align center at x axis
+.ui-position-center-x {margin: 0 auto;}
+
+// align center at y axis
+.ui-position-center-y {
+  .absolute(auto, 50%);
+  .translate(0, -50%);
+}
+
+// align center at both x and y axises
+.ui-position-center {
   .absolute(50%, 50%);
   .translate;
 }
 
 // floating
-.ui-float-left  {float: left;}
-.ui-float-right {float: right;}
-.nofloat        {float: none;}
+.ui-position-left  {float: left;}
+.ui-position-right {float: right;}
+.ui-position-reset {float: none;}
 
 // font settings
 // headers

@@ -1,61 +1,53 @@
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: (@gap * 2);
+.ui-container {
+  .margin-h(auto);
   .sizing;
+  margin-bottom: @gap;
 
-  max-width: @container-max-width;
-  min-width: @container-min-width;
+  .width-range(@container-min-width, @container-max-width);
 
-  &:not([class^="row"]):not([class*=" row"]) {
+  @media @above-big {
+    .padding-h(@gap-big);
+  }
+
+  @media @under-big, @above-small {
     .padding-h(@gap);
-
-    @media screen and (min-width: @screen-large) {
-      .padding-h(@gap-big);
-    }
-
-    @media screen and (max-width: @screen-medium) {
-      .padding-h(@gap-medium);
-    }
-
-    @media screen and (max-width: @screen-small) {
-      .padding-h(@gap-small);
-    }
   }
 
-  @media screen and (max-width: @screen-tablet) {
-    margin-bottom: @gap-small * 2;
+  @media @under-small {
+    .padding-h(@gap-medium);
   }
 
-  &.flexible {
+  .transition(padding @transition);
+
+  &.ui-flexible {
     max-width: none;
   }
 
-  &.large {
+  &.ui-large {
     max-width: @container-large;
   }
 
-  &.big {
+  &.ui-big {
     max-width: @container-big;
   }
 
-  &.medium {
+  &.ui-medium {
     max-width: @container-medium;
   }
 
-  &.small {
+  &.ui-small {
     max-width: @container-small;
   }
 
-  &.tiny {
+  &.ui-tiny {
     max-width: @container-tiny;
   }
 
-  &.tablet {
+  &.ui-tablet {
     max-width: @container-tablet;
   }
 
-  &.mobile {
+  &.ui-mobile {
     max-width: @container-mobile;
   }
 }
