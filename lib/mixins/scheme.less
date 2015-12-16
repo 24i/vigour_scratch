@@ -58,24 +58,24 @@
   // ---------------------------
   // on focus change color
   & when (@focus = color) {
-    &:active,
-    &:focus {
+    // &:focus,
+    &:active {
       color: extract(@scheme, 3);
     }
   }
 
   // on focus change background
   & when (@focus = background) {
-    &:active,
-    &:focus {
+    // &:focus,
+    &:active {
       background-color: extract(@scheme, 6);
     }
   }
 
   // on focus change both
   & when (@focus = both) {
-    &:active,
-    &:focus {
+    // &:focus,
+    &:active {
       color: extract(@scheme, 3);
       background-color: extract(@scheme, 6);
     }
