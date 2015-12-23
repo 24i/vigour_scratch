@@ -78,26 +78,32 @@
  * @example
  * .overflow(10px, yellow, #eee, #ccc)
  */
-.overflow (@width: 10px) {
-  overflow-x: hidden;
-  overflow-y: auto;
-
+.custom-overflow (
+  @width: @scrollbar-width,
+  @scheme: @scrollbar-scheme,
+  @radius: @scrollbar-radius
+) {
   &::-webkit-scrollbar {
     width: @width;
+    height: @width;
   }
+
   &::-webkit-scrollbar-track {
-    .radius(5px);
-    background: rgba(255, 255, 255, 0.2);
+    .radius(@radius);
+    background: extract(@scheme, 4);
     width: 8px;
   }
+
   &::-webkit-scrollbar-thumb {
-    .radius(5px);
-    background: #ccc;
+    .radius(@radius);
+    background: extract(@scheme, 1);
     width: 6px;
   }
+
   &::-webkit-scrollbar-thumb:hover {
-    background: #bbb;
+    background: extract(@scheme, 2);
   }
+
   &::-webkit-scrollbar-thumb:window-inactive {
     background: #eee;
   }
