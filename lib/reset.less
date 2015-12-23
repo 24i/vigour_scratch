@@ -155,14 +155,16 @@ a {
   outline: none;
   cursor: pointer;
 
-  &:hover {
-    color: @a-hover;
-    text-decoration: @a-hover-decoration;
-  }
+  &.ui-interactive {
+    &:hover {
+      color: @a-hover;
+      text-decoration: @a-hover-decoration;
+    }
 
-  &:focus {
-    color: @a-focus;
-    text-decoration: @a-focus-decoration;
+    &:focus {
+      color: @a-focus;
+      text-decoration: @a-focus-decoration;
+    }
   }
 }
 
