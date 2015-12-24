@@ -6,9 +6,10 @@
 // It's under MIT License and it's free to use.
 
 // general mixin
-.animated() {
+.animated(@name: '', @duration: @animation-duration) {
+  .animation-name(@name);
   .animation-fill(both);
-  .animation-duration(@animation-duration);
+  .animation-duration(@duration);
 }
 
 & when (@animatecss-bounce = true) {
