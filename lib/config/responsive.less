@@ -14,55 +14,54 @@
 @screen-tablet:  768px;
 @screen-mobile:  480px;
 
-
 /**
  * Media queries
  * ----------------------------------------------
  */
 
 // retina screens
-@high-density: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
-               ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
-               ~"only screen and (min-device-pixel-ratio: 1.5)";
+@high-density: ~"all and (-webkit-min-device-pixel-ratio: 1.5)",
+               ~"all and (min--moz-device-pixel-ratio: 1.5)",
+               ~"all and (min-device-pixel-ratio: 1.5)";
 
 // large screen
-@above-large: ~"only screen and (min-width: @{screen-large})";
-@large:       ~"only screen and (min-width: @{screen-medium}) and
-                                (max-width: @{screen-large})";
-@under-large: ~"only screen and (max-width: @{screen-large})";
+@above-large: ~"all and (min-width: @{screen-large})";
+@large:       ~"all and (min-width: @{screen-medium}) and
+                        (max-width: "(@screen-large - 1px)~")";
+@under-large: ~"all and (max-width: "(@screen-large - 1px)~")";
 
 // big screen
-@above-big: ~"only screen and (min-width: @{screen-big})";
-@big:       ~"only screen and (min-width: @{screen-medium}) and
-                              (max-width: @{screen-big})";
-@under-big: ~"only screen and (max-width: @{screen-big})";
+@above-big: ~"all and (min-width: @{screen-big})";
+@big:       ~"all and (min-width: @{screen-medium}) and
+                      (max-width: "(@screen-big - 1px)~")";
+@under-big: ~"all and (max-width: "(@screen-big - 1px)~")";
 
 // medium screen
-@above-medium: ~"only screen and (min-width: @{screen-medium})";
-@medium:       ~"only screen and (min-width: @{screen-small}) and
-                                 (max-width: @{screen-medium})";
-@under-medium: ~"only screen and (max-width: @{screen-medium})";
+@above-medium: ~"all and (min-width: @{screen-medium})";
+@medium:       ~"all and (min-width: @{screen-small}) and
+                         (max-width: "(@screen-medium - 1px)~")";
+@under-medium: ~"all and (max-width: "(@screen-medium - 1px)~")";
 
 // small screen
-@above-small: ~"only screen and (min-width: @{screen-small})";
-@small:       ~"only screen and (min-width: @{screen-tiny}) and
-                                (max-width: @{screen-small})";
-@under-small: ~"only screen and (max-width: @{screen-small})";
+@above-small: ~"all and (min-width: @{screen-small})";
+@small:       ~"all and (min-width: @{screen-tiny}) and
+                        (max-width: "(@screen-small - 1px)~")";
+@under-small: ~"all and (max-width: "(@screen-small - 1px)~")";
 
 // tiny screen
-@above-tiny: ~"only screen and (min-width: @{screen-tiny})";
-@tiny:       ~"only screen and (min-width: @{screen-tablet}) and
-                               (max-width: @{screen-tiny})";
-@under-tiny: ~"only screen and (max-width: @{screen-tiny})";
+@above-tiny: ~"all and (min-width: @{screen-tiny})";
+@tiny:       ~"all and (min-width: @{screen-tablet}) and
+                       (max-width: "(@screen-tiny - 1px)~")";
+@under-tiny: ~"all and (max-width: "(@screen-tiny - 1px)~")";
 
 // tablet
-@above-tablet: ~"only screen and (min-width: @{screen-tablet})";
-@tablet:       ~"only screen and (min-width: @{screen-mobile}) and
-                                 (max-width: @{screen-tablet})";
-@under-tablet: ~"only screen and (max-width: @{screen-tablet})";
+@above-tablet: ~"all and (min-width: @{screen-tablet})";
+@tablet:       ~"all and (min-width: @{screen-mobile}) and
+                         (max-width: "(@screen-tablet - 1px)~")";
+@under-tablet: ~"all and (max-width: "(@screen-tablet - 1px)~")";
 
 // mobile
-@above-mobile: ~"only screen and (min-width: @{screen-mobile})";
-@mobile:       ~"only screen and (min-width: 0) and
-                                 (max-width: @{screen-mobile})";
-@under-mobile: ~"only screen and (max-width: @{screen-mobile})";
+@above-mobile: ~"all and (min-width: @{screen-mobile})";
+@mobile:       ~"all and (min-width: 0) and
+                         (max-width: "(@screen-mobile - 1px)~")";
+@under-mobile: ~"all and (max-width: "(@screen-mobile - 1px)~")";
