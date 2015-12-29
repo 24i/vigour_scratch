@@ -10,7 +10,7 @@
  * .radius(3px) // all
  * .radius(top right bottom left)
  */
-.radius(@radius: @radius) {
+.radius (@radius: @radius) {
   -webkit-border-radius: @radius;
      -moz-border-radius: @radius;
           border-radius: @radius;
@@ -35,10 +35,10 @@
  * @example
  * .shadow(1px 1px 3px 1px #ccc)
  */
-.shadow (@property, @property2: 0 0 0px 0px, @property3: 0 0 0px 0px) {
-  -webkit-box-shadow: @property, @property2, @property3;
-     -moz-box-shadow: @property, @property2, @property3;
-          box-shadow: @property, @property2, @property3;
+.shadow (@property) {
+  -webkit-box-shadow: @property;
+     -moz-box-shadow: @property;
+          box-shadow: @property;
 }
 
 /**
@@ -50,7 +50,12 @@
  * @example
  * .gradient(#fff, #ccc)
  */
-.gradient(@from: #000 50%, @to: #fff 50%, @startpoint: top, @endpoint: bottom) {
+.gradient (
+  @from: #000 50%,
+  @to: #fff 50%,
+  @startpoint: top,
+  @endpoint: bottom
+) {
   background: -moz-linear-gradient(@startpoint, @from, @to);
   background: -webkit-linear-gradient(@startpoint, @from, @to);
   background: -ms-linear-gradient(@startpoint, @from, @to);
@@ -64,7 +69,11 @@
  * @example
  * .gradient-o(#fff, #ccc)
  */
-.gradient-o(@from: #000 0%, @to: #fff 100%, @position: center) {
+.gradient-o (
+  @from: #000 0%,
+  @to: #fff 100%,
+  @position: center
+) {
   background: -webkit-radial-gradient(@position, ellipse cover, @to, @from);
   background: -webkit-gradient(radial, @position @position, @to, @from);
   background: -moz-radial-gradient(@position, ellipse cover, @to, @from);
@@ -81,6 +90,9 @@
 .custom-overflow (
   @width: @scrollbar-width,
   @scheme: @scrollbar-scheme,
+  @thumb-opacity: 100%,
+  @track-opacity: 0%,
+  @inactive-opacity: 50%,
   @radius: @scrollbar-radius
 ) {
   &::-webkit-scrollbar {
@@ -88,23 +100,24 @@
     height: @width;
   }
 
-  &::-webkit-scrollbar-track {
-    .radius(@radius);
-    // background: extract(@scheme, 4);
-    width: 8px;
-  }
-
   &::-webkit-scrollbar-thumb {
+    width: @width;
+    background: fade(extract(@scheme, 1), @thumb-opacity);
     .radius(@radius);
-    background: extract(@scheme, 1);
-    width: 6px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: extract(@scheme, 2);
+    background: fade(extract(@scheme, 2), @thumb-opacity);
   }
 
   &::-webkit-scrollbar-thumb:window-inactive {
-    background: #eee;
+    background: fade(extract(@scheme, 1), @thumb-opacity);
+  }
+
+  &::-webkit-scrollbar-track {
+    width: @width;
+    height: @width;
+    background: fade(extract(@scheme, 4), @track-opacity);
+    .radius(@radius);
   }
 }

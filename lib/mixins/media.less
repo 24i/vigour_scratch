@@ -5,10 +5,10 @@
  * @param {string} to
  * @example
  * .media(@screen-tablet, @screen-large)
- * @media @range {
+ * @media @return {
  *   // ruleset
  * }
  */
-.media-range(@from, @to) {
+.media-range (@from: 0, @to: none) {
   @return: ~"all and (min-width: @{from}) and (max-width: "(@to - 1px)~")";
 }
