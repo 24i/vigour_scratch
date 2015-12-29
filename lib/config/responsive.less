@@ -20,48 +20,48 @@
  */
 
 // retina screens
-@high-density: ~"all and (-webkit-min-device-pixel-ratio: 1.5)",
-               ~"all and (min--moz-device-pixel-ratio: 1.5)",
-               ~"all and (min-device-pixel-ratio: 1.5)";
+@high-density: ~"and (-webkit-min-device-pixel-ratio: 1.5)",
+               ~"and (min--moz-device-pixel-ratio: 1.5)",
+               ~"and (min-device-pixel-ratio: 1.5)";
 
 // large screen
-@above-large: ~"all and (min-width: @{screen-large})";
-@large:       ~"all and (min-width: @{screen-medium}) and
-                        (max-width: "(@screen-large - 1px)~")";
-@under-large: ~"all and (max-width: "(@screen-large - 1px)~")";
+@above-large: ~"and (min-width: @{screen-large})";
+@large:       ~"and (min-width: @{screen-medium}) and "
+                  ~"(max-width: "(@screen-large - 1px)~")";
+@under-large: ~"and (max-width: "(@screen-large - 1px)~")";
 
 // big screen
-@above-big: ~"all and (min-width: @{screen-big})";
-@big:       ~"all and (min-width: @{screen-medium}) and
-                      (max-width: "(@screen-big - 1px)~")";
-@under-big: ~"all and (max-width: "(@screen-big - 1px)~")";
+@above-big: ~"and (min-width: @{screen-big})";
+@big:       ~"and (min-width: @{screen-medium}) and "
+                ~"(max-width: "(@screen-big - 1px)~")";
+@under-big: ~"and (max-width: "(@screen-big - 1px)~")";
 
 // medium screen
-@above-medium: ~"all and (min-width: @{screen-medium})";
-@medium:       ~"all and (min-width: @{screen-small}) and
-                         (max-width: "(@screen-medium - 1px)~")";
-@under-medium: ~"all and (max-width: "(@screen-medium - 1px)~")";
+@above-medium: ~"and (min-width: @{screen-medium})";
+@medium:       ~"and (min-width: @{screen-small}) and "
+                   ~"(max-width: "(@screen-medium - 1px)~")";
+@under-medium: ~"and (max-width: "(@screen-medium - 1px)~")";
 
 // small screen
-@above-small: ~"all and (min-width: @{screen-small})";
-@small:       ~"all and (min-width: @{screen-tiny}) and
-                        (max-width: "(@screen-small - 1px)~")";
-@under-small: ~"all and (max-width: "(@screen-small - 1px)~")";
+@above-small: ~"and (min-width: @{screen-small})";
+@small:       ~"and (min-width: @{screen-tiny}) and "
+                  ~"(max-width: "(@screen-small - 1px)~")";
+@under-small: ~"and (max-width: "(@screen-small - 1px)~")";
 
 // tiny screen
-@above-tiny: ~"all and (min-width: @{screen-tiny})";
-@tiny:       ~"all and (min-width: @{screen-tablet}) and
-                       (max-width: "(@screen-tiny - 1px)~")";
-@under-tiny: ~"all and (max-width: "(@screen-tiny - 1px)~")";
+@above-tiny: ~"and (min-width: @{screen-tiny})";
+@tiny:       ~"and (min-width: @{screen-tablet}) and "
+                 ~"(max-width: "(@screen-tiny - 1px)~")";
+@under-tiny: ~"and (max-width: "(@screen-tiny - 1px)~")";
 
 // tablet
-@above-tablet: ~"all and (min-width: @{screen-tablet})";
-@tablet:       ~"all and (min-width: @{screen-mobile}) and
-                         (max-width: "(@screen-tablet - 1px)~")";
-@under-tablet: ~"all and (max-width: "(@screen-tablet - 1px)~")";
+@above-tablet: ~"and (min-width: @{screen-tablet})";
+@tablet:       ~"and (min-width: @{screen-mobile}) and "
+                   ~"(max-width: "(@screen-tablet - 1px)~")";
+@under-tablet: ~"and (max-width: "(@screen-tablet - 1px)~")";
 
 // mobile
-@above-mobile: ~"all and (min-width: @{screen-mobile})";
-@mobile:       ~"all and (min-width: 0) and
-                         (max-width: "(@screen-mobile - 1px)~")";
-@under-mobile: ~"all and (max-width: "(@screen-mobile - 1px)~")";
+@above-mobile: ~"and (min-width: @{screen-mobile})";
+@mobile:       ~"and (min-width: 0) and "
+                   ~"(max-width: "(@screen-mobile - 1px)~")";
+@under-mobile: ~"and (max-width: "(@screen-mobile - 1px)~")";
