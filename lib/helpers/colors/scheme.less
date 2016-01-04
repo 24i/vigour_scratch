@@ -8,10 +8,12 @@
 
  // primary
 .ui-scheme-primary {
-  .scheme(@primary-scheme);
+  &:not(.ui-inverse) {
+    .scheme(@primary-scheme);
 
-  &.ui-interactive {
-    .scheme-interactive(@primary-scheme, both, both);
+    &.ui-interactive {
+      .scheme-interactive(@primary-scheme, both, both);
+    }
   }
 
   &.ui-inverse {
@@ -25,10 +27,12 @@
 
 // secondary
 .ui-scheme-secondary {
-  .scheme(@secondary-scheme);
+  &:not(.ui-inverse) {
+    .scheme(@secondary-scheme);
 
-  &.ui-interactive {
-    .scheme-interactive(@secondary-scheme, both, both);
+    &.ui-interactive {
+      .scheme-interactive(@secondary-scheme, both, both);
+    }
   }
 
   &.ui-inverse {
@@ -42,10 +46,12 @@
 
 // tertiary
 .ui-scheme-tertiary {
-  .scheme(@tertiary-scheme);
+  &:not(.ui-inverse) {
+    .scheme(@tertiary-scheme);
 
-  &.ui-interactive {
-    .scheme-interactive(@tertiary-scheme, both, both);
+    &.ui-interactive {
+      .scheme-interactive(@tertiary-scheme, both, both);
+    }
   }
 
   &.ui-inverse {
@@ -59,10 +65,12 @@
 
 // quaternary
 .ui-scheme-quaternary {
-  .scheme(@quaternary-scheme);
+  &:not(.ui-inverse) {
+    .scheme(@quaternary-scheme);
 
-  &.ui-interactive {
-    .scheme-interactive(@quaternary-scheme, both, both);
+    &.ui-interactive {
+      .scheme-interactive(@quaternary-scheme, both, both);
+    }
   }
 
   &.ui-inverse {
@@ -76,10 +84,12 @@
 
 // quinary
 .ui-scheme-quinary {
-  .scheme(@quinary-scheme);
+  &:not(.ui-inverse) {
+    .scheme(@quinary-scheme);
 
-  &.ui-interactive {
-    .scheme-interactive(@quinary-scheme, both, both);
+    &.ui-interactive {
+      .scheme-interactive(@quinary-scheme, both, both);
+    }
   }
 
   &.ui-inverse {
@@ -93,10 +103,12 @@
 
 // graydark
 .ui-scheme-graydark {
-  .scheme(@graydark-scheme);
+  &:not(.ui-inverse) {
+    .scheme(@graydark-scheme);
 
-  &.ui-interactive {
-    .scheme-interactive(@graydark-scheme, both, both);
+    &.ui-interactive {
+      .scheme-interactive(@graydark-scheme, both, both);
+    }
   }
 
   &.ui-inverse {
@@ -110,10 +122,12 @@
 
 // graylight
 .ui-scheme-graylight {
-  .scheme(@graylight-scheme);
+  &:not(.ui-inverse) {
+    .scheme(@graylight-scheme);
 
-  &.ui-interactive {
-    .scheme-interactive(@graylight-scheme, both, both);
+    &.ui-interactive {
+      .scheme-interactive(@graylight-scheme, both, both);
+    }
   }
 
   &.ui-inverse {
@@ -127,10 +141,12 @@
 
 // blackwhite
 .ui-scheme-blackwhite {
-  .scheme(@blackwhite-scheme);
+  &:not(.ui-inverse) {
+    .scheme(@blackwhite-scheme);
 
-  &.ui-interactive {
-    .scheme-interactive(@blackwhite-scheme, both, both);
+    &.ui-interactive {
+      .scheme-interactive(@blackwhite-scheme, both, both);
+    }
   }
 
   &.ui-inverse {
