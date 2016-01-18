@@ -93,7 +93,7 @@
 ) {
   // border
   & when (@border = true) {
-    border-color: extract(@scheme, 7);
+    border-color: fade(extract(@scheme, 1), 10%);
   }
 
   // setting for additional
