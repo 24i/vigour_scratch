@@ -27,26 +27,28 @@
 ) {
   .scheme (@scheme);
 
-  // setting for hover
-  // on hover change color
-  & when (@hover = color) {
-    &:hover {
-      color: extract(@scheme, 2);
+  @media all @above-tiny {
+    // setting for hover
+    // on hover change color
+    & when (@hover = color) {
+      &:hover {
+        color: extract(@scheme, 2);
+      }
     }
-  }
 
-  // on hover change background
-  & when (@hover = background) {
-    &:hover {
-      background-color: extract(@scheme, 5);
+    // on hover change background
+    & when (@hover = background) {
+      &:hover {
+        background-color: extract(@scheme, 5);
+      }
     }
-  }
 
-  // on hover change both
-  & when (@hover = both) {
-    &:hover {
-      color: extract(@scheme, 2);
-      background-color: extract(@scheme, 5);
+    // on hover change both
+    & when (@hover = both) {
+      &:hover {
+        color: extract(@scheme, 2);
+        background-color: extract(@scheme, 5);
+      }
     }
   }
 
