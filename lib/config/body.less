@@ -3,10 +3,10 @@
  * ----------------------------------------------
  */
 
-// document colors
-
 // document font settings
 @body-scheme: @blackwhite-scheme;
+@body-background: extract(@body-scheme, 4);
+@body-background-small: @body-background;
 
 @body-font-size: @h6; // root font size is 10px
 @body-style: normal;
