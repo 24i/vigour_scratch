@@ -4,11 +4,11 @@
  * .convertUnit(@h4, vh, font-size, 1.5)
  */
 
-.convertUnit (
-  @size,
-  @newUnit: vh,
+.convert (
   @property: font-size,
-  @scale: 1.4
+  @size,
+  @scale: 1.4,
+  @newUnit: vh
 ) {
   @var: (@size * @scale);
   @converted: `parseFloat('@{var}')`;
