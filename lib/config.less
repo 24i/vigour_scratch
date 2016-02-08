@@ -1,22 +1,27 @@
-// Config
-// ==============================================
-// This variables are often defined depend on Brand Book of
-// the company. They are used in `reset.less` file as a
-// dependency. If you need to change any class which is
-// depends on those, you may need to change it here or
-// redefine it as a new one.
+/**
+ * Config
+ * ==============================================
+ * This variables are often defined depend on Brand Book of
+ * the company. They are used in `reset.less` file as a
+ * dependency. If you need to change any class which is
+ * depends on those, you may need to change it here or
+ * redefine it as a new one.
+ */
 
-
-// General config
-// ----------------------------------------------
-
+/**
+ * General config
+ * ----------------------------------------------
+ */
 // directories paths
 @img-path:   'assets/img';
 
 @reset: false;
 @components: false;
 
-
+/**
+ * Config per component
+ * ----------------------------------------------
+ */
 // include all config files
 @import url('./config/animation.less');
 @import url('./config/body.less');
@@ -25,6 +30,7 @@
 @import url('./config/carousel.less');
 @import url('./config/container.less');
 @import url('./config/extra.less');
+@import url('./config/fade.less');
 @import url('./config/forms.less');
 @import url('./config/grid.less');
 @import url('./config/gutter.less');
