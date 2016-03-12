@@ -1,3 +1,5 @@
+**scratch is on a shelf temporarily. Please use play**
+
 [![npm version](https://badge.fury.io/js/vigour-scratch.svg)](https://badge.fury.io/js/vigour-scratch)
 
 
