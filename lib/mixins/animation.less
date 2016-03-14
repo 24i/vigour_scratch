@@ -1,8 +1,39 @@
 /* Animation mixins
 ----------------------------------------------  */
 
+
 /**
- * `animation-name` mixin
+ * `@keyframes` mixin
+ * @param {string} name
+ * @param {object} rules
+ * @example
+ * .keyframes(fadeIn, {
+ *   0% {},
+ *   100% {}
+ * })
+ */
+.keyframes(@name, @rules) {
+  @-webkit-keyframes @name {
+    @rules();
+  }
+  @keyframes @name {
+    @rules();
+  }
+}
+
+/**
+ * `perspective` mixin
+ * @param {number} property
+ * @example
+ * .perspective(800)
+ */
+.perspective(@property: 800) {
+  -webkit-perspective: @property;
+          perspective: @property;
+}
+
+/**
+ * `animation` mixin
  * @param {string} property
  * @example
  * .animation(fadeIn .2s easeOut .8s)
@@ -71,9 +102,9 @@
  * `animation-fill-mode` mixin
  * @param {string} [property=towards]
  * @example
- * .animation-fill(backwards)
+ * .animation-fill-mode(backwards)
  */
-.animation-fill(@property: towards) {
+.animation-fill-mode(@property: towards) {
   -webkit-animation-fill-mode: @property;
           animation-fill-mode: @property;
 }

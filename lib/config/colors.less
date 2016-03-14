@@ -63,6 +63,7 @@
 
 
 
+
 /**
  * Brand colors
  * ----------------------------------------------
@@ -135,28 +136,28 @@
 @quinary-additional:             @yellow;
 
 // grayscale dark theme
-@graydark:                 @darkgray;
-@graydark-darken:          darken(@graydark, 10%);
-@graydark-lighten:         lighten(@graydark, 10%);
-@graydark-hover:           darken(@graydark, 5%);
-@graydark-focus:           darken(@graydark, 9%);
-@graydark-contrast:        @midgray;
-@graydark-contrast-hover:  darken(@graydark-contrast, 5%);
-@graydark-contrast-focus:  darken(@graydark-contrast, 9%);
-@graydark-border:          black;
-@graydark-additional:      @primary;
+@graydark:                       @darkgray;
+@graydark-darken:                darken(@graydark, 10%);
+@graydark-lighten:               lighten(@graydark, 10%);
+@graydark-hover:                 darken(@graydark, 5%);
+@graydark-focus:                 darken(@graydark, 9%);
+@graydark-contrast:              @midgray;
+@graydark-contrast-hover:        darken(@graydark-contrast, 5%);
+@graydark-contrast-focus:        darken(@graydark-contrast, 9%);
+@graydark-border:                black;
+@graydark-additional:            @primary;
 
 // grayscale light theme
-@graylight:                @midgray;
-@graylight-darken:         darken(@graylight, 10%);
-@graylight-lighten:        lighten(@graylight, 10%);
-@graylight-hover:          darken(@graylight, 5%);
-@graylight-focus:          darken(@graylight, 9%);
-@graylight-contrast:       @whitegray;
-@graylight-contrast-hover: darken(@graylight-contrast, 5%);
-@graylight-contrast-focus: darken(@graylight-contrast, 9%);
-@graylight-border:         black;
-@graylight-additional:     @primary;
+@graylight:                      @midgray;
+@graylight-darken:               darken(@graylight, 10%);
+@graylight-lighten:              lighten(@graylight, 10%);
+@graylight-hover:                darken(@graylight, 5%);
+@graylight-focus:                darken(@graylight, 9%);
+@graylight-contrast:             @whitegray;
+@graylight-contrast-hover:       darken(@graylight-contrast, 5%);
+@graylight-contrast-focus:       darken(@graylight-contrast, 9%);
+@graylight-border:               black;
+@graylight-additional:           @primary;
 
 // black and white theme
 @blackwhite:                     @darkgray;
@@ -271,7 +272,7 @@
                                  @quinary-additional;
 
 // scheme for graylight color
-@graylight-scheme:         @graylight,
+@graylight-scheme:               @graylight,
                                  @graylight-hover,
                                  @graylight-focus,
                                  @graylight-contrast,
@@ -280,7 +281,7 @@
                                  @graylight-border,
                                  @graylight-additional;
 
-@graylight-scheme-inverse: @graylight-contrast,
+@graylight-scheme-inverse:       @graylight-contrast,
                                  @graylight-contrast-hover,
                                  @graylight-contrast-focus,
                                  @graylight,
@@ -290,7 +291,7 @@
                                  @graylight-additional;
 
 // scheme for graydark color
-@graydark-scheme:          @graydark,
+@graydark-scheme:                @graydark,
                                  @graydark-hover,
                                  @graydark-focus,
                                  @graydark-contrast,
@@ -299,7 +300,7 @@
                                  @graydark-border,
                                  @graydark-additional;
 
-@graydark-scheme-inverse:  @graydark-contrast,
+@graydark-scheme-inverse:        @graydark-contrast,
                                  @graydark-contrast-hover,
                                  @graydark-contrast-focus,
                                  @graydark,
@@ -326,3 +327,11 @@
                                  @blackwhite-focus,
                                  @blackwhite-border,
                                  @blackwhite-additional;
+
+@reset-scheme:                   transparent,
+                                 transparent,
+                                 transparent,
+                                 transparent,
+                                 transparent,
+                                 transparent,
+                                 transparent;

@@ -1,4 +1,6 @@
 html {
+  .translate3d(0, 0, 1px);
+
   &.windows {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -6,6 +8,8 @@ html {
 }
 
 body {
+  -webkit-backface-visibility: hidden;
+
   &.prevent-overflow {
     overflow: hidden;
   }
@@ -13,4 +17,8 @@ body {
   & when (@header-fixed = true) {
     padding-top: @header-height;
   }
+}
+
+body.phone {
+  .user-select;
 }

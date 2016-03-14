@@ -13,21 +13,15 @@ html {
   position: relative;
   height: 100%;
   font-size: 10px;
-  font-family: @body-family;
 
   .scheme(@body-scheme);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 
   letter-spacing: .3px;
 
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-overflow-scrolling: touch;
-
-  & when (@responsive = true) {
-    @media @under-tablet {
-      font-size: 9px;
-    }
-  }
 }
 
 body {
@@ -36,11 +30,11 @@ body {
   line-height: @body-line-height;
   border: 0;
   outline: 0;
-  font-weight: @body-weight;
+  font-weight: @body-font-weight;
   font-size: @body-font-size;
-  font-style: @body-style;
-  font-variant: @body-variant;
-  font-family: @body-family;
+  font-style: @body-font-style;
+  font-variant: @body-font-variant;
+  font-family: @body-font-family;
   min-width: @container-min-width;
   overflow-x: hidden;
   position: relative;
@@ -148,14 +142,14 @@ audio:not([controls]) {
 }
 
 a {
-  color: @a-color;
+  color: currentColor;
   font-weight: @a-weight;
   text-decoration: @a-decoration;
-  font-family: @a-family, @body-family;
+  font-family: @a-family, @body-font-family;
   outline: none;
   cursor: pointer;
 
-  &.ui-interactive {
+  &.interactive {
     &:hover {
       color: @a-hover;
       text-decoration: @a-hover-decoration;
@@ -176,7 +170,7 @@ a:hover {
 p {
   line-height: @paragraph-line-height;
   margin: @paragraph-margin;
-  font-family: @paragraph-family, @body-family;
+  font-family: @paragraph-family, @body-font-family;
 }
 
 abbr[title] {
@@ -246,9 +240,7 @@ svg:not(:root) {
 
 hr {
   border: 0;
-  background: currentColor;
-  height: 1px;
-  opacity: .2;
+  border-bottom: @lightgray 1px solid;
   margin: @gutter 0;
 }
 

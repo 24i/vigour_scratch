@@ -13,6 +13,7 @@
 @screen-tiny:    1024px;
 @screen-tablet:  768px;
 @screen-mobile:  480px;
+@screen-mobile-small:  320px;
 
 /**
  * Media queries
@@ -64,3 +65,9 @@
 @mobile:       ~"and (min-width: 0) and "
                ~"(max-width: "(@screen-mobile - 1px)~")";
 @under-mobile: ~"and (max-width: "(@screen-mobile - 1px)~")";
+
+// mobile
+@above-mobile-small: ~"and (min-width: @{screen-mobile-small})";
+@mobile-small:       ~"and (min-width: 0) and "
+                     ~"(max-width: @{screen-mobile-small})";
+@under-mobile-small: ~"and (max-width: @{screen-mobile-small})";
