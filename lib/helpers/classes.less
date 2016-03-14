@@ -6,7 +6,7 @@
  */
 
 // transition for interactive elements
-.ui-interactive {
+.interactive {
   .transition(@transition);
 }
 
@@ -30,13 +30,13 @@
 // align center at y axis
 .ui-position-center-y {
   .absolute(auto, 50%);
-  .translate(0, -50%);
+  .translate3d(0, -50%, 1px);
 }
 
 // align center at both x and y axises
 .ui-position-center {
   .absolute(50%, 50%);
-  .translate;
+  .translate3d(-50%, -50%, 1px);
 }
 
 // floating
@@ -107,6 +107,11 @@
 // busy
 .ui-busy {
   pointer-events: none;
+}
+
+// rtl
+.ui-rtl {
+  direction: rtl;
 }
 
 // aditional tricks

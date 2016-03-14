@@ -1,14 +1,14 @@
 /**
  * Convert any unit to another
  * @example
- * .convertUnit(font-size, @h4, 1.5, vh)
+ * .convertUnit(@h4, vh, font-size, 1.5)
  */
 
-.convert (
-  @property: font-size,
+.convertUnit (
   @size,
-  @scale: @default-tv-scale,
-  @newUnit: @default-tv-unit
+  @newUnit: vh,
+  @property: font-size,
+  @scale: 1.4
 ) {
   @var: (@size * @scale);
   @converted: `parseFloat('@{var}')`;
