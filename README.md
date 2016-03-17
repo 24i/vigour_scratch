@@ -31,7 +31,7 @@ To install, run:
 
 Injecting in Browserify:
 
-	require('vigour-scratch/index.less');
+	require('vigour-scratch');
 
 Injecting in less:
 
